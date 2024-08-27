@@ -78,7 +78,7 @@ def select_parent(population, weights):
     
     return population[0]
 
-def genetic_algo(population, fitness):
+def genetic_algo(population, fitness, pool):
     start_time = time.time()
     
     max_individual = None
@@ -142,11 +142,3 @@ def genetic_algo(population, fitness):
         
         return A PPEND(S UBSTRING (parent1, 1, c), SUBSTRING (parent2, c + 1, n)) """
 ##################
-numbers = list(range(1, 11))
-permutations = list(itertools.permutations(numbers))
-
-pool = numbers
-init_population = initial_population(permutations, 20)
-
-ans = genetic_algo(init_population, fitness_sort)
-print(ans)

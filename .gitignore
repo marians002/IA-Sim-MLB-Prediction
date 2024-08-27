@@ -1,4 +1,5 @@
 *.log
+*.pyc
 /.idea
 /__pycache__
 /manager/__pycache__

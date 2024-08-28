@@ -1,9 +1,16 @@
 import pandas as pd
 import geneticA
-import MLBpopulation
+from MLBpopulation import *
 import csv
 import os
 import itertools
+import statsapi
+
+""" # Get roster for a specific team
+team_id = 147  # Example: New York Yankees
+roster = statsapi.roster(team_id, season=2023)
+
+print(roster) """
 
 # Get the path to the CSV file
 current_dir = os.path.dirname(__file__)
@@ -20,6 +27,7 @@ batters = pd.read_csv(csv_path)
 print(batters.columns)
 print(pitchers.columns)
 
+teams = get_teams(batters, pitchers)
 # case of use
 """ numbers = list(range(1, 11))
 permutations = list(itertools.permutations(numbers))

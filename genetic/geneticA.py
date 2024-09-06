@@ -1,7 +1,5 @@
 import random
-import itertools
 import time
-import random
 import math
 
 
@@ -17,8 +15,8 @@ def order_one_crossover(parent1, parent2):
     child2[cx_point1:cx_point2] = parent2[cx_point1:cx_point2]
 
     # Step 3: Fill remaining positions
-    fill_positions(child1, parent2)
-    fill_positions(child2, parent1)
+    child1 = fill_positions(child1, parent2)
+    child2 = fill_positions(child2, parent1)
 
     return child1, child2
 
@@ -29,8 +27,10 @@ def fill_positions(child, parent):
     for elem in parent:
         if elem not in child:
             while child[current_pos] is not None:
-                current_pos += 1
+                current_pos = (current_pos + 1)%size
             child[current_pos] = elem
+    
+    return child
 
 
 def fitness_sort(object):
@@ -74,7 +74,9 @@ def mutate(child, pool):
     return child
 
 
-def select_parent(population, weights):
+def wheel_selection(population, weights):
+    """ Spin the wheel, bigger portion to most weighted individuals """
+    """ This selections works better if the fitness function rewards greatly the better individuals. For less margin of fitness is better the Thournament Selection """
     total_fitness = sum(weights)
     pick = random.uniform(0, total_fitness)
 
@@ -86,8 +88,15 @@ def select_parent(population, weights):
 
     return population[0]
 
+def tournament_selection(population, weights, n=4):
+    """ Random selection among n individuals, stays the one with highest weight """
+    """ n must be less or equal tha the size of the population/wheights """
+    indices = random.sample(range(len(population)), k=n)
+    winner = max([(population[i],weights[i]) for i in indices], key=lambda x : x[1])
 
-def genetic_algo(population, fitness, pool):
+    return winner[0]
+
+def genetic_algo(population, fitness, pool, search_t=20):
     start_time = time.time()
 
     max_individual = None
@@ -98,7 +107,7 @@ def genetic_algo(population, fitness, pool):
         new_population = []
 
         for i in range(len(population) // 2):
-            parent1, parent2 = select_parent(population, weigths), select_parent(population, weigths)
+            parent1, parent2 = tournament_selection(population, weigths), tournament_selection(population, weigths)
 
             child1, child2 = order_one_crossover(parent1, parent2)
 
@@ -107,7 +116,7 @@ def genetic_algo(population, fitness, pool):
 
             new_population.extend([child1, child2])
 
-        # elitism, keep the best individuals and punish the worse
+        # elitism: keep the 2 best individuals
 
         population.sort(key=fitness, reverse=True)
         new_population.sort(key=fitness, reverse=False)
@@ -122,7 +131,7 @@ def genetic_algo(population, fitness, pool):
 
         if fitness(best) > max_val:
             max_individual = best
-        if time.time() - start_time > 20: break
+        if time.time() - start_time > search_t: break
 
     return max_individual
 

@@ -31,37 +31,7 @@ def get_teams(batters, pitchers):
             founded = False
             for _, row in batters.iterrows():
                 if p[0] == row['last_name, first_name']:
-                    player = Batter(
-                        last_name_first_name=row['last_name, first_name'],
-                        player_id=row['player_id'],
-                        year=row['year'],
-                        p_game=row['p_game'],
-                        pa=row['pa'],
-                        ab=row['ab'],
-                        hit=row['hit'],
-                        single=row['single'],
-                        double=row['double'],
-                        triple=row['triple'],
-                        home_run=row['home_run'],
-                        strikeout=row['strikeout'],
-                        walk=row['walk'],
-                        k_percent=row['k_percent'],
-                        bb_percent=row['bb_percent'],
-                        batting_avg=row['batting_avg'],
-                        slg_percent=row['slg_percent'],
-                        on_base_percent=row['on_base_percent'],
-                        on_base_plus_slg=row['on_base_plus_slg'],
-                        woba=row['woba'],
-                        xwoba=row['xwoba'],
-                        sweet_spot_percent=row['sweet_spot_percent'],
-                        barrel_batted_rate=row['barrel_batted_rate'],
-                        hard_hit_percent=row['hard_hit_percent'],
-                        avg_best_speed=row['avg_best_speed'],
-                        avg_hyper_speed=row['avg_hyper_speed'],
-                        whiff_percent=row['whiff_percent'],
-                        swing_percent=row['swing_percent'],
-                        pitch_hand=row['pitch_hand']
-                    )
+                    player = Batter(row)
                     t[3].append(player)
                     founded = True
                     break
@@ -71,29 +41,7 @@ def get_teams(batters, pitchers):
 
             for _, row in pitchers.iterrows():
                 if p[0] == row['last_name, first_name']:
-                    player = Pitcher(
-                        last_name_first_name=row['last_name, first_name'],
-                        player_id=row['player_id'],
-                        year=row['year'],
-                        p_game=row['p_game'],
-                        pitch_hand=row['pitch_hand'],
-                        ip=row['ip'],
-                        era=row['era'],
-                        whip=row['whip'],
-                        k_9=row['k_9'],
-                        bb_9=row['bb_9'],
-                        hr_9=row['hr_9'],
-                        fip=row['fip'],
-                        xfip=row['xfip'],
-                        k_percent=row['k_percent'],
-                        bb_percent=row['bb_percent'],
-                        ground_ball_percent=row['ground_ball_percent'],
-                        fly_ball_percent=row['fly_ball_percent'],
-                        line_drive_percent=row['line_drive_percent'],
-                        soft_contact_percent=row['soft_contact_percent'],
-                        medium_contact_percent=row['medium_contact_percent'],
-                        hard_contact_percent=row['hard_contact_percent']
-                    )
+                    player = Pitcher(row)
                     t[3].append(player)
                     break
 

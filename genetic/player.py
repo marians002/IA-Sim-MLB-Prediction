@@ -4,7 +4,7 @@ class Player:
                  k_percent, bb_percent, batting_avg, slg_percent, on_base_percent,
                  on_base_plus_slg, woba, xwoba, sweet_spot_percent,
                  barrel_batted_rate, hard_hit_percent, avg_best_speed,
-                 avg_hyper_speed, whiff_percent, swing_percent):
+                 avg_hyper_speed, whiff_percent, swing_percent, pos):
         self.last_name_first_name = last_name_first_name
         self.player_id = player_id
         self.year = year
@@ -32,26 +32,26 @@ class Player:
         self.avg_hyper_speed = avg_hyper_speed
         self.whiff_percent = whiff_percent
         self.swing_percent = swing_percent
-
+        self.pos = pos
 #tested
 class Batter(Player):
-    def __init__(self,data):
+    def __init__(self, data, pos=None):
         super().__init__(data[0], data[1], data[2], data[3], data[4], data[5],
                          data[6], data[7], data[8], data[9], data[10], data[11],
                          data[12], data[13], data[14],data[15], data[16], data[17], data[18], 
                          data[19], data[20],data[21], data[22], data[23], data[24], 
-                         data[25], data[26])
+                         data[25], data[26], pos)
 
 
 #tested
 class Pitcher(Player):
-    def __init__(self, data):
-        super().__init__(data[0], data[1], data[2], data[8], data[6], data[7],
+    def __init__(self, data, pos=None):
+        super().__init__(data[0], data[1], data[2], data[6], data[7], data[8],
                          data[9], data[10], data[11], data[12], data[13], data[14],
                          data[15], data[16], data[17],data[18], data[19], data[20],
-                         data[21], data[22], data[23], data[24], data[25], data[26])
+                         data[21], data[22], data[23], data[24], data[25], data[26],
+                         data[27], data[28], data[29], pos)
         self.player_age = data[3]
         self.p_game = data[4]
         self.p_formatted_ip = data[5]
-        """ self.batting_avg = data[17] """
-        self.pitch_hand = data[27]
+        self.pitch_hand = data[30]

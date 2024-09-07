@@ -1,8 +1,14 @@
-import random
 import statsapi
 from player import Batter, Pitcher
 from team import Team
 
+def name_formatter(last_name_first_name):
+    """ Returning a string of the form: FIRST_NAME LAST_NAME, for a matter of using same format in both datasets"""
+    for i in range(len(last_name_first_name)):
+        if last_name_first_name[i] == ',':
+            return last_name_first_name[i+2:] + ' ' + last_name_first_name[:i]
+        
+        
 
 def get_teams(batters, pitchers):
     # Get all teams from statsapi
@@ -13,25 +19,23 @@ def get_teams(batters, pitchers):
     # Get players and positions for each team
     for team_id, team_name in team_ids_names:
         roster = statsapi.get('team_roster', {'teamId': team_id})
-        # print(f"Team ID: {team_id}, Name: {team_name}")
         team_players = []
         for player in roster['roster']:
-            print(f"Player: {player['person']['fullName']}, Position: {player['position']['abbreviation']}")
             team_players.append((player['person']['fullName'], player['position']['abbreviation']))
-
+        
+        # fourth position is reserved for a list of Player class objects
         teams.append([team_id, team_name, team_players, []])
 
-    # teams actual format is not useful for simulation. Need to identify players according to their names and get
-    # their stats
-
-    # SEARCHING players and grouping by team
+    # teams actual format is not useful for simulation. Need to identify players according to their names and get their stats
+    
+    # SEARCHING players and groupping by team
     real_teams = []
     for t in teams:
         for p in t[2]:
             founded = False
             for _, row in batters.iterrows():
-                if p[0] == row['last_name, first_name']:
-                    player = Batter(row)
+                if p[0] == name_formatter(row['last_name, first_name']):
+                    player = Batter(list(row), pos=[p[1]])
                     t[3].append(player)
                     founded = True
                     break
@@ -40,8 +44,8 @@ def get_teams(batters, pitchers):
                 break
 
             for _, row in pitchers.iterrows():
-                if p[0] == row['last_name, first_name']:
-                    player = Pitcher(row)
+                if p[0] == name_formatter(row['last_name, first_name']):
+                    player = Pitcher(list(row), pos=[p[1], 'P'])
                     t[3].append(player)
                     break
 
@@ -52,6 +56,7 @@ def get_teams(batters, pitchers):
 
 
 def fitness_lineup(team):
+    """ Simple fitness func for Players """
     val = 0
     val += team[0].on_base_percent * 0.5 + team[0].avg_best_speed * 0.3 + team[0].batting_avg * 0.2
     val += team[1].on_base_percent * 0.5 + team[1].avg_best_speed * 0.3 + team[1].batting_avg * 0.2
@@ -64,16 +69,3 @@ def fitness_lineup(team):
     val += team[8].on_base_percent * 0.5 + team[8].avg_best_speed * 0.3 + team[8].batting_avg * 0.2
 
     return val
-
-# def random_population(self, size):
-#     population = []
-#     for  _ in range(size):
-#         team = random.sample(self.batters, k=8) + random.sample(self.pitchers, k=1)
-#         population.append(team)
-#
-#     return population """
-#
-# (self, last_name_first_name, player_id, year, p_game, pa, ab, hit, single, double, triple, home_run, strikeout,
-# walk, k_percent, bb_percent, batting_avg, slg_percent, on_base_percent, on_base_plus_slg, woba, xwoba,
-# sweet_spot_percent, barrel_batted_rate, hard_hit_percent, avg_best_speed, avg_hyper_speed, whiff_percent,
-# swing_percent, pitch_hand) """

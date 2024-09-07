@@ -9,7 +9,7 @@ def order_one_crossover(parent1, parent2):
 
     # Step 1: Select crossover points
     cx_point1, cx_point2 = sorted(random.sample(range(size), 2))
-
+    
     # Step 2: Copy segments
     child1[cx_point1:cx_point2] = parent1[cx_point1:cx_point2]
     child2[cx_point1:cx_point2] = parent2[cx_point1:cx_point2]
@@ -22,13 +22,14 @@ def order_one_crossover(parent1, parent2):
 
 
 def fill_positions(child, parent):
-    size = len(parent)
-    current_pos = 0
     for elem in parent:
         if elem not in child:
-            while child[current_pos] is not None:
-                current_pos = (current_pos + 1)%size
-            child[current_pos] = elem
+            putted = False
+            for i in range(len(child)):
+                if child[i] is None:
+                    putted = True
+                    child[i] = elem
+                if putted: break
     
     return child
 
@@ -43,9 +44,6 @@ def fitness_sort(object):
 
     return val
 
-
-def initial_population(pool, population_size):
-    return random.sample(pool, population_size)
 
 
 def weighted_by(population, fitness):

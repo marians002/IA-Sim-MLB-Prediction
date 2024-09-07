@@ -4,7 +4,6 @@ from MLBpopulation import *
 import csv
 import os
 import itertools
-import statsapi
 
 """ # Get roster for a specific team
 team_id = 147  # Example: New York Yankees
@@ -23,43 +22,40 @@ csv_path = os.path.join(current_dir, 'datasets', 'batters.csv')
 # Read the CSV file into a DataFrame
 batters = pd.read_csv(csv_path)
 
-# Display the DataFrame
-print(batters.columns)
-print(pitchers.columns)
-print(batters.values[0])
-myPlayer = Batter(list(batters.values[0]))    
-
 players = []
 for _, row in batters.iterrows():
     players.append(Batter(list(row)))
     
-    
-print(players[24])
+# Find teams and show number of players on them
+teams = get_teams(batters, pitchers)
+for i in range(len(teams)):
+    print(len(teams[i].players))
 
-#teams = get_teams(batters, pitchers)
 
-""" 
-Dont know why this test dont work. Geet stick in a cycle...
-pool = players
+""" pool = players
 
 init_population = []
 for i in range(20):
     init_population.append(random.sample(players, 9))
 
 fitness = fitness_lineup
-ans = geneticA.genetic_algo(population=init_population, fitness=fitness, pool=pool)
- """
+ans = geneticA.genetic_algo(population=init_population, fitness=fitness, pool=pool) """
+
 # case of use
 # Fitness func is max when numeric array is ordered
-numbers = list(range(1, 11))
+""" numbers = list(range(1, 11))
 permutations = list(itertools.permutations(numbers))
 
+parents = random.sample(permutations, 2)
+child1, child2 = geneticA.order_one_crossover(parents[0], parents[1])
+
 pool = numbers
-init_population = geneticA.initial_population(permutations, 20)
+init_population = random.sample(permutations, 20)
 
 ans = geneticA.genetic_algo(init_population, geneticA.fitness_sort, pool)
 
-print(ans)
+print(ans) """
+
 
 
 

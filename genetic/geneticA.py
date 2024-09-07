@@ -9,7 +9,7 @@ def order_one_crossover(parent1, parent2):
 
     # Step 1: Select crossover points
     cx_point1, cx_point2 = sorted(random.sample(range(size), 2))
-    
+
     # Step 2: Copy segments
     child1[cx_point1:cx_point2] = parent1[cx_point1:cx_point2]
     child2[cx_point1:cx_point2] = parent2[cx_point1:cx_point2]
@@ -30,7 +30,7 @@ def fill_positions(child, parent):
                     putted = True
                     child[i] = elem
                 if putted: break
-    
+
     return child
 
 
@@ -43,7 +43,6 @@ def fitness_sort(object):
         mul += 1
 
     return val
-
 
 
 def weighted_by(population, fitness):
@@ -73,8 +72,9 @@ def mutate(child, pool):
 
 
 def wheel_selection(population, weights):
-    """ Spin the wheel, bigger portion to most weighted individuals """
-    """ This selections works better if the fitness function rewards greatly the better individuals. For less margin of fitness is better the Thournament Selection """
+    # Spin the wheel, bigger portion to most weighted individuals
+    # This selections works better if the fitness function rewards greatly the better
+    # individuals. For less margin of fitness is better the Thournament Selection
     total_fitness = sum(weights)
     pick = random.uniform(0, total_fitness)
 
@@ -86,13 +86,15 @@ def wheel_selection(population, weights):
 
     return population[0]
 
+
 def tournament_selection(population, weights, n=4):
-    """ Random selection among n individuals, stays the one with highest weight """
-    """ n must be less or equal tha the size of the population/wheights """
+    # Random selection among n individuals, stays the one with highest weight
+    # n must be less or equal tha the size of the population/wheights
     indices = random.sample(range(len(population)), k=n)
-    winner = max([(population[i],weights[i]) for i in indices], key=lambda x : x[1])
+    winner = max([(population[i], weights[i]) for i in indices], key=lambda x: x[1])
 
     return winner[0]
+
 
 def genetic_algo(population, fitness, pool, search_t=20):
     start_time = time.time()

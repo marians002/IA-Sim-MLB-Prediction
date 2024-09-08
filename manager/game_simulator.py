@@ -1,6 +1,14 @@
-import pandas as pd
 import json
 import random
+
+
+def determine_pitch_result(batter, pitcher):
+    # Simular el resultado del pitcheo basado en las estadísticas del bateador y lanzador
+    outcomes = ['strikeout', 'walk', 'single', 'double', 'triple', 'home_run', 'out']
+    probabilities = [0.2, 0.1, 0.3, 0.1, 0.05, 0.1, 0.15]  # Ejemplo de probabilidades
+    result = random.choices(outcomes, probabilities)[0]
+    return result
+
 
 class GameSimulator:
     def __init__(self, manager, batters_df, pitchers_df):
@@ -41,9 +49,8 @@ class GameSimulator:
         # self.game_state['opponent_batter_tendency'] = batter['tendency']
         self.game_state['opponent_batter_tendency'] = 'right'
 
-
         # Determinar el resultado del pitcheo
-        result = self.determine_pitch_result(batter, pitcher)
+        result = determine_pitch_result(batter, pitcher)
         self.update_game_state(result)
 
         # Evaluar las reglas y tomar decisiones
@@ -54,13 +61,6 @@ class GameSimulator:
             'result': result,
             'game_state': self.game_state.copy()
         })
-
-    def determine_pitch_result(self, batter, pitcher):
-        # Simular el resultado del pitcheo basado en las estadísticas del bateador y lanzador
-        outcomes = ['strikeout', 'walk', 'single', 'double', 'triple', 'home_run', 'out']
-        probabilities = [0.2, 0.1, 0.3, 0.1, 0.05, 0.1, 0.15]  # Ejemplo de probabilidades
-        result = random.choices(outcomes, probabilities)[0]
-        return result
 
     def update_game_state(self, result):
         if result == 'strikeout':

@@ -1,12 +1,11 @@
 import random
 import time
-import itertools
-import random
 import math
+
 
 def order_one_crossover(parent1, parent2):
     size = len(parent1)
-    child1, child2 = [None]*size, [None]*size
+    child1, child2 = [None] * size, [None] * size
 
     # Step 1: Select crossover points
     cx_point1, cx_point2 = sorted(random.sample(range(size), 2))
@@ -16,43 +15,48 @@ def order_one_crossover(parent1, parent2):
     child2[cx_point1:cx_point2] = parent2[cx_point1:cx_point2]
 
     # Step 3: Fill remaining positions
-    fill_positions(child1, parent2)
-    fill_positions(child2, parent1)
+    child1 = fill_positions(child1, parent2)
+    child2 = fill_positions(child2, parent1)
 
     return child1, child2
 
+
 def fill_positions(child, parent):
-    size = len(parent)
-    current_pos = 0
     for elem in parent:
         if elem not in child:
-            while child[current_pos] is not None:
-                current_pos +=1
-            child[current_pos] = elem
+            putted = False
+            for i in range(len(child)):
+                if child[i] is None:
+                    putted = True
+                    child[i] = elem
+                if putted: break
+
+    return child
+
 
 def fitness_sort(object):
-    """ most valued elemnts goes back """
+    """ most valued elements goes back """
     val = 0
     mul = 1
     for element in object:
-        val += element*mul
-        mul+=1
-        
+        val += element * mul
+        mul += 1
+
     return val
 
-def initial_population(pool, population_size):
-    return random.sample(pool, population_size)
 
 def weighted_by(population, fitness):
     """ Returns a probability according to the weights """
     weights = [fitness(p) for p in population]
     total_weight = sum(weights)
-    
-    return [w/total_weight for w in weights]
+
+    return [w / total_weight for w in weights]
+
 
 def crossover(parent1, parent2):
     c = random.randint(0, len(parent1))
     return parent1[:c] + parent2[c:]
+
 
 """ def mutate(team, player_pool):
     new_players = team.players[:]
@@ -60,63 +64,79 @@ def crossover(parent1, parent2):
     new_players[idx1], new_players[idx2] = new_players[idx2], new_players[idx1]
     return Team(new_players) """
 
+
 def mutate(child, pool):
-    if random.random() < 0.05:  
+    if random.random() < 0.05:
         return child
     return child
 
 
-def select_parent(population, weights):
+def wheel_selection(population, weights):
+    # Spin the wheel, bigger portion to most weighted individuals
+    # This selections works better if the fitness function rewards greatly the better
+    # individuals. For less margin of fitness is better the Thournament Selection
     total_fitness = sum(weights)
-    pick = random.uniform(0,total_fitness)
-    
+    pick = random.uniform(0, total_fitness)
+
     current = 0
     for individual, fitness_value in zip(population, weights):
         current += fitness_value
         if current >= pick:
-            return individual                   
-    
+            return individual
+
     return population[0]
 
-def genetic_algo(population, fitness, pool):
+
+def tournament_selection(population, weights, n=4):
+    # Random selection among n individuals, stays the one with highest weight
+    # n must be less or equal tha the size of the population/wheights
+    indices = random.sample(range(len(population)), k=n)
+    winner = max([(population[i], weights[i]) for i in indices], key=lambda x: x[1])
+
+    return winner[0]
+
+
+def genetic_algo(population, fitness, pool, search_t=20):
     start_time = time.time()
-    
+
     max_individual = None
     max_val = -math.inf
-    
+
     while True:
         weigths = weighted_by(population, fitness)
         new_population = []
-        
-        for i in range(len(population)//2):
-            parent1, parent2 =  select_parent(population, weigths), select_parent(population, weigths)
-            
+
+        for i in range(len(population) // 2):
+            parent1, parent2 = tournament_selection(population, weigths), tournament_selection(population, weigths)
+
             child1, child2 = order_one_crossover(parent1, parent2)
-        
+
             child1 = mutate(child1, pool)
-            child2 = mutate(child2, pool)    
-            
+            child2 = mutate(child2, pool)
+
             new_population.extend([child1, child2])
-        
-        #elitism, keep the best individuals and punish the worse
-        
+
+        # elitism: keep the 2 best individuals
+
         population.sort(key=fitness, reverse=True)
         new_population.sort(key=fitness, reverse=False)
-        
-        if fitness(population[0]) >= fitness(new_population[1]) and fitness(population[1]) >= fitness(new_population[0]):
+
+        if fitness(population[0]) >= fitness(new_population[1]) and fitness(population[1]) >= fitness(
+                new_population[0]):
             population = new_population
-        else: 
-            population[2:] = new_population [2:]
-        
+        else:
+            population[2:] = new_population[2:]
+
         best = max(population, key=fitness)
-        
+
         if fitness(best) > max_val:
             max_individual = best
-        if time.time() - start_time > 20: break
-        
+        if time.time() - start_time > search_t: break
+
     return max_individual
 
-#### PSUDOCODE ####
+
+# region PSUDOCODE
 """ function GENETIC ALGORITHM(population, ﬁtness) returns an individual
         repeat
             weights← WEIGHTED BY(population, ﬁtness)
@@ -141,4 +161,3 @@ def genetic_algo(population, fitness, pool):
         c ← random number from 1 to n
         
         return A PPEND(S UBSTRING (parent1, 1, c), SUBSTRING (parent2, c + 1, n)) """
-##################

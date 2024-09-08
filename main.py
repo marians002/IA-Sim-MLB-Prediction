@@ -9,11 +9,11 @@ from data_loader.team import Team
 
 
 # Fill the players list
-def get_players(data, players, p_type):
+def get_players(data, players, type_batter):
     for _, row in data.iterrows():
         first_name, last_name = name_formatter(row['last_name, first_name'])
         player_data = [first_name, last_name] + list(row)[1:]
-        if p_type:
+        if type_batter:
             players.append(Batter(player_data))
         else:
             players.append(Pitcher(player_data))
@@ -52,7 +52,6 @@ def get_team_rosters(year=2022):
 
 def add_players_to_teams(team_rosters, players):
     teams = []
-    # teams = {team_name: Team(team_id, team_name) for team_id, team_name in team_rosters.items()}
 
     for team_name, team_players in team_rosters.items():
         new_team = Team(team_name)
@@ -132,7 +131,7 @@ def main():
         save_to_json(teams_dict, teams_file)
         save_to_json(players_dict, players_file)
 
-    print_team_rosters(teams_dict)
+    # print_team_rosters(teams_dict)
     print("Teams and players data loaded successfully.")
 
 

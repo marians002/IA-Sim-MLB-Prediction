@@ -1,3 +1,6 @@
+import math
+
+
 class Player:
     def __init__(self, first_name, last_name, player_id, year, ab, pa, hit,
                  single, double, triple, home_run, strikeout, walk,
@@ -76,9 +79,22 @@ class Batter(Player):
                          data[12], data[13], data[14], data[15], data[16], data[17], data[18],
                          data[19], data[20], data[21], data[22], data[23], data[24],
                          data[25], data[26], data[27], pos)
+        if math.isnan(data[28]):
+            self.oaa = None
+        else:
+            self.oaa = data[28]
+
+        if math.isnan(data[29]):
+            self.arm_strength = None
+        else:
+            self.arm_strength = data[29]
 
     def to_dict(self):
-        return super().to_dict()
+        player_dict = super().to_dict()
+        player_dict.update({'oaa': self.oaa,
+                            'arm_strength': self.arm_strength
+                            })
+        return player_dict
 
 
 class Pitcher(Player):

@@ -70,7 +70,9 @@
                 "swing_percent": 22.7,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 53.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Elvis",
@@ -103,7 +105,9 @@
                 "swing_percent": 21.4,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 45.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Luis",
@@ -136,7 +140,9 @@
                 "swing_percent": 19.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 48.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Christian",
@@ -169,7 +175,9 @@
                 "swing_percent": 34.7,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 62.5,
+                "arm_strength": 88.3
             },
             {
                 "first_name": "Paul",
@@ -239,7 +247,9 @@
                 "swing_percent": 28.5,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 47.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Jonah",
@@ -272,7 +282,9 @@
                 "swing_percent": 17.1,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 35.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Seth",
@@ -305,7 +317,9 @@
                 "swing_percent": 29.6,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Conner",
@@ -338,7 +352,9 @@
                 "swing_percent": 24.8,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 45.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Ernie",
@@ -371,7 +387,9 @@
                 "swing_percent": 16.0,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 49.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -441,7 +459,9 @@
                 "swing_percent": 20.4,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 63.6,
+                "arm_strength": null
             },
             {
                 "first_name": "D\u00e9rmis",
@@ -474,7 +494,9 @@
                 "swing_percent": 44.5,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 51.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Justin",
@@ -729,7 +751,9 @@
                 "swing_percent": 13.1,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 48.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Jared",
@@ -836,7 +860,9 @@
                 "swing_percent": 42.7,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 54.2,
+                "arm_strength": 86.9
             },
             {
                 "first_name": "Ram\u00f3n",
@@ -869,7 +895,9 @@
                 "swing_percent": 30.3,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 46.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Zach",
@@ -939,7 +967,9 @@
                 "swing_percent": 25.6,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 47.3,
+                "arm_strength": null
             },
             {
                 "first_name": "David",
@@ -972,7 +1002,9 @@
                 "swing_percent": 24.1,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 44.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Vimael",
@@ -1005,7 +1037,9 @@
                 "swing_percent": 17.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 44.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Billy",
@@ -1038,7 +1072,9 @@
                 "swing_percent": 27.8,
                 "pos": [
                     "OF"
-                ]
+                ],
+                "oaa": 42.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Sam",
@@ -1145,7 +1181,9 @@
                 "swing_percent": 24.0,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 49.3,
+                "arm_strength": 86.1
             },
             {
                 "first_name": "Sheldon",
@@ -1178,7 +1216,9 @@
                 "swing_percent": 27.2,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Adam",
@@ -1248,7 +1288,9 @@
                 "swing_percent": 30.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 50.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Joel",
@@ -1318,7 +1360,9 @@
                 "swing_percent": 34.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 52.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Stephen",
@@ -1351,7 +1395,9 @@
                 "swing_percent": 41.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 55.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Austin",
@@ -1569,7 +1615,9 @@
                 "swing_percent": 30.1,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 53.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Kirby",
@@ -1639,7 +1687,9 @@
                 "swing_percent": 26.3,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 38.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Domingo",
@@ -1746,7 +1796,9 @@
                 "swing_percent": 27.1,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 46.5,
+                "arm_strength": 72.3
             },
             {
                 "first_name": "Ken",
@@ -1821,7 +1873,9 @@
                 "swing_percent": 30.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 46.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Miguel",
@@ -1854,7 +1908,9 @@
                 "swing_percent": 23.4,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 51.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Anthony",
@@ -2035,7 +2091,9 @@
                 "swing_percent": 26.7,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 43.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Rodolfo",
@@ -2068,7 +2126,9 @@
                 "swing_percent": 32.6,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 47.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Yu",
@@ -2101,7 +2161,9 @@
                 "swing_percent": 29.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 47.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Michael",
@@ -2134,7 +2196,9 @@
                 "swing_percent": 30.8,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 57.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Zack",
@@ -2167,7 +2231,9 @@
                 "swing_percent": 36.5,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 41.3,
+                "arm_strength": 78.4
             },
             {
                 "first_name": "Roansy",
@@ -2274,7 +2340,9 @@
                 "swing_percent": 35.4,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 40.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Chase",
@@ -2381,7 +2449,9 @@
                 "swing_percent": 31.2,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 54.5,
+                "arm_strength": 78.6
             },
             {
                 "first_name": "Junior",
@@ -2488,7 +2558,9 @@
                 "swing_percent": 23.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 43.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Ke'Bryan",
@@ -2521,7 +2593,9 @@
                 "swing_percent": 20.7,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 43.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -2554,7 +2628,9 @@
                 "swing_percent": 15.3,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 55.3,
+                "arm_strength": 77.1
             },
             {
                 "first_name": "Heath",
@@ -2698,7 +2774,9 @@
                 "swing_percent": 26.8,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 46.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Tucupita",
@@ -2731,7 +2809,9 @@
                 "swing_percent": 20.6,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 46.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Jake",
@@ -2764,7 +2844,9 @@
                 "swing_percent": 30.7,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 57.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Cal",
@@ -2797,7 +2879,9 @@
                 "swing_percent": 26.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 50.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Kevin",
@@ -2830,7 +2914,9 @@
                 "swing_percent": 15.6,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 48.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Johan",
@@ -2900,7 +2986,9 @@
                 "swing_percent": 20.7,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 38.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Michael",
@@ -2933,7 +3021,9 @@
                 "swing_percent": 28.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 44.3,
+                "arm_strength": 83.5
             },
             {
                 "first_name": "Roberto",
@@ -2966,7 +3056,9 @@
                 "swing_percent": 36.6,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 39.9,
+                "arm_strength": 78.5
             },
             {
                 "first_name": "Dillon",
@@ -3110,7 +3202,9 @@
                 "swing_percent": 27.7,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 50.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Robert",
@@ -3291,7 +3385,9 @@
                 "swing_percent": 30.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 43.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Zach",
@@ -3361,7 +3457,9 @@
                 "swing_percent": 21.9,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 44.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Cole",
@@ -3394,7 +3492,9 @@
                 "swing_percent": 28.1,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 46.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Duane",
@@ -3464,7 +3564,9 @@
                 "swing_percent": 20.1,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 36.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Daniel",
@@ -3497,7 +3599,9 @@
                 "swing_percent": 20.4,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 32.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Bryse",
@@ -3609,7 +3713,9 @@
                 "swing_percent": 22.3,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 57.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Sergio",
@@ -3642,7 +3748,9 @@
                 "swing_percent": 23.8,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 42.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Jorge",
@@ -3675,7 +3783,9 @@
                 "swing_percent": 38.0,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 62.6,
+                "arm_strength": 88.2
             },
             {
                 "first_name": "Jos\u00e9",
@@ -3708,7 +3818,9 @@
                 "swing_percent": 24.1,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 55.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Josh",
@@ -3741,7 +3853,9 @@
                 "swing_percent": 21.7,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 45.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Luis",
@@ -3774,7 +3888,9 @@
                 "swing_percent": 31.7,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 62.7,
+                "arm_strength": 83.7
             },
             {
                 "first_name": "Robinson",
@@ -3807,7 +3923,9 @@
                 "swing_percent": 24.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 56.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Mike",
@@ -3914,7 +4032,9 @@
                 "swing_percent": 18.0,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 41.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Yu",
@@ -3984,7 +4104,9 @@
                 "swing_percent": 21.5,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 45.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Luis",
@@ -4091,7 +4213,9 @@
                 "swing_percent": 26.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 38.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Javy",
@@ -4235,7 +4359,9 @@
                 "swing_percent": 18.8,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 49.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Pierce",
@@ -4305,7 +4431,9 @@
                 "swing_percent": 19.1,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 43.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Reiss",
@@ -4412,7 +4540,9 @@
                 "swing_percent": 24.9,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 50.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Sean",
@@ -4519,7 +4649,9 @@
                 "swing_percent": 26.8,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 46.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Adrian",
@@ -4626,7 +4758,9 @@
                 "swing_percent": 31.2,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 45.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Austin",
@@ -4659,7 +4793,9 @@
                 "swing_percent": 14.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 42.8,
+                "arm_strength": 81.4
             },
             {
                 "first_name": "Jurickson",
@@ -4692,7 +4828,9 @@
                 "swing_percent": 18.7,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 43.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Taylor",
@@ -4836,7 +4974,9 @@
                 "swing_percent": 19.2,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 35.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Craig",
@@ -4943,7 +5083,9 @@
                 "swing_percent": 37.8,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 43.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Steven",
@@ -5129,7 +5271,9 @@
                 "swing_percent": 27.1,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 47.6,
+                "arm_strength": 78.3
             },
             {
                 "first_name": "Diego",
@@ -5236,7 +5380,9 @@
                 "swing_percent": 14.3,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 41.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Stuart",
@@ -5269,7 +5415,9 @@
                 "swing_percent": 35.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Matt",
@@ -5376,7 +5524,9 @@
                 "swing_percent": 21.9,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 35.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Ty",
@@ -5409,7 +5559,9 @@
                 "swing_percent": 19.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 52.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Adam",
@@ -5442,7 +5594,9 @@
                 "swing_percent": 14.4,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 48.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Logan",
@@ -5549,7 +5703,9 @@
                 "swing_percent": 27.9,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 49.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Mitch",
@@ -5582,7 +5738,9 @@
                 "swing_percent": 29.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 45.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Travis",
@@ -5615,7 +5773,9 @@
                 "swing_percent": 9.9,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 39.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Jarred",
@@ -5648,7 +5808,9 @@
                 "swing_percent": 33.3,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.5,
+                "arm_strength": null
             },
             {
                 "first_name": "George",
@@ -5718,7 +5880,9 @@
                 "swing_percent": 31.1,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 43.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Kyle",
@@ -5751,7 +5915,9 @@
                 "swing_percent": 39.2,
                 "pos": [
                     "OF"
-                ]
+                ],
+                "oaa": 47.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Wyatt",
@@ -5895,7 +6061,9 @@
                 "swing_percent": 27.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 38.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Andr\u00e9s",
@@ -6002,7 +6170,9 @@
                 "swing_percent": 32.1,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 52.6,
+                "arm_strength": 83.8
             },
             {
                 "first_name": "Yohan",
@@ -6109,7 +6279,9 @@
                 "swing_percent": 30.4,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 50.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Sergio",
@@ -6179,7 +6351,9 @@
                 "swing_percent": 21.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 42.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Paul",
@@ -6323,7 +6497,9 @@
                 "swing_percent": 33.1,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 41.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Erik",
@@ -6393,7 +6569,9 @@
                 "swing_percent": 21.6,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 47.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Luis",
@@ -6426,7 +6604,9 @@
                 "swing_percent": 26.7,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 47.0,
+                "arm_strength": 82.3
             },
             {
                 "first_name": "Taylor",
@@ -6459,7 +6639,9 @@
                 "swing_percent": 33.7,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Justin",
@@ -6492,7 +6674,9 @@
                 "swing_percent": 37.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 45.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Donovan",
@@ -6525,7 +6709,9 @@
                 "swing_percent": 17.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 52.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Jesse",
@@ -6558,7 +6744,9 @@
                 "swing_percent": 19.9,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 43.3,
+                "arm_strength": null
             }
         ]
     },
@@ -6633,7 +6821,9 @@
                 "swing_percent": 38.0,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 47.2,
+                "arm_strength": 82.4
             },
             {
                 "first_name": "Tyler",
@@ -6703,7 +6893,9 @@
                 "swing_percent": 32.4,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 47.1,
+                "arm_strength": null
             },
             {
                 "first_name": "John",
@@ -6773,7 +6965,9 @@
                 "swing_percent": 14.0,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 36.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Curt",
@@ -6806,7 +7000,9 @@
                 "swing_percent": 27.1,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 47.6,
+                "arm_strength": 78.3
             },
             {
                 "first_name": "Kervin",
@@ -6950,7 +7146,9 @@
                 "swing_percent": 31.8,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "J.D.",
@@ -6983,7 +7181,9 @@
                 "swing_percent": 37.4,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 51.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Anthony",
@@ -7090,7 +7290,9 @@
                 "swing_percent": 15.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 55.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Steven",
@@ -7123,7 +7325,9 @@
                 "swing_percent": 42.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 44.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Thairo",
@@ -7156,7 +7360,9 @@
                 "swing_percent": 19.7,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 49.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Stuart",
@@ -7189,7 +7395,9 @@
                 "swing_percent": 35.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Wilmer",
@@ -7222,7 +7430,9 @@
                 "swing_percent": 18.9,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 45.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Mike",
@@ -7255,7 +7465,9 @@
                 "swing_percent": 21.9,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 35.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Jarl\u00edn",
@@ -7325,7 +7537,9 @@
                 "swing_percent": 22.7,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Sean",
@@ -7432,7 +7646,9 @@
                 "swing_percent": 16.7,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 40.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Dominic",
@@ -7613,7 +7829,9 @@
                 "swing_percent": 29.4,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 44.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Yunior",
@@ -7720,7 +7938,9 @@
                 "swing_percent": 22.7,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 49.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Michael",
@@ -7753,7 +7973,9 @@
                 "swing_percent": 19.1,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 43.5,
+                "arm_strength": 78.1
             },
             {
                 "first_name": "Joc",
@@ -7786,7 +8008,9 @@
                 "swing_percent": 24.4,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 46.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Carlos",
@@ -7893,7 +8117,9 @@
                 "swing_percent": 27.5,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 40.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Austin",
@@ -7926,7 +8152,9 @@
                 "swing_percent": 31.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 45.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Thomas",
@@ -7996,7 +8224,9 @@
                 "swing_percent": 37.2,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 44.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Jason",
@@ -8029,7 +8259,9 @@
                 "swing_percent": 25.9,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 47.0,
+                "arm_strength": null
             },
             {
                 "first_name": "LaMonte",
@@ -8062,7 +8294,9 @@
                 "swing_percent": 17.8,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 44.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Donovan",
@@ -8095,7 +8329,9 @@
                 "swing_percent": 17.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 52.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Logan",
@@ -8165,7 +8401,9 @@
                 "swing_percent": 29.9,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Alex",
@@ -8235,7 +8473,9 @@
                 "swing_percent": 22.9,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 43.5,
+                "arm_strength": 78.7
             },
             {
                 "first_name": "Mike",
@@ -8268,7 +8508,9 @@
                 "swing_percent": 22.5,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 42.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Alex",
@@ -8343,7 +8585,9 @@
                 "swing_percent": 19.1,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 48.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Harrison",
@@ -8376,7 +8620,9 @@
                 "swing_percent": 22.1,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 48.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Alec",
@@ -8409,7 +8655,9 @@
                 "swing_percent": 24.7,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 51.1,
+                "arm_strength": null
             },
             {
                 "first_name": "G\u00e9nesis",
@@ -8479,7 +8727,9 @@
                 "swing_percent": 24.8,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 45.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Dylan",
@@ -8512,7 +8762,9 @@
                 "swing_percent": 25.6,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 46.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Paul",
@@ -8545,7 +8797,9 @@
                 "swing_percent": 35.2,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 48.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Corey",
@@ -8578,7 +8832,9 @@
                 "swing_percent": 22.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 58.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Brendan",
@@ -8611,7 +8867,9 @@
                 "swing_percent": 15.6,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 38.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Tommy",
@@ -8644,7 +8902,9 @@
                 "swing_percent": 20.6,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 47.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Junior",
@@ -8788,7 +9048,9 @@
                 "swing_percent": 26.8,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 41.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Nolan",
@@ -8821,7 +9083,9 @@
                 "swing_percent": 34.5,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 51.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Ryan",
@@ -8965,7 +9229,9 @@
                 "swing_percent": 22.7,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 48.8,
+                "arm_strength": 80.6
             },
             {
                 "first_name": "Matthew",
@@ -9146,7 +9412,9 @@
                 "swing_percent": 22.0,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 58.6,
+                "arm_strength": 79.9
             },
             {
                 "first_name": "Jordan",
@@ -9253,7 +9521,9 @@
                 "swing_percent": 23.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 39.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -9286,7 +9556,9 @@
                 "swing_percent": 30.9,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 46.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Johan",
@@ -9393,7 +9665,9 @@
                 "swing_percent": 21.3,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 48.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Jose",
@@ -9500,7 +9774,9 @@
                 "swing_percent": 33.5,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 53.9,
+                "arm_strength": 81.4
             },
             {
                 "first_name": "Edmundo",
@@ -9533,7 +9809,9 @@
                 "swing_percent": 31.4,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 57.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Chris",
@@ -9825,7 +10103,9 @@
                 "swing_percent": 26.1,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 54.5,
+                "arm_strength": null
             }
         ]
     },
@@ -9900,7 +10180,9 @@
                 "swing_percent": 22.4,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 44.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Shawn",
@@ -9970,7 +10252,9 @@
                 "swing_percent": 28.6,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 46.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Luke",
@@ -10114,7 +10398,9 @@
                 "swing_percent": 34.7,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 62.5,
+                "arm_strength": 88.3
             },
             {
                 "first_name": "Vidal",
@@ -10147,7 +10433,9 @@
                 "swing_percent": 20.7,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 50.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Yu",
@@ -10180,7 +10468,9 @@
                 "swing_percent": 29.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 47.5,
+                "arm_strength": null
             },
             {
                 "first_name": "JT",
@@ -10250,7 +10540,9 @@
                 "swing_percent": 32.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 41.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Garrett",
@@ -10320,7 +10612,9 @@
                 "swing_percent": 14.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 41.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Robert",
@@ -10538,7 +10832,9 @@
                 "swing_percent": 13.3,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 51.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Ralph",
@@ -10645,7 +10941,9 @@
                 "swing_percent": 31.9,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 51.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Andrew",
@@ -10752,7 +11050,9 @@
                 "swing_percent": 33.5,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 53.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Josh",
@@ -10785,7 +11085,9 @@
                 "swing_percent": 32.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 46.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Manuel",
@@ -10818,7 +11120,9 @@
                 "swing_percent": 24.7,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 52.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Shane",
@@ -10888,7 +11192,9 @@
                 "swing_percent": 23.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 61.2,
+                "arm_strength": 86.9
             },
             {
                 "first_name": "Isaac",
@@ -10921,7 +11227,9 @@
                 "swing_percent": 16.5,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 39.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Luis",
@@ -10991,7 +11299,9 @@
                 "swing_percent": 26.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 50.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Brett",
@@ -11024,7 +11334,9 @@
                 "swing_percent": 38.2,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 44.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Ren\u00e9",
@@ -11057,7 +11369,9 @@
                 "swing_percent": 36.8,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 56.0,
+                "arm_strength": 83.4
             },
             {
                 "first_name": "Colin",
@@ -11127,7 +11441,9 @@
                 "swing_percent": 34.6,
                 "pos": [
                     "OF"
-                ]
+                ],
+                "oaa": 46.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Brooks",
@@ -11197,7 +11513,9 @@
                 "swing_percent": 39.9,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Harold",
@@ -11230,7 +11548,9 @@
                 "swing_percent": 25.5,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 56.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Drew",
@@ -11337,7 +11657,9 @@
                 "swing_percent": 35.9,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 51.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Jeffrey",
@@ -11444,7 +11766,9 @@
                 "swing_percent": 25.4,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 43.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Matt",
@@ -11588,7 +11912,9 @@
                 "swing_percent": 40.2,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 51.0,
+                "arm_strength": 75.0
             }
         ]
     },
@@ -11848,7 +12174,9 @@
                 "swing_percent": 36.3,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 53.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Willie",
@@ -11881,7 +12209,9 @@
                 "swing_percent": 14.0,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 36.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Charlie",
@@ -11914,7 +12244,9 @@
                 "swing_percent": 30.5,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 59.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Steven",
@@ -11947,7 +12279,9 @@
                 "swing_percent": 42.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 44.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Dane",
@@ -12017,7 +12351,9 @@
                 "swing_percent": 28.9,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 55.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Adolis",
@@ -12050,7 +12386,9 @@
                 "swing_percent": 33.5,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 53.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Mitch",
@@ -12083,7 +12421,9 @@
                 "swing_percent": 25.3,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 42.3,
+                "arm_strength": 81.0
             },
             {
                 "first_name": "Jon",
@@ -12190,7 +12530,9 @@
                 "swing_percent": 21.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 50.8,
+                "arm_strength": 83.7
             },
             {
                 "first_name": "Jonathan",
@@ -12297,7 +12639,9 @@
                 "swing_percent": 39.0,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 53.3,
+                "arm_strength": 88.1
             },
             {
                 "first_name": "Andy",
@@ -12330,7 +12674,9 @@
                 "swing_percent": 19.4,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 46.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Josh",
@@ -12363,7 +12709,9 @@
                 "swing_percent": 30.8,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 47.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Dallas",
@@ -12507,7 +12855,9 @@
                 "swing_percent": 24.9,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 52.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Brett",
@@ -12577,7 +12927,9 @@
                 "swing_percent": 34.6,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 39.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Brad",
@@ -12610,7 +12962,9 @@
                 "swing_percent": 36.3,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyson",
@@ -12754,7 +13108,9 @@
                 "swing_percent": 19.9,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 46.7,
+                "arm_strength": 75.9
             },
             {
                 "first_name": "Cole",
@@ -12935,7 +13291,9 @@
                 "swing_percent": 26.5,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 54.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Marcus",
@@ -12968,7 +13326,9 @@
                 "swing_percent": 20.6,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 47.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Josh",
@@ -13001,7 +13361,9 @@
                 "swing_percent": 23.4,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 41.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Nick",
@@ -13034,7 +13396,9 @@
                 "swing_percent": 23.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 42.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Leody",
@@ -13067,7 +13431,9 @@
                 "swing_percent": 28.1,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 49.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Bubba",
@@ -13100,7 +13466,9 @@
                 "swing_percent": 31.6,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 58.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Jesus",
@@ -13170,7 +13538,9 @@
                 "swing_percent": 38.5,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 37.5,
+                "arm_strength": 83.2
             },
             {
                 "first_name": "Eli",
@@ -13203,7 +13573,9 @@
                 "swing_percent": 39.6,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 46.6,
+                "arm_strength": null
             }
         ]
     },
@@ -13389,7 +13761,9 @@
                 "swing_percent": 23.0,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 55.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Cavan",
@@ -13422,7 +13796,9 @@
                 "swing_percent": 25.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 40.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Ryan",
@@ -13492,7 +13868,9 @@
                 "swing_percent": 29.4,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 49.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Max",
@@ -13562,7 +13940,9 @@
                 "swing_percent": 28.7,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 41.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Adam",
@@ -13632,7 +14012,9 @@
                 "swing_percent": 36.5,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 41.3,
+                "arm_strength": 78.4
             },
             {
                 "first_name": "Santiago",
@@ -13665,7 +14047,9 @@
                 "swing_percent": 15.5,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 46.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Matt",
@@ -13809,7 +14193,9 @@
                 "swing_percent": 24.4,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 49.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Lourdes",
@@ -13842,7 +14228,9 @@
                 "swing_percent": 21.3,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -13875,7 +14263,9 @@
                 "swing_percent": 15.3,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 55.3,
+                "arm_strength": 77.1
             },
             {
                 "first_name": "Teoscar",
@@ -13908,7 +14298,9 @@
                 "swing_percent": 35.1,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 48.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Danny",
@@ -13941,7 +14333,9 @@
                 "swing_percent": 21.8,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 45.3,
+                "arm_strength": 82.2
             },
             {
                 "first_name": "Yusei",
@@ -14011,7 +14405,9 @@
                 "swing_percent": 15.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 41.0,
+                "arm_strength": 80.3
             },
             {
                 "first_name": "Casey",
@@ -14155,7 +14551,9 @@
                 "swing_percent": 19.4,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 50.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Julian",
@@ -14225,7 +14623,9 @@
                 "swing_percent": 19.7,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 47.9,
+                "arm_strength": 81.8
             },
             {
                 "first_name": "David",
@@ -14517,7 +14917,9 @@
                 "swing_percent": 21.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 55.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Trent",
@@ -14624,7 +15026,9 @@
                 "swing_percent": 37.4,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 51.7,
+                "arm_strength": null
             }
         ]
     },
@@ -14699,7 +15103,9 @@
                 "swing_percent": 7.1,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 42.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Dylan",
@@ -14769,7 +15175,9 @@
                 "swing_percent": 34.1,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 46.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Yennier",
@@ -14839,7 +15247,9 @@
                 "swing_percent": 35.0,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Gilberto",
@@ -14872,7 +15282,9 @@
                 "swing_percent": 23.4,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 44.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Mark",
@@ -14905,7 +15317,9 @@
                 "swing_percent": 31.9,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 62.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Carlos",
@@ -14938,7 +15352,9 @@
                 "swing_percent": 22.0,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 44.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Jharel",
@@ -15193,7 +15609,9 @@
                 "swing_percent": 35.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Chi Chi",
@@ -15263,7 +15681,9 @@
                 "swing_percent": 27.8,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 59.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Sonny",
@@ -15407,7 +15827,9 @@
                 "swing_percent": 22.6,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 46.2,
+                "arm_strength": 82.4
             },
             {
                 "first_name": "Max",
@@ -15440,7 +15862,9 @@
                 "swing_percent": 19.9,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 46.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Alex",
@@ -15473,7 +15897,9 @@
                 "swing_percent": 20.1,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 50.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Trevor",
@@ -15506,7 +15932,9 @@
                 "swing_percent": 40.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 41.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Sandy",
@@ -15539,7 +15967,9 @@
                 "swing_percent": 25.2,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 38.0,
+                "arm_strength": 78.1
             },
             {
                 "first_name": "Jorge",
@@ -15683,7 +16113,9 @@
                 "swing_percent": 24.3,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 51.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Jovani",
@@ -15864,7 +16296,9 @@
                 "swing_percent": 35.0,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 58.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Jorge",
@@ -15897,7 +16331,9 @@
                 "swing_percent": 25.6,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 42.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Joe",
@@ -16004,7 +16440,9 @@
                 "swing_percent": 30.8,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 44.0,
+                "arm_strength": 86.3
             },
             {
                 "first_name": "Cole",
@@ -16074,7 +16512,9 @@
                 "swing_percent": 37.2,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 39.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Devin",
@@ -16292,7 +16732,9 @@
                 "swing_percent": 21.4,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 53.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Louie",
@@ -16362,7 +16804,9 @@
                 "swing_percent": 38.1,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 44.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Josh",
@@ -16511,7 +16955,9 @@
                 "swing_percent": 21.1,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 51.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Connor",
@@ -16581,7 +17027,9 @@
                 "swing_percent": 24.9,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 48.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Nick",
@@ -16614,7 +17062,9 @@
                 "swing_percent": 32.2,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 57.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Sam",
@@ -16943,7 +17393,9 @@
                 "swing_percent": 24.0,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 60.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Darick",
@@ -16976,7 +17428,9 @@
                 "swing_percent": 33.7,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 52.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Brad",
@@ -17046,7 +17500,9 @@
                 "swing_percent": 28.2,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 56.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Od\u00fabel",
@@ -17079,7 +17535,9 @@
                 "swing_percent": 24.0,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 52.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Rhys",
@@ -17112,7 +17570,9 @@
                 "swing_percent": 25.7,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 41.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Corey",
@@ -17182,7 +17642,9 @@
                 "swing_percent": 29.1,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 47.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Nick",
@@ -17215,7 +17677,9 @@
                 "swing_percent": 35.4,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.8,
+                "arm_strength": null
             },
             {
                 "first_name": "\u00d3scar",
@@ -17248,7 +17712,9 @@
                 "swing_percent": 26.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 56.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Mickey",
@@ -17281,7 +17747,9 @@
                 "swing_percent": 37.9,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 58.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Yairo",
@@ -17314,7 +17782,9 @@
                 "swing_percent": 25.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 59.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Nick",
@@ -17458,7 +17928,9 @@
                 "swing_percent": 34.6,
                 "pos": [
                     "OF"
-                ]
+                ],
+                "oaa": 46.7,
+                "arm_strength": null
             },
             {
                 "first_name": "J.T.",
@@ -17491,7 +17963,9 @@
                 "swing_percent": 25.7,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 49.0,
+                "arm_strength": 87.6
             },
             {
                 "first_name": "David",
@@ -17635,7 +18109,9 @@
                 "swing_percent": 29.0,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 40.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Jean",
@@ -17668,7 +18144,9 @@
                 "swing_percent": 18.5,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 48.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Edmundo",
@@ -17701,7 +18179,9 @@
                 "swing_percent": 31.4,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 57.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Bryson",
@@ -17734,7 +18214,9 @@
                 "swing_percent": 17.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 45.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Garrett",
@@ -17767,7 +18249,9 @@
                 "swing_percent": 21.2,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 39.2,
+                "arm_strength": 83.5
             },
             {
                 "first_name": "Ranger",
@@ -17874,7 +18358,9 @@
                 "swing_percent": 19.5,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 44.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Zack",
@@ -17944,7 +18430,9 @@
                 "swing_percent": 37.4,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 51.7,
+                "arm_strength": null
             }
         ]
     },
@@ -17982,7 +18470,9 @@
                 "swing_percent": 24.9,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Ehire",
@@ -18015,7 +18505,9 @@
                 "swing_percent": 22.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 44.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Ozzie",
@@ -18048,7 +18540,9 @@
                 "swing_percent": 22.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 58.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Ian",
@@ -18118,7 +18612,9 @@
                 "swing_percent": 27.3,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 44.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Robinson",
@@ -18151,7 +18647,9 @@
                 "swing_percent": 24.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 56.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Jesse",
@@ -18221,7 +18719,9 @@
                 "swing_percent": 34.3,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 44.6,
+                "arm_strength": 81.9
             },
             {
                 "first_name": "Tucker",
@@ -18291,7 +18791,9 @@
                 "swing_percent": 38.2,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 43.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Adam",
@@ -18324,7 +18826,9 @@
                 "swing_percent": 29.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 50.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Bryce",
@@ -18394,7 +18898,9 @@
                 "swing_percent": 21.9,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 35.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Max",
@@ -18464,7 +18970,9 @@
                 "swing_percent": 27.1,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 46.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Vaughn",
@@ -18497,7 +19005,9 @@
                 "swing_percent": 25.6,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 51.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Robbie",
@@ -18530,7 +19040,9 @@
                 "swing_percent": 23.9,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 40.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Michael",
@@ -18563,7 +19075,9 @@
                 "swing_percent": 28.1,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 52.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Guillermo",
@@ -18596,7 +19110,9 @@
                 "swing_percent": 35.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 54.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Raisel",
@@ -19036,7 +19552,9 @@
                 "swing_percent": 28.9,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 49.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Marcell",
@@ -19069,7 +19587,9 @@
                 "swing_percent": 28.7,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 49.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Austin",
@@ -19102,7 +19622,9 @@
                 "swing_percent": 27.6,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 51.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Eddie",
@@ -19135,7 +19657,9 @@
                 "swing_percent": 31.9,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 53.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Will",
@@ -19279,7 +19803,9 @@
                 "swing_percent": 30.7,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 49.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -19386,7 +19912,9 @@
                 "swing_percent": 26.9,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 52.8,
+                "arm_strength": 82.2
             }
         ]
     },
@@ -19424,7 +19952,9 @@
                 "swing_percent": 23.2,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 47.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Tim",
@@ -19457,7 +19987,9 @@
                 "swing_percent": 23.2,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 57.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Elvis",
@@ -19490,7 +20022,9 @@
                 "swing_percent": 21.4,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 45.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Tanner",
@@ -19597,7 +20131,9 @@
                 "swing_percent": 35.4,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 53.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Dylan",
@@ -19778,7 +20314,9 @@
                 "swing_percent": 33.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Matt",
@@ -19885,7 +20423,9 @@
                 "swing_percent": 37.9,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 53.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Yasmani",
@@ -19918,7 +20458,9 @@
                 "swing_percent": 21.6,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 39.7,
+                "arm_strength": 76.5
             },
             {
                 "first_name": "Kendall",
@@ -20025,7 +20567,9 @@
                 "swing_percent": 30.3,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 49.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Joe",
@@ -20317,7 +20861,9 @@
                 "swing_percent": 20.8,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 51.7,
+                "arm_strength": 80.2
             },
             {
                 "first_name": "Danny",
@@ -20350,7 +20896,9 @@
                 "swing_percent": 25.3,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 42.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Yo\u00e1n",
@@ -20383,7 +20931,9 @@
                 "swing_percent": 27.8,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 47.1,
+                "arm_strength": null
             },
             {
                 "first_name": "AJ",
@@ -20416,7 +20966,9 @@
                 "swing_percent": 24.7,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 53.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Luis",
@@ -20449,7 +21001,9 @@
                 "swing_percent": 27.1,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 61.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Jos\u00e9",
@@ -20519,7 +21073,9 @@
                 "swing_percent": 21.9,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Bennett",
@@ -20589,7 +21145,9 @@
                 "swing_percent": 21.0,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 47.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Vince",
@@ -20659,7 +21217,9 @@
                 "swing_percent": 37.6,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 53.5,
+                "arm_strength": 82.2
             }
         ]
     },
@@ -20697,7 +21257,9 @@
                 "swing_percent": 27.0,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 49.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Sandy",
@@ -20767,7 +21329,9 @@
                 "swing_percent": 30.3,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Shawn",
@@ -20837,7 +21401,9 @@
                 "swing_percent": 17.2,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 66.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Anthony",
@@ -20944,7 +21510,9 @@
                 "swing_percent": 24.5,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 44.5,
+                "arm_strength": null
             },
             {
                 "first_name": "JJ",
@@ -20977,7 +21545,9 @@
                 "swing_percent": 27.9,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 46.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Richard",
@@ -21121,7 +21691,9 @@
                 "swing_percent": 33.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 52.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Edward",
@@ -21228,7 +21800,9 @@
                 "swing_percent": 32.1,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 47.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Garrett",
@@ -21261,7 +21835,9 @@
                 "swing_percent": 25.1,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 45.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Bryan",
@@ -21294,7 +21870,9 @@
                 "swing_percent": 28.7,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 49.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Lewin",
@@ -21327,7 +21905,9 @@
                 "swing_percent": 27.2,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 46.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Jerar",
@@ -21360,7 +21940,9 @@
                 "swing_percent": 42.7,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 54.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Dylan",
@@ -21430,7 +22012,9 @@
                 "swing_percent": 22.9,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 44.7,
+                "arm_strength": 80.7
             },
             {
                 "first_name": "Avisa\u00edl",
@@ -21463,7 +22047,9 @@
                 "swing_percent": 36.7,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 59.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Braxton",
@@ -21533,7 +22119,9 @@
                 "swing_percent": 17.9,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 44.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Louis",
@@ -21677,7 +22265,9 @@
                 "swing_percent": 25.5,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 44.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Pablo",
@@ -22006,7 +22596,9 @@
                 "swing_percent": 15.5,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 47.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Jes\u00fas",
@@ -22039,7 +22631,9 @@
                 "swing_percent": 29.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Tanner",
@@ -22109,7 +22703,9 @@
                 "swing_percent": 31.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 46.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Jacob",
@@ -22142,7 +22738,9 @@
                 "swing_percent": 22.7,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 43.7,
+                "arm_strength": 82.0
             },
             {
                 "first_name": "Cole",
@@ -22212,7 +22810,9 @@
                 "swing_percent": 16.7,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 53.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Luke",
@@ -22245,7 +22845,9 @@
                 "swing_percent": 29.9,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Jimmy",
@@ -22357,7 +22959,9 @@
                 "swing_percent": 23.4,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 51.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Harrison",
@@ -22390,7 +22994,9 @@
                 "swing_percent": 22.1,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 48.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Anthony",
@@ -22534,7 +23140,9 @@
                 "swing_percent": 20.7,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Oswaldo",
@@ -22567,7 +23175,9 @@
                 "swing_percent": 26.9,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 52.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Matt",
@@ -22600,7 +23210,9 @@
                 "swing_percent": 23.7,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 41.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Miguel",
@@ -22744,7 +23356,9 @@
                 "swing_percent": 33.2,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 47.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Scott",
@@ -22814,7 +23428,9 @@
                 "swing_percent": 40.6,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 47.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Domingo",
@@ -22921,7 +23537,9 @@
                 "swing_percent": 23.1,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 50.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Chad",
@@ -22991,7 +23609,9 @@
                 "swing_percent": 25.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 41.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Kyle",
@@ -23024,7 +23644,9 @@
                 "swing_percent": 26.8,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 50.6,
+                "arm_strength": 80.1
             },
             {
                 "first_name": "Clay",
@@ -23094,7 +23716,9 @@
                 "swing_percent": 29.8,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 42.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Isiah",
@@ -23127,7 +23751,9 @@
                 "swing_percent": 11.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 44.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Michael",
@@ -23197,7 +23823,9 @@
                 "swing_percent": 15.7,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 39.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Jonathan",
@@ -23452,7 +24080,9 @@
                 "swing_percent": 17.7,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 49.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Anthony",
@@ -23485,7 +24115,9 @@
                 "swing_percent": 22.8,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 46.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Clarke",
@@ -23629,7 +24261,9 @@
                 "swing_percent": 36.5,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 43.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Jameson",
@@ -23699,7 +24333,9 @@
                 "swing_percent": 27.1,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 49.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Jose",
@@ -23732,7 +24368,9 @@
                 "swing_percent": 21.1,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 50.0,
+                "arm_strength": 77.8
             },
             {
                 "first_name": "Lou",
@@ -23807,7 +24445,9 @@
                 "swing_percent": 28.2,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 49.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Jason",
@@ -23951,7 +24591,9 @@
                 "swing_percent": 31.1,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 46.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Corbin",
@@ -24058,7 +24700,9 @@
                 "swing_percent": 25.8,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 53.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Victor",
@@ -24091,7 +24735,9 @@
                 "swing_percent": 20.9,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 42.3,
+                "arm_strength": 79.8
             },
             {
                 "first_name": "Jake",
@@ -24161,7 +24807,9 @@
                 "swing_percent": 25.0,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 41.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Chi Chi",
@@ -24342,7 +24990,9 @@
                 "swing_percent": 40.1,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 49.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Adrian",
@@ -24486,7 +25136,9 @@
                 "swing_percent": 34.6,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 39.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Andrew",
@@ -24519,7 +25171,9 @@
                 "swing_percent": 24.2,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 44.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Jake",
@@ -24626,7 +25280,9 @@
                 "swing_percent": 31.5,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 48.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Omar",
@@ -24659,7 +25315,9 @@
                 "swing_percent": 23.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 50.0,
+                "arm_strength": 79.0
             },
             {
                 "first_name": "Freddy",
@@ -24766,7 +25424,9 @@
                 "swing_percent": 26.7,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 40.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Hunter",
@@ -24799,7 +25459,9 @@
                 "swing_percent": 27.0,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Taylor",
@@ -24980,7 +25642,9 @@
                 "swing_percent": 26.5,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 50.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Rowdy",
@@ -25013,7 +25677,9 @@
                 "swing_percent": 23.8,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 43.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Jos\u00e9",
@@ -25083,7 +25749,9 @@
                 "swing_percent": 22.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 43.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Devin",
@@ -25153,7 +25821,9 @@
                 "swing_percent": 20.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 43.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Brandon",
@@ -25223,7 +25893,9 @@
                 "swing_percent": 25.0,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 43.2,
+                "arm_strength": null
             }
         ]
     },
@@ -25261,7 +25933,9 @@
                 "swing_percent": 36.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 51.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Jaime",
@@ -25516,7 +26190,9 @@
                 "swing_percent": 21.8,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 45.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Steven",
@@ -25549,7 +26225,9 @@
                 "swing_percent": 42.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 44.8,
+                "arm_strength": null
             },
             {
                 "first_name": "David",
@@ -25582,7 +26260,9 @@
                 "swing_percent": 12.2,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 48.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Mike",
@@ -25615,7 +26295,9 @@
                 "swing_percent": 21.9,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 35.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Phil",
@@ -25648,7 +26330,9 @@
                 "swing_percent": 27.1,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 46.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Jimmy",
@@ -25755,7 +26439,9 @@
                 "swing_percent": 27.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 52.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Michael",
@@ -25862,7 +26548,9 @@
                 "swing_percent": 24.1,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 44.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Brandon",
@@ -25895,7 +26583,9 @@
                 "swing_percent": 29.1,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 47.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Jos\u00e9",
@@ -26002,7 +26692,9 @@
                 "swing_percent": 24.4,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 48.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Mickey",
@@ -26035,7 +26727,9 @@
                 "swing_percent": 37.9,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 58.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Shohei",
@@ -26216,7 +26910,9 @@
                 "swing_percent": 19.6,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 42.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Luis",
@@ -26249,7 +26945,9 @@
                 "swing_percent": 21.5,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 55.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Jose",
@@ -26282,7 +26980,9 @@
                 "swing_percent": 26.0,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 57.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Austin",
@@ -26315,7 +27015,9 @@
                 "swing_percent": 33.5,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 53.9,
+                "arm_strength": 81.4
             },
             {
                 "first_name": "Patrick",
@@ -26385,7 +27087,9 @@
                 "swing_percent": 24.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 54.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Chase",
@@ -26455,7 +27159,9 @@
                 "swing_percent": 16.8,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Max",
@@ -26488,7 +27194,9 @@
                 "swing_percent": 34.0,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 44.1,
+                "arm_strength": 80.3
             },
             {
                 "first_name": "Michael",
@@ -26521,7 +27229,9 @@
                 "swing_percent": 19.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 41.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Jos\u00e9",
@@ -26591,7 +27301,9 @@
                 "swing_percent": 21.1,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 48.1,
+                "arm_strength": 80.2
             },
             {
                 "first_name": "Noah",
@@ -26698,7 +27410,9 @@
                 "swing_percent": 34.2,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 46.9,
+                "arm_strength": 83.9
             },
             {
                 "first_name": "Touki",
@@ -26768,7 +27482,9 @@
                 "swing_percent": 30.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 43.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Andrew",
@@ -26801,7 +27517,9 @@
                 "swing_percent": 34.0,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 53.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Jonathan",
@@ -26834,7 +27552,9 @@
                 "swing_percent": 34.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 51.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -26867,7 +27587,9 @@
                 "swing_percent": 18.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 47.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Jared",
@@ -26900,7 +27622,9 @@
                 "swing_percent": 27.6,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 49.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Andrew",
@@ -26970,7 +27694,9 @@
                 "swing_percent": 22.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 41.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Austin",
@@ -27082,7 +27808,9 @@
                 "swing_percent": 24.1,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 51.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Sergio",
@@ -27115,7 +27843,9 @@
                 "swing_percent": 23.8,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 42.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Seth",
@@ -27148,7 +27878,9 @@
                 "swing_percent": 28.7,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 47.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Madison",
@@ -27218,7 +27950,9 @@
                 "swing_percent": 28.8,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 44.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Humberto",
@@ -27473,7 +28207,9 @@
                 "swing_percent": 35.0,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 56.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -27580,7 +28316,9 @@
                 "swing_percent": 29.5,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 46.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Tommy",
@@ -27650,7 +28388,9 @@
                 "swing_percent": 23.5,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 42.1,
+                "arm_strength": 83.9
             },
             {
                 "first_name": "Cooper",
@@ -27683,7 +28423,9 @@
                 "swing_percent": 27.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 40.9,
+                "arm_strength": 82.2
             },
             {
                 "first_name": "Drey",
@@ -27753,7 +28495,9 @@
                 "swing_percent": 21.1,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 43.6,
+                "arm_strength": 81.5
             },
             {
                 "first_name": "Merrill",
@@ -27823,7 +28567,9 @@
                 "swing_percent": 21.5,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 41.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Ian",
@@ -27930,7 +28676,9 @@
                 "swing_percent": 29.9,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Joe",
@@ -28000,7 +28748,9 @@
                 "swing_percent": 20.7,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 46.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Corbin",
@@ -28070,7 +28820,9 @@
                 "swing_percent": 27.4,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 53.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Mark",
@@ -28288,7 +29040,9 @@
                 "swing_percent": 26.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 50.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Geraldo",
@@ -28321,7 +29075,9 @@
                 "swing_percent": 18.3,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 41.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Sean",
@@ -28428,7 +29184,9 @@
                 "swing_percent": 25.8,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 50.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Josh",
@@ -28461,7 +29219,9 @@
                 "swing_percent": 22.2,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 41.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Caleb",
@@ -28531,7 +29291,9 @@
                 "swing_percent": 21.7,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 39.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Alek",
@@ -28564,7 +29326,9 @@
                 "swing_percent": 25.0,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 49.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Edwin",
@@ -28634,7 +29398,9 @@
                 "swing_percent": 25.2,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 50.6,
+                "arm_strength": 78.9
             },
             {
                 "first_name": "Christian",
@@ -28667,7 +29433,9 @@
                 "swing_percent": 24.6,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 44.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Luke",
@@ -28816,7 +29584,9 @@
                 "swing_percent": 27.0,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 49.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Keegan",
@@ -28997,7 +29767,9 @@
                 "swing_percent": 24.3,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 43.9,
+                "arm_strength": 82.5
             },
             {
                 "first_name": "Kyle",
@@ -29104,7 +29876,9 @@
                 "swing_percent": 33.3,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 50.3,
+                "arm_strength": 78.9
             },
             {
                 "first_name": "Paul",
@@ -29248,7 +30022,9 @@
                 "swing_percent": 23.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 51.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Louis",
@@ -29318,7 +30094,9 @@
                 "swing_percent": 26.6,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 41.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Joey",
@@ -29536,7 +30314,9 @@
                 "swing_percent": 30.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 53.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Ryan",
@@ -29569,7 +30349,9 @@
                 "swing_percent": 35.0,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 52.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Ryan",
@@ -29602,7 +30384,9 @@
                 "swing_percent": 29.8,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 56.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -29635,7 +30419,9 @@
                 "swing_percent": 26.8,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 45.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Rougned",
@@ -29668,7 +30454,9 @@
                 "swing_percent": 27.3,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 50.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Chris",
@@ -29701,7 +30489,9 @@
                 "swing_percent": 38.4,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 42.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Cionel",
@@ -29771,7 +30561,9 @@
                 "swing_percent": 38.2,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 44.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Jake",
@@ -29841,7 +30633,9 @@
                 "swing_percent": 17.9,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 40.5,
+                "arm_strength": 86.3
             },
             {
                 "first_name": "Anthony",
@@ -29874,7 +30668,9 @@
                 "swing_percent": 21.5,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Kyle",
@@ -29907,7 +30703,9 @@
                 "swing_percent": 32.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 55.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Beau",
@@ -30014,7 +30812,9 @@
                 "swing_percent": 27.4,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 49.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Terrin",
@@ -30047,7 +30847,9 @@
                 "swing_percent": 23.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 49.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Nick",
@@ -30270,7 +31072,9 @@
                 "swing_percent": 20.5,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 57.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Matt",
@@ -30414,7 +31218,9 @@
                 "swing_percent": 24.8,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 45.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Jackie",
@@ -30447,7 +31253,9 @@
                 "swing_percent": 29.4,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 49.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Ryan",
@@ -30517,7 +31325,9 @@
                 "swing_percent": 26.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 37.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Yu",
@@ -30550,7 +31360,9 @@
                 "swing_percent": 29.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 47.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Franchy",
@@ -30583,7 +31395,9 @@
                 "swing_percent": 37.1,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 48.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Kutter",
@@ -30653,7 +31467,9 @@
                 "swing_percent": 35.0,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 46.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -30760,7 +31576,9 @@
                 "swing_percent": 28.1,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 54.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Jake",
@@ -30830,7 +31648,9 @@
                 "swing_percent": 28.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 49.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Nathan",
@@ -30937,7 +31757,9 @@
                 "swing_percent": 24.6,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 47.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Rich",
@@ -31007,7 +31829,9 @@
                 "swing_percent": 18.8,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 49.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Tanner",
@@ -31114,7 +31938,9 @@
                 "swing_percent": 30.1,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 51.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Reese",
@@ -31147,7 +31973,9 @@
                 "swing_percent": 20.8,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 51.7,
+                "arm_strength": 80.2
             },
             {
                 "first_name": "Kaleb",
@@ -31217,7 +32045,9 @@
                 "swing_percent": 26.0,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 42.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Nick",
@@ -31287,7 +32117,9 @@
                 "swing_percent": 19.9,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 46.7,
+                "arm_strength": 75.9
             },
             {
                 "first_name": "Rob",
@@ -31320,7 +32152,9 @@
                 "swing_percent": 24.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 42.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Hansel",
@@ -31501,7 +32335,9 @@
                 "swing_percent": 30.8,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 49.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Matt",
@@ -31608,7 +32444,9 @@
                 "swing_percent": 17.2,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 49.2,
+                "arm_strength": 80.4
             },
             {
                 "first_name": "Alex",
@@ -31641,7 +32479,9 @@
                 "swing_percent": 15.5,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 45.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Michael",
@@ -31785,7 +32625,9 @@
                 "swing_percent": 30.6,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 48.9,
+                "arm_strength": 85.7
             }
         ]
     },
@@ -31897,7 +32739,9 @@
                 "swing_percent": 33.5,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 44.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Kervin",
@@ -32004,7 +32848,9 @@
                 "swing_percent": 30.9,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 50.6,
+                "arm_strength": 86.0
             },
             {
                 "first_name": "Scott",
@@ -32185,7 +33031,9 @@
                 "swing_percent": 19.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 54.2,
+                "arm_strength": 79.4
             },
             {
                 "first_name": "Robert",
@@ -32255,7 +33103,9 @@
                 "swing_percent": 27.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 49.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Kyle",
@@ -32325,7 +33175,9 @@
                 "swing_percent": 44.0,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Jason",
@@ -32358,7 +33210,9 @@
                 "swing_percent": 27.8,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 48.4,
+                "arm_strength": null
             },
             {
                 "first_name": "P.J.",
@@ -32391,7 +33245,9 @@
                 "swing_percent": 27.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 43.1,
+                "arm_strength": 78.9
             },
             {
                 "first_name": "Nico",
@@ -32424,7 +33280,9 @@
                 "swing_percent": 14.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 49.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Brandon",
@@ -32568,7 +33426,9 @@
                 "swing_percent": 10.3,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 44.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Chris",
@@ -32638,7 +33498,9 @@
                 "swing_percent": 21.1,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 46.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Wade",
@@ -32745,7 +33607,9 @@
                 "swing_percent": 38.3,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 50.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Sean",
@@ -32852,7 +33716,9 @@
                 "swing_percent": 19.3,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 45.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Franmil",
@@ -32885,7 +33751,9 @@
                 "swing_percent": 37.1,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Alfonso",
@@ -32918,7 +33786,9 @@
                 "swing_percent": 26.2,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 42.0,
+                "arm_strength": null
             },
             {
                 "first_name": "David",
@@ -33099,7 +33969,9 @@
                 "swing_percent": 26.5,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 54.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Andrelton",
@@ -33132,7 +34004,9 @@
                 "swing_percent": 17.8,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 49.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Drew",
@@ -33313,7 +34187,9 @@
                 "swing_percent": 22.8,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 39.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Matt",
@@ -33457,7 +34333,9 @@
                 "swing_percent": 11.6,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 47.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Nelson",
@@ -33490,7 +34368,9 @@
                 "swing_percent": 36.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 47.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Jonathan",
@@ -33523,7 +34403,9 @@
                 "swing_percent": 34.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 51.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Hayden",
@@ -33630,7 +34512,9 @@
                 "swing_percent": 36.4,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 48.1,
+                "arm_strength": null
             }
         ]
     },
@@ -33668,7 +34552,9 @@
                 "swing_percent": 23.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 51.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Chase",
@@ -33738,7 +34624,9 @@
                 "swing_percent": 37.9,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 56.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Graham",
@@ -33808,7 +34696,9 @@
                 "swing_percent": 38.5,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 57.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Luis",
@@ -34026,7 +34916,9 @@
                 "swing_percent": 21.5,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 45.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Robert",
@@ -34133,7 +35025,9 @@
                 "swing_percent": 35.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Buck",
@@ -34203,7 +35097,9 @@
                 "swing_percent": 19.2,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 50.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Luke",
@@ -34273,7 +35169,9 @@
                 "swing_percent": 24.1,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 45.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Aramis",
@@ -34306,7 +35204,9 @@
                 "swing_percent": 30.8,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 52.1,
+                "arm_strength": 84.7
             },
             {
                 "first_name": "Ian",
@@ -34487,7 +35387,9 @@
                 "swing_percent": 23.6,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 41.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Joel",
@@ -34631,7 +35533,9 @@
                 "swing_percent": 16.3,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 50.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -34738,7 +35642,9 @@
                 "swing_percent": 27.7,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 49.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Dauri",
@@ -34808,7 +35714,9 @@
                 "swing_percent": 29.2,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 54.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -34841,7 +35749,9 @@
                 "swing_percent": 30.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 58.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Connor",
@@ -34911,7 +35821,9 @@
                 "swing_percent": 19.1,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 43.5,
+                "arm_strength": 78.1
             },
             {
                 "first_name": "Tommy",
@@ -34944,7 +35856,9 @@
                 "swing_percent": 26.0,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 42.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Matt",
@@ -34977,7 +35891,9 @@
                 "swing_percent": 29.2,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 41.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Chuckie",
@@ -35010,7 +35926,9 @@
                 "swing_percent": 25.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 59.5,
+                "arm_strength": 86.3
             },
             {
                 "first_name": "Austin",
@@ -35043,7 +35961,9 @@
                 "swing_percent": 33.5,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 53.9,
+                "arm_strength": 81.4
             },
             {
                 "first_name": "Reiver",
@@ -35150,7 +36070,9 @@
                 "swing_percent": 21.8,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 47.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Donovan",
@@ -35183,7 +36105,9 @@
                 "swing_percent": 20.9,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 49.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Spencer",
@@ -35216,7 +36140,9 @@
                 "swing_percent": 21.2,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 41.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -35249,7 +36175,9 @@
                 "swing_percent": 27.0,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 43.6,
+                "arm_strength": 84.0
             },
             {
                 "first_name": "Hunter",
@@ -35319,7 +36247,9 @@
                 "swing_percent": 29.6,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 46.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Art",
@@ -35431,7 +36361,9 @@
                 "swing_percent": 36.1,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 42.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Will",
@@ -35464,7 +36396,9 @@
                 "swing_percent": 30.6,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 42.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Shane",
@@ -35534,7 +36468,9 @@
                 "swing_percent": 24.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 44.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Anthony",
@@ -35604,7 +36540,9 @@
                 "swing_percent": 29.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 47.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Aaron",
@@ -35711,7 +36649,9 @@
                 "swing_percent": 16.0,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 49.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Enyel",
@@ -35781,7 +36721,9 @@
                 "swing_percent": 18.5,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Ian",
@@ -35851,7 +36793,9 @@
                 "swing_percent": 26.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 53.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Oscar",
@@ -35884,7 +36828,9 @@
                 "swing_percent": 26.7,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 59.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Anthony",
@@ -35954,7 +36900,9 @@
                 "swing_percent": 27.1,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 47.6,
+                "arm_strength": 82.1
             },
             {
                 "first_name": "Sam",
@@ -36024,7 +36972,9 @@
                 "swing_percent": 29.9,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 43.6,
+                "arm_strength": null
             },
             {
                 "first_name": "James",
@@ -36094,7 +37044,9 @@
                 "swing_percent": 9.0,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 38.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Sandy",
@@ -36127,7 +37079,9 @@
                 "swing_percent": 25.2,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 38.0,
+                "arm_strength": 78.1
             },
             {
                 "first_name": "Luke",
@@ -36160,7 +37114,9 @@
                 "swing_percent": 27.6,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 44.9,
+                "arm_strength": 83.4
             },
             {
                 "first_name": "Kirk",
@@ -36267,7 +37223,9 @@
                 "swing_percent": 26.6,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 56.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Owen",
@@ -36300,7 +37258,9 @@
                 "swing_percent": 18.5,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 48.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Eli",
@@ -36407,7 +37367,9 @@
                 "swing_percent": 19.5,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 51.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Richie",
@@ -36440,7 +37402,9 @@
                 "swing_percent": 16.6,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Konnor",
@@ -36584,7 +37548,9 @@
                 "swing_percent": 15.1,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 46.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Yohan",
@@ -36654,7 +37620,9 @@
                 "swing_percent": 37.1,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Amed",
@@ -36687,7 +37655,9 @@
                 "swing_percent": 21.0,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 53.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Nick",
@@ -36831,7 +37801,9 @@
                 "swing_percent": 12.6,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 40.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Alex",
@@ -37017,7 +37989,9 @@
                 "swing_percent": 21.4,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 51.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Sean",
@@ -37050,7 +38024,9 @@
                 "swing_percent": 27.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 37.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Kris",
@@ -37083,7 +38059,9 @@
                 "swing_percent": 21.5,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Jhoulys",
@@ -37190,7 +38168,9 @@
                 "swing_percent": 24.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 47.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Yonathan",
@@ -37223,7 +38203,9 @@
                 "swing_percent": 18.7,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 50.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Elias",
@@ -37256,7 +38238,9 @@
                 "swing_percent": 22.7,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 51.8,
+                "arm_strength": 84.8
             },
             {
                 "first_name": "Carlos",
@@ -37511,7 +38495,9 @@
                 "swing_percent": 24.7,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 50.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Garrett",
@@ -37544,7 +38530,9 @@
                 "swing_percent": 25.4,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 44.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Sam",
@@ -37577,7 +38565,9 @@
                 "swing_percent": 34.8,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 43.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Jose",
@@ -37610,7 +38600,9 @@
                 "swing_percent": 13.2,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 51.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Connor",
@@ -37643,7 +38635,9 @@
                 "swing_percent": 21.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 40.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Tyler",
@@ -37861,7 +38855,9 @@
                 "swing_percent": 28.2,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 45.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Elehuris",
@@ -37894,7 +38890,9 @@
                 "swing_percent": 35.5,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 52.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Brendan",
@@ -37927,7 +38925,9 @@
                 "swing_percent": 22.7,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 49.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Antonio",
@@ -37997,7 +38997,9 @@
                 "swing_percent": 27.2,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 54.5,
+                "arm_strength": 81.6
             },
             {
                 "first_name": "Chad",
@@ -38104,7 +39106,9 @@
                 "swing_percent": 33.8,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Alan",
@@ -38137,7 +39141,9 @@
                 "swing_percent": 25.0,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 52.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Jos\u00e9",
@@ -38249,7 +39255,9 @@
                 "swing_percent": 28.1,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 47.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Javier",
@@ -38282,7 +39290,9 @@
                 "swing_percent": 35.8,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 55.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Jacob",
@@ -38352,7 +39362,9 @@
                 "swing_percent": 22.5,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 46.2,
+                "arm_strength": 79.3
             },
             {
                 "first_name": "Beau",
@@ -38422,7 +39434,9 @@
                 "swing_percent": 27.0,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 50.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Daz",
@@ -38455,7 +39469,9 @@
                 "swing_percent": 30.7,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Jeimer",
@@ -38488,7 +39504,9 @@
                 "swing_percent": 25.4,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 52.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Kerry",
@@ -38521,7 +39539,9 @@
                 "swing_percent": 27.8,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 52.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Luis",
@@ -38591,7 +39611,9 @@
                 "swing_percent": 19.8,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 53.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Willi",
@@ -38624,7 +39646,9 @@
                 "swing_percent": 28.4,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 58.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Andrew",
@@ -38731,7 +39755,9 @@
                 "swing_percent": 27.4,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 53.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Angel",
@@ -38986,7 +40012,9 @@
                 "swing_percent": 25.6,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 45.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Robbie",
@@ -39019,7 +40047,9 @@
                 "swing_percent": 23.9,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 40.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Eric",
@@ -39052,7 +40082,9 @@
                 "swing_percent": 32.8,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 51.4,
+                "arm_strength": 83.2
             },
             {
                 "first_name": "Derek",
@@ -39085,7 +40117,9 @@
                 "swing_percent": 30.8,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 50.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Garrett",
@@ -39229,7 +40263,9 @@
                 "swing_percent": 27.6,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 49.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Alex",
@@ -39373,7 +40409,9 @@
                 "swing_percent": 13.2,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 41.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Daniel",
@@ -39517,7 +40555,9 @@
                 "swing_percent": 27.1,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 56.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Eduardo",
@@ -39624,7 +40664,9 @@
                 "swing_percent": 28.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 55.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Tarik",
@@ -39731,7 +40773,9 @@
                 "swing_percent": 25.6,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 45.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Will",
@@ -39880,7 +40924,9 @@
                 "swing_percent": 16.2,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 44.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Yordan",
@@ -39913,7 +40959,9 @@
                 "swing_percent": 23.4,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 42.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Brandon",
@@ -39983,7 +41031,9 @@
                 "swing_percent": 14.9,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 40.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Hunter",
@@ -40053,7 +41103,9 @@
                 "swing_percent": 42.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 48.0,
+                "arm_strength": 80.7
             },
             {
                 "first_name": "Aledmys",
@@ -40086,7 +41138,9 @@
                 "swing_percent": 22.7,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 52.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Mauricio",
@@ -40119,7 +41173,9 @@
                 "swing_percent": 15.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 55.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Luis",
@@ -40189,7 +41245,9 @@
                 "swing_percent": 14.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 48.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Cristian",
@@ -40259,7 +41317,9 @@
                 "swing_percent": 32.2,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 49.9,
+                "arm_strength": 86.0
             },
             {
                 "first_name": "Seth",
@@ -40329,7 +41389,9 @@
                 "swing_percent": 36.6,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 51.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Chas",
@@ -40362,7 +41424,9 @@
                 "swing_percent": 32.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 48.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Lance",
@@ -40432,7 +41496,9 @@
                 "swing_percent": 31.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 47.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Rafael",
@@ -40576,7 +41642,9 @@
                 "swing_percent": 29.7,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 55.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Ryan",
@@ -40646,7 +41714,9 @@
                 "swing_percent": 35.9,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 51.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Will",
@@ -40790,7 +41860,9 @@
                 "swing_percent": 19.9,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 52.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Jos\u00e9",
@@ -40860,7 +41932,9 @@
                 "swing_percent": 17.2,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 49.2,
+                "arm_strength": 80.4
             },
             {
                 "first_name": "Justin",
@@ -41009,7 +42083,9 @@
                 "swing_percent": 20.7,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 48.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Ronald",
@@ -41264,7 +42340,9 @@
                 "swing_percent": 29.2,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 50.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Nate",
@@ -41297,7 +42375,9 @@
                 "swing_percent": 23.8,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 49.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Amir",
@@ -41478,7 +42558,9 @@
                 "swing_percent": 21.9,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 46.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Brad",
@@ -41585,7 +42667,9 @@
                 "swing_percent": 17.3,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 49.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Daniel",
@@ -41655,7 +42739,9 @@
                 "swing_percent": 27.8,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 54.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Whit",
@@ -41688,7 +42774,9 @@
                 "swing_percent": 19.4,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 50.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Wyatt",
@@ -41795,7 +42883,9 @@
                 "swing_percent": 43.1,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 50.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Edward",
@@ -41828,7 +42918,9 @@
                 "swing_percent": 24.9,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 51.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Vinnie",
@@ -41861,7 +42953,9 @@
                 "swing_percent": 15.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 46.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Joel",
@@ -41931,7 +43025,9 @@
                 "swing_percent": 31.8,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 57.4,
+                "arm_strength": 82.9
             },
             {
                 "first_name": "Nick",
@@ -41964,7 +43060,9 @@
                 "swing_percent": 34.4,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 45.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Emmanuel",
@@ -41997,7 +43095,9 @@
                 "swing_percent": 25.8,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 50.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Carlos",
@@ -42030,7 +43130,9 @@
                 "swing_percent": 21.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 42.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Brady",
@@ -42211,7 +43313,9 @@
                 "swing_percent": 29.1,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 51.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Drew",
@@ -42244,7 +43348,9 @@
                 "swing_percent": 32.4,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 47.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Luke",
@@ -42314,7 +43420,9 @@
                 "swing_percent": 25.2,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 51.8,
+                "arm_strength": null
             }
         ]
     },
@@ -42352,7 +43460,9 @@
                 "swing_percent": 25.5,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 61.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Yency",
@@ -42459,7 +43569,9 @@
                 "swing_percent": 17.6,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 42.1,
+                "arm_strength": 75.6
             },
             {
                 "first_name": "Cody",
@@ -42492,7 +43604,9 @@
                 "swing_percent": 27.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 49.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Mookie",
@@ -42525,7 +43639,9 @@
                 "swing_percent": 16.5,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 44.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Phil",
@@ -42743,7 +43859,9 @@
                 "swing_percent": 19.5,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 49.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Joey",
@@ -42776,7 +43894,9 @@
                 "swing_percent": 40.6,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 47.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Tony",
@@ -43105,7 +44225,9 @@
                 "swing_percent": 31.1,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 43.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Gavin",
@@ -43138,7 +44260,9 @@
                 "swing_percent": 23.3,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 42.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Chris",
@@ -43245,7 +44369,9 @@
                 "swing_percent": 21.1,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 46.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Reyes",
@@ -43315,7 +44441,9 @@
                 "swing_percent": 26.1,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 38.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Ryan",
@@ -43533,7 +44661,9 @@
                 "swing_percent": 39.9,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 49.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Trayce",
@@ -43566,7 +44696,9 @@
                 "swing_percent": 37.8,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 43.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Justin",
@@ -43599,7 +44731,9 @@
                 "swing_percent": 20.3,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 48.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Trea",
@@ -43632,7 +44766,9 @@
                 "swing_percent": 26.3,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 51.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Julio",
@@ -43702,7 +44838,9 @@
                 "swing_percent": 24.3,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 51.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Alex",
@@ -43851,7 +44989,9 @@
                 "swing_percent": 22.3,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 57.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Riley",
@@ -43884,7 +45024,9 @@
                 "swing_percent": 30.1,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 45.6,
+                "arm_strength": 85.6
             },
             {
                 "first_name": "Joan",
@@ -43954,7 +45096,9 @@
                 "swing_percent": 22.2,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 44.8,
+                "arm_strength": null
             },
             {
                 "first_name": "V\u00edctor",
@@ -44024,7 +45168,9 @@
                 "swing_percent": 24.0,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 53.6,
+                "arm_strength": 76.7
             },
             {
                 "first_name": "Josh",
@@ -44057,7 +45203,9 @@
                 "swing_percent": 21.7,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 45.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Alex",
@@ -44090,7 +45238,9 @@
                 "swing_percent": 24.8,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 44.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Steve",
@@ -44234,7 +45384,9 @@
                 "swing_percent": 21.3,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 54.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Paolo",
@@ -44378,7 +45530,9 @@
                 "swing_percent": 28.0,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 53.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Josiah",
@@ -44485,7 +45639,9 @@
                 "swing_percent": 20.4,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 47.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Yadiel",
@@ -44518,7 +45674,9 @@
                 "swing_percent": 29.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 51.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Andr\u00e9s",
@@ -44625,7 +45783,9 @@
                 "swing_percent": 23.3,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 48.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Tanner",
@@ -44732,7 +45892,9 @@
                 "swing_percent": 27.2,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 53.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Josh",
@@ -44802,7 +45964,9 @@
                 "swing_percent": 14.9,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 50.9,
+                "arm_strength": 79.0
             },
             {
                 "first_name": "Aaron",
@@ -44909,7 +46073,9 @@
                 "swing_percent": 19.2,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 35.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Dee",
@@ -44942,7 +46108,9 @@
                 "swing_percent": 16.4,
                 "pos": [
                     "OF"
-                ]
+                ],
+                "oaa": 59.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Jackson",
@@ -45012,7 +46180,9 @@
                 "swing_percent": 21.1,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 44.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Mason",
@@ -45082,7 +46252,9 @@
                 "swing_percent": 11.6,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 47.7,
+                "arm_strength": null
             },
             {
                 "first_name": "Austin",
@@ -45194,7 +46366,9 @@
                 "swing_percent": 24.2,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 49.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Chris",
@@ -45264,7 +46438,9 @@
                 "swing_percent": 22.1,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 42.9,
+                "arm_strength": null
             },
             {
                 "first_name": "Robinson",
@@ -45297,7 +46473,9 @@
                 "swing_percent": 24.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 56.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Carlos",
@@ -45367,7 +46545,9 @@
                 "swing_percent": 37.4,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 51.3,
+                "arm_strength": null
             },
             {
                 "first_name": "Edwin",
@@ -45437,7 +46617,9 @@
                 "swing_percent": 27.7,
                 "pos": [
                     "3B"
-                ]
+                ],
+                "oaa": 52.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Mychal",
@@ -45507,7 +46689,9 @@
                 "swing_percent": 13.3,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 40.6,
+                "arm_strength": null
             },
             {
                 "first_name": "Colin",
@@ -45614,7 +46798,9 @@
                 "swing_percent": 9.9,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 39.1,
+                "arm_strength": null
             },
             {
                 "first_name": "Francisco",
@@ -45647,7 +46833,9 @@
                 "swing_percent": 22.9,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 47.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Yoan",
@@ -45754,7 +46942,9 @@
                 "swing_percent": 24.0,
                 "pos": [
                     "RF"
-                ]
+                ],
+                "oaa": 49.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Trevor",
@@ -45824,7 +47014,9 @@
                 "swing_percent": 14.9,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 49.6,
+                "arm_strength": 76.4
             },
             {
                 "first_name": "James",
@@ -45857,7 +47049,9 @@
                 "swing_percent": 28.3,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 51.6,
+                "arm_strength": 80.7
             },
             {
                 "first_name": "Jeff",
@@ -45890,7 +47084,9 @@
                 "swing_percent": 15.9,
                 "pos": [
                     "2B"
-                ]
+                ],
+                "oaa": 53.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Adonis",
@@ -45997,7 +47193,9 @@
                 "swing_percent": 30.5,
                 "pos": [
                     "LF"
-                ]
+                ],
+                "oaa": 58.0,
+                "arm_strength": null
             },
             {
                 "first_name": "Tom\u00e1s",
@@ -46030,7 +47228,9 @@
                 "swing_percent": 34.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 60.5,
+                "arm_strength": 77.4
             },
             {
                 "first_name": "Brandon",
@@ -46063,7 +47263,9 @@
                 "swing_percent": 19.6,
                 "pos": [
                     "CF"
-                ]
+                ],
+                "oaa": 43.8,
+                "arm_strength": null
             },
             {
                 "first_name": "Stephen",
@@ -46170,7 +47372,9 @@
                 "swing_percent": 28.4,
                 "pos": [
                     "C"
-                ]
+                ],
+                "oaa": 44.3,
+                "arm_strength": 83.5
             },
             {
                 "first_name": "David",
@@ -46277,7 +47481,9 @@
                 "swing_percent": 29.2,
                 "pos": [
                     "SS"
-                ]
+                ],
+                "oaa": 41.5,
+                "arm_strength": null
             },
             {
                 "first_name": "Joely",
@@ -46347,7 +47553,9 @@
                 "swing_percent": 27.5,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 40.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Max",
@@ -46454,7 +47662,9 @@
                 "swing_percent": 26.0,
                 "pos": [
                     "1B"
-                ]
+                ],
+                "oaa": 45.4,
+                "arm_strength": null
             },
             {
                 "first_name": "Drew",
@@ -46561,7 +47771,9 @@
                 "swing_percent": 20.4,
                 "pos": [
                     "DH"
-                ]
+                ],
+                "oaa": 32.2,
+                "arm_strength": null
             },
             {
                 "first_name": "Taijuan",

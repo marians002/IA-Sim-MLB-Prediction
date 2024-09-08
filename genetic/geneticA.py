@@ -46,11 +46,9 @@ def fitness_sort(object):
 
 
 def weighted_by(population, fitness):
-    """ Returns a probability according to the weights """
-    weights = [fitness(p) for p in population]
-    total_weight = sum(weights)
-
-    return [w / total_weight for w in weights]
+    """ Returns the weight of each individual"""
+    return [fitness(p) for p in population]
+    
 
 
 def crossover(parent1, parent2):

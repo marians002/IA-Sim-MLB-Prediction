@@ -1,8 +1,38 @@
 from data_loader import data_loader as dl
+from simulator.game_simulator import *
+from manager.baseball_manager import *
+from manager.rules import *
 
 
 def main():
-    teams_dict, players_dict = dl.load_data()
+    teams = dl.load_data()
+
+    # Select two random teams:
+    # They will be fixed by the moment
+    t1 = teams[0]
+    t2 = teams[1]
+    dl.print_team_rosters([t1, t2])
+
+    t1_pitchers, t1_batters = dl.separate_pitchers_batters(t1)
+    t2_pitchers, t2_batters = dl.separate_pitchers_batters(t2)
+
+    manager = BaseballManager()
+    rules = [change_pitcher_rule, steal_base_rule, bunt_rule, challenge_rule, defensive_shift_rule,
+             bullpen_usage_rule, pinch_hitter_rule, hit_and_run_rule, infield_in_rule,
+             defensive_positioning_rule]
+    for rule in rules:
+        manager.add_rule(rule)
+
+    # Test lineup (Default batters and pitchers)
+    h_lineup = [t1_pitchers[0]]
+    a_lineup = [t2_pitchers[0]]
+    for i in range(10):
+        h_lineup.append(t1_batters[i])
+        a_lineup.append(t2_batters[i])
+
+    game_simulator = GameSimulator(manager, t1_batters, t1_pitchers, t2_batters, t2_pitchers, h_lineup, a_lineup)
+    game_simulator.simulate_game()
+    game_simulator.save_log('game_log.json')
 
 
 if __name__ == "__main__":

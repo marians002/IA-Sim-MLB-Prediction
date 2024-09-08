@@ -4,7 +4,7 @@ import math
 class Player:
     def __init__(self, first_name, last_name, player_id, year, ab, pa, hit,
                  single, double, triple, home_run, strikeout, walk,
-                 k_percent, bb_percent, batting_avg, slg_percent, on_base_percent,
+                 k_percent, bb_percent, avg, slg_percent, on_base_percent,
                  on_base_plus_slg, woba, xwoba, sweet_spot_percent,
                  barrel_batted_rate, hard_hit_percent, avg_best_speed,
                  avg_hyper_speed, whiff_percent, swing_percent, pos):
@@ -23,7 +23,7 @@ class Player:
         self.walk = walk
         self.k_percent = k_percent
         self.bb_percent = bb_percent
-        self.batting_avg = batting_avg
+        self.avg = avg
         self.slg_percent = slg_percent
         self.on_base_percent = on_base_percent
         self.on_base_plus_slg = on_base_plus_slg
@@ -37,39 +37,6 @@ class Player:
         self.whiff_percent = whiff_percent
         self.swing_percent = swing_percent
         self.pos = pos
-
-    def to_dict(self):
-        return {
-            'first_name': self.first_name,
-            'last_name': self.last_name,
-            'player_id': self.player_id,
-            'year': self.year,
-            'ab': self.ab,
-            'pa': self.pa,
-            'hit': self.hit,
-            'single': self.single,
-            'double': self.double,
-            'triple': self.triple,
-            'home_run': self.home_run,
-            'strikeout': self.strikeout,
-            'walk': self.walk,
-            'k_percent': self.k_percent,
-            'bb_percent': self.bb_percent,
-            'batting_avg': self.batting_avg,
-            'slg_percent': self.slg_percent,
-            'on_base_percent': self.on_base_percent,
-            'on_base_plus_slg': self.on_base_plus_slg,
-            'woba': self.woba,
-            'xwoba': self.xwoba,
-            'sweet_spot_percent': self.sweet_spot_percent,
-            'barrel_batted_rate': self.barrel_batted_rate,
-            'hard_hit_percent': self.hard_hit_percent,
-            'avg_best_speed': self.avg_best_speed,
-            'avg_hyper_speed': self.avg_hyper_speed,
-            'whiff_percent': self.whiff_percent,
-            'swing_percent': self.swing_percent,
-            'pos': self.pos
-        }
 
 
 class Batter(Player):
@@ -89,13 +56,6 @@ class Batter(Player):
         else:
             self.arm_strength = data[29]
 
-    def to_dict(self):
-        player_dict = super().to_dict()
-        player_dict.update({'oaa': self.oaa,
-                            'arm_strength': self.arm_strength
-                            })
-        return player_dict
-
 
 class Pitcher(Player):
     def __init__(self, data, pos=None):
@@ -108,13 +68,3 @@ class Pitcher(Player):
         self.p_game = data[5]
         self.p_formatted_ip = data[6]
         self.pitch_hand = data[31]
-
-    def to_dict(self):
-        player_dict = super().to_dict()
-        player_dict.update({
-            'player_age': self.player_age,
-            'p_game': self.p_game,
-            'p_formatted_ip': self.p_formatted_ip,
-            'pitch_hand': self.pitch_hand
-        })
-        return player_dict

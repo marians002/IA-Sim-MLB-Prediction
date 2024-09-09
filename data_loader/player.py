@@ -2,7 +2,7 @@ import math
 
 
 class Player:
-    def __init__(self, first_name, last_name, player_id, year, ab, pa, hit,
+    def __init__(self, first_name, last_name, player_id, pa, ab, hit,
                  single, double, triple, home_run, strikeout, walk,
                  k_percent, bb_percent, avg, slg_percent, on_base_percent,
                  on_base_plus_slg, woba, xwoba, sweet_spot_percent,
@@ -11,7 +11,6 @@ class Player:
         self.first_name = first_name
         self.last_name = last_name
         self.player_id = player_id
-        self.year = year
         self.ab = ab
         self.pa = pa
         self.hit = hit
@@ -41,20 +40,22 @@ class Player:
 
 class Batter(Player):
     def __init__(self, data, pos=None):
-        super().__init__(data[0], data[1], data[2], data[3], data[4], data[5],
+        super().__init__(data[0], data[1], data[2], data[4], data[3], data[5],
                          data[6], data[7], data[8], data[9], data[10], data[11],
                          data[12], data[13], data[14], data[15], data[16], data[17], data[18],
                          data[19], data[20], data[21], data[22], data[23], data[24],
-                         data[25], data[26], data[27], pos)
+                         data[25], data[26], pos)
+
+        if math.isnan(data[27]):
+            self.arm_strength = None
+        else:
+            self.arm_strength = data[27]
+
         if math.isnan(data[28]):
             self.oaa = None
         else:
             self.oaa = data[28]
-
-        if math.isnan(data[29]):
-            self.arm_strength = None
-        else:
-            self.arm_strength = data[29]
+        self.sprint_speed = data[29]
 
 
 class Pitcher(Player):
@@ -63,8 +64,7 @@ class Pitcher(Player):
                          data[9], data[10], data[11], data[12], data[13], data[14],
                          data[15], data[16], data[17], data[18], data[19], data[20],
                          data[21], data[22], data[23], data[24], data[25], data[26],
-                         data[27], data[28], data[29], data[30], pos)
-        self.player_age = data[4]
-        self.p_game = data[5]
-        self.p_formatted_ip = data[6]
-        self.pitch_hand = data[31]
+                         data[27], data[28], data[29], pos)
+        self.p_game = data[4]
+        self.p_formatted_ip = data[5]
+        self.pitch_hand = data[30]

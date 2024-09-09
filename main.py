@@ -22,13 +22,9 @@ def main():
              defensive_positioning_rule]
     for rule in rules:
         manager.add_rule(rule)
-    t = get_lineup(t1_pitchers, t1_batters)
-    # Test lineup (Default batters and pitchers)
-    h_lineup = [t1_pitchers[0]]
-    a_lineup = [t2_pitchers[0]]
-    for i in range(10):
-        h_lineup.append(t1_batters[i])
-        a_lineup.append(t2_batters[i])
+    
+    h_lineup = get_lineup(t1_pitchers, t1_batters)
+    a_lineup = get_lineup(t2_pitchers, t2_batters)
 
     game_simulator = GameSimulator(manager, t1_batters, t1_pitchers, t2_batters, t2_pitchers, h_lineup, a_lineup)
     game_simulator.simulate_game()

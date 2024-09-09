@@ -15,11 +15,27 @@ def order_one_crossover(parent1, parent2):
     child2[cx_point1:cx_point2] = parent2[cx_point1:cx_point2]
 
     # Step 3: Fill remaining positions
-    fill_positions(child1, parent2)
-    fill_positions(child2, parent1)
+    fill_positions_mlb(child1, parent2)
+    fill_positions_mlb(child2, parent1)
 
     return child1, child2
 
+def valid_pos(pos, child):
+    for p in child:
+        if p is not None and p.pos[0] == pos:
+            return False
+    return True
+
+def fill_positions_mlb(child, parent):
+    for p in parent:
+        if valid_pos(p.pos[0], child):
+            putted = False
+            for i in range(len(child)):
+                if child[i] is None:
+                    putted = True
+                    child[i] = p
+                if putted: break
+                
 def fill_positions(child, parent):
     for elem in parent:
         if elem not in child:

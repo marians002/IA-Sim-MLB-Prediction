@@ -15,11 +15,10 @@ def order_one_crossover(parent1, parent2):
     child2[cx_point1:cx_point2] = parent2[cx_point1:cx_point2]
 
     # Step 3: Fill remaining positions
-    child1 = fill_positions(child1, parent2)
-    child2 = fill_positions(child2, parent1)
+    fill_positions(child1, parent2)
+    fill_positions(child2, parent1)
 
     return child1, child2
-
 
 def fill_positions(child, parent):
     for elem in parent:
@@ -30,9 +29,6 @@ def fill_positions(child, parent):
                     putted = True
                     child[i] = elem
                 if putted: break
-
-    return child
-
 
 def fitness_sort(object):
     """ most valued elements goes back """
@@ -48,26 +44,28 @@ def fitness_sort(object):
 def weighted_by(population, fitness):
     """ Returns the weight of each individual"""
     return [fitness(p) for p in population]
-    
 
-
-def crossover(parent1, parent2):
-    c = random.randint(0, len(parent1))
-    return parent1[:c] + parent2[c:]
-
-
-""" def mutate(team, player_pool):
-    new_players = team.players[:]
-    idx1, idx2 = random.sample(range(len(new_players)), 2)
-    new_players[idx1], new_players[idx2] = new_players[idx2], new_players[idx1]
-    return Team(new_players) """
-
+def spot(population):
+    for t in population:
+        for p in t:
+            if p is None:
+                return True
+    return False
 
 def mutate(child, pool):
     if random.random() < 0.05:
+        candidates = []
+        i = random.choice(range(len(child)-1))
+        
+        for player in pool:
+            if player.pos[0] == child[i].pos[0]:
+                candidates.append(player)
+        
+        if len(candidates) == 0: return child
+        child[i] = random.choice(candidates)
         return child
+    
     return child
-
 
 def wheel_selection(population, weights):
     # Spin the wheel, bigger portion to most weighted individuals
@@ -84,7 +82,6 @@ def wheel_selection(population, weights):
 
     return population[0]
 
-
 def tournament_selection(population, weights, n=4):
     # Random selection among n individuals, stays the one with highest weight
     # n must be less or equal tha the size of the population/wheights
@@ -93,14 +90,15 @@ def tournament_selection(population, weights, n=4):
 
     return winner[0]
 
-
 def genetic_algo(population, fitness, pool, search_t=20):
     start_time = time.time()
-
     max_individual = None
     max_val = -math.inf
-
+    iters = 0
     while True:
+        iters += 1
+        if spot(population):
+            print(iters)
         weigths = weighted_by(population, fitness)
         new_population = []
 
@@ -132,7 +130,6 @@ def genetic_algo(population, fitness, pool, search_t=20):
         if time.time() - start_time > search_t: break
 
     return max_individual
-
 
 # region PSUDOCODE
 """ function GENETIC ALGORITHM(population, ﬁtness) returns an individual

@@ -2,7 +2,7 @@ from data_loader import data_loader as dl
 from simulator.game_simulator import *
 from manager.baseball_manager import *
 from manager.rules import *
-
+from genetica.mlbeticA import *
 
 def main():
     teams = dl.load_data()
@@ -22,7 +22,7 @@ def main():
              defensive_positioning_rule]
     for rule in rules:
         manager.add_rule(rule)
-
+    t = get_lineup(t1_pitchers, t1_batters)
     # Test lineup (Default batters and pitchers)
     h_lineup = [t1_pitchers[0]]
     a_lineup = [t2_pitchers[0]]

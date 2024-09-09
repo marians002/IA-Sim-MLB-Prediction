@@ -40,26 +40,26 @@ def fitness_sort(object):
 
     return val
 
-
 def weighted_by(population, fitness):
     """ Returns the weight of each individual"""
     return [fitness(p) for p in population]
 
-def spot(population):
-    for t in population:
-        for p in t:
-            if p is None:
-                return True
-    return False
-
 def mutate(child, pool):
     if random.random() < 0.05:
         candidates = []
-        i = random.choice(range(len(child)-1))
         
+        i = random.randint(a=0, b=(len(child)-2))
+        
+        if child[i].pos[0] == 'DH':
+            return child
         for player in pool:
-            if player.pos[0] == child[i].pos[0]:
+            if child[i].pos[0] == player.pos[0]:
                 candidates.append(player)
+            elif child[i].pos[0] in ['RF', 'CF', 'LF'] and player.pos[0] == 'OF':
+                candidates.append(player)
+            elif child[i].pos[0] == 'OF' and player.pos[0] in ['RF', 'CF', 'LF']:
+                candidates.append(player)
+            
         
         if len(candidates) == 0: return child
         child[i] = random.choice(candidates)
@@ -94,11 +94,8 @@ def genetic_algo(population, fitness, pool, search_t=20):
     start_time = time.time()
     max_individual = None
     max_val = -math.inf
-    iters = 0
+    
     while True:
-        iters += 1
-        if spot(population):
-            print(iters)
         weigths = weighted_by(population, fitness)
         new_population = []
 

@@ -75,7 +75,7 @@ class GameSimulator:
         return self.home_team_lineup[self.current_batter]
 
     def get_current_pitcher(self):
-        return self.away_team_lineup[-1]
+        return self.away_team_lineup[0]
 
     def simulate_pitch(self, batter, pitcher):
         # Update the game state with the batter's and pitcher's statistics

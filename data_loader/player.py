@@ -1,4 +1,4 @@
-import math
+from math import isnan
 
 
 class Player:
@@ -46,12 +46,12 @@ class Batter(Player):
                          data[19], data[20], data[21], data[22], data[23], data[24],
                          data[25], data[26], pos)
 
-        if math.isnan(data[27]):
+        if isnan(data[27]):
             self.arm_strength = None
         else:
             self.arm_strength = data[27]
 
-        if math.isnan(data[28]):
+        if isnan(data[28]):
             self.oaa = None
         else:
             self.oaa = data[28]

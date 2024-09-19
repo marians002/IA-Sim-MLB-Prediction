@@ -10,8 +10,8 @@ def main():
 
     # Select two random teams:
     # They will be fixed by the moment
-    t1 = teams[0]
-    t2 = teams[1]
+    t1 = teams[12]
+    t2 = teams[19]
     dl.print_team_rosters([t1, t2])
 
     t1_pitchers, t1_batters = dl.separate_pitchers_batters(t1)
@@ -27,6 +27,10 @@ def main():
     # Test lineup (Default batters and pitchers)
     h_lineup = [t1_pitchers[0]]
     a_lineup = [t2_pitchers[0]]
+
+    # Posteriormente hay que cambiar las dos lineas de arriba para que se elija un pitcher y ese pitcher se coloque en
+    # la posicion 0 del listado de pitchers para hacer cositas con los cambios de pitcher luego
+
     for i in range(10):
         h_lineup.append(t1_batters[i])
         a_lineup.append(t2_batters[i])

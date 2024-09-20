@@ -38,6 +38,14 @@ def steal_base_rule(runner):
         return f"{runner.first_name} {runner.last_name} was caught stealing."
 
 
+def bunt_rule(batter):
+    bunt_success_probability = batter.speed / 100  # Assuming speed is a percentage
+    if random.random() < bunt_success_probability:
+        return f"{batter.first_name} {batter.last_name} successfully bunted!"
+    else:
+        return f"{batter.first_name} {batter.last_name} was out on the bunt attempt."
+
+
 class GameSimulator:
     def __init__(self, manager, batters_t1, pitchers_t1, batters_t2, pitchers_t2, h_lineup, a_lineup):
         self.manager = manager
@@ -115,6 +123,8 @@ class GameSimulator:
             return self.change_pitcher()
         elif decision == "steal_base_rule":
             return steal_base_rule(runner=self.game_state.batter)
+        elif decision == "bunt_rule":
+            return bunt_rule(self.game_state.batter)
         # Add more decision handling as needed
         else:
             return "Decision not recognized or not implemented yet."

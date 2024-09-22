@@ -10,8 +10,8 @@ def main():
 
     # Select two random teams:
     # They will be fixed by the moment
-    t1 = teams[10]
-    t2 = teams[14]
+    t1 = teams[2]
+    t2 = teams[18]
     # dl.print_team_rosters([t1, t2])
 
     t1_pitchers, t1_batters = dl.separate_pitchers_batters(t1)

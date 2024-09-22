@@ -1,7 +1,8 @@
 class GameState:
     def __init__(self):
         self.batting_team = 1  # Home team bats first
-        self.pitch_count = 0
+        self.pitch_count_home = 0
+        self.pitch_count_away = 0
         self.batter = None
         self.pitcher = None
         self.runner_on_first = False
@@ -100,20 +101,6 @@ class GameState:
                     self.runner_on_first = False
                 self.runner_on_third = True
 
-    def runner_on_third_update(self, current_score):
-        if self.runner_on_third:
-            if self.batting_team == 1:
-                self.update(home_score=current_score + 1, runner_on_third=False)
-            else:
-                self.update(away_score=current_score + 1, runner_on_third=False)
-
-    def runner_on_second_update(self, current_score):
-        if self.runner_on_second:
-            if self.batting_team == 1:
-                self.update(home_score=current_score + 1, runner_on_second=False)
-            else:
-                self.update(away_score=current_score + 1, runner_on_second=False)
-
     def remove_runners(self, bases=0):
         if bases == 1:
             self.runner_on_first = False
@@ -140,7 +127,8 @@ class GameState:
     def __str__(self):
         return (f"GameState:\n"
                 f"Batting team={self.batting_team}\n"
-                f"Pitch count={self.pitch_count}\n"
+                f"Pitch count Home={self.pitch_count_home}\n"
+                f"Pitch count Away={self.pitch_count_away}\n"
                 f"Batter={self.batter.first_name} {self.batter.last_name}\n"
                 f"Pitcher={self.pitcher.first_name} {self.pitcher.last_name}\n"
                 f"Runner on first={self.runner_on_first}\n"

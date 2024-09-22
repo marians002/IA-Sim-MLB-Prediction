@@ -56,6 +56,7 @@ def initial_population(pitchers, batters, n=20):
     CF = []
     RF = []
     DH = []
+    OF = []
     rols = [C, B1, B2, B3, LF, CF, RF, SS, DH]
 
     for batter in batters:
@@ -75,6 +76,8 @@ def initial_population(pitchers, batters, n=20):
             CF.append(batter)
         elif batter.pos[0] == 'RF':
             RF.append(batter)
+        elif batter.pos[0] == 'OF':
+            OF.append(batter)
         else:
             DH.append(batter)
     for _ in range(n):

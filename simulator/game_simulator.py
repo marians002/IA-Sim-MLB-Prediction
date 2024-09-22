@@ -177,6 +177,10 @@ class GameSimulator:
         elif decision == "hit_and_run_rule":
             return hit_and_run_rule(self.game_state)
 
+        elif decision == "intentional_walk_rule":
+            return intentional_walk_rule(self.game_state)
+
+
         elif decision == "No action":
             return None, 'No action taken.'
         # Add more decision handling as needed

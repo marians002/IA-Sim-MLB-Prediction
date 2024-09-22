@@ -63,3 +63,8 @@ def hit_and_run_rule(game_state: GameState):
     if random.random() < hit_run_prob:
         return 'hitrun', f"{game_state.batter.first_name} {game_state.batter.last_name} successfully executed a hit and run!"
     return 'out', f"{game_state.batter.first_name} {game_state.batter.last_name} failed to execute a hit and run."
+
+
+def intentional_walk_rule(game_state: GameState):
+    return 'walk', (f"The manager decided to intentionally walk the batter "
+                    f"{game_state.batter.first_name} {game_state.batter.last_name}.")

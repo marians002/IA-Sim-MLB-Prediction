@@ -71,6 +71,15 @@ def hit_and_run_rule(game_state: GameState):
     return False
 
 
+# Intentional Walk Rule: Si hay un corredor en tercera base, primera está libre y menos de 2 outs,
+# considerar dar un pase intencional
+def intentional_walk_rule(game_state: GameState):
+    if (game_state.runner_on_third and not game_state.runner_on_first
+            and game_state.outs < 2 and game_state.batter.avg > 0.280):
+        return True
+    return False
+
+
 # Defensa en el Infield: Si hay un corredor en tercera base y menos de 2 outs, jugar con la defensa del infield
 # adentro para prevenir una carrera
 def infield_in_rule(game_state: GameState):

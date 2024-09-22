@@ -37,6 +37,12 @@ class Player:
         self.swing_percent = swing_percent
         self.pos = pos
 
+    def __str__(self):
+        if isinstance(self, Pitcher):
+            return f"Pitcher: {self.first_name} {self.last_name}"
+        else:
+            return f"Batter: {self.first_name} {self.last_name}"
+
 
 class Batter(Player):
     def __init__(self, data, pos=None):
@@ -57,6 +63,9 @@ class Batter(Player):
             self.oaa = data[28]
         self.sprint_speed = data[29]
 
+    def __str__(self):
+        return super().__str__()
+
 
 class Pitcher(Player):
     def __init__(self, data, pos=None):
@@ -68,3 +77,6 @@ class Pitcher(Player):
         self.p_game = data[4]
         self.p_formatted_ip = data[5]
         self.pitch_hand = data[30]
+
+    def __str__(self):
+        return super().__str__()

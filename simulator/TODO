@@ -1,6 +1,0 @@
-- Modificar las reglas recién añadidas para que modifiquen el estado del juego.
-Decidir entre hacer todas las reglas estáticas y que retornen el string con el estado del juego,
-o que modifiquen el estado del juego y que el estado del juego se actualice en el log.
-Además, hay que modificar la simulación del inning para que si una de las reglas del manager afecta el
-estado del juego, no se consuma el turno al bate directamente.
-

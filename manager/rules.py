@@ -11,14 +11,17 @@ def change_pitcher_rule(game_state: GameState):
 # Regla del Robo de Base
 def steal_base_rule(game_state: GameState):
     if game_state.runner_on_first and game_state.outs < 2 and game_state.pitcher.pitch_hand == 'R':
-        if game_state.batter.sprint_speed and game_state.batter.sprint_speed > 28:
+        if game_state.batter.sprint_speed and game_state.batter.sprint_speed > 29:
             return True
     return False
 
 
 # Regla del Toque de Bola:
+# Si hay un corredor en primera base y no hay corredores en segunda o tercera base, no hay outs,
+# y el promedio de bateo del bateador es menor a 0.250, considerar el toque de bola.
 def bunt_rule(game_state: GameState):
-    if game_state.runner_on_first and game_state.outs == 0 and game_state.inning < 6 and game_state.batter.avg < 0.270:
+    if (game_state.runner_on_first and not game_state.runner_on_third and not game_state.runner_on_second and
+            game_state.outs < 2 and game_state.batter.avg < 0.250):
         return True
     return False
 

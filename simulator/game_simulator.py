@@ -123,8 +123,8 @@ class GameSimulator:
             else:
                 self.update_pitch_count()
 
-            self.update_game_state(result)
             self.update_log(batter, pitcher, action, result, action_result)
+            self.update_game_state(result)
             if self.reset_inning():
                 self.update_log(batter, pitcher, 'No action', 'Change teams', 'Change teams')
                 break
@@ -146,9 +146,9 @@ class GameSimulator:
 
     def swap_teams(self):
         if self.game_state.home_team_batting:
-            self.game_state.update(batting_team=0)
+            self.game_state.update(home_team_batting=False)
         else:
-            self.game_state.update(batting_team=1)
+            self.game_state.update(home_team_batting=True)
 
     def apply_manager_decision(self, decision):
         # Handle decisions
@@ -210,7 +210,8 @@ class GameSimulator:
             self.game_state.remove_runners(1)  # Porque al avanzar a los corredores una base, se queda uno en primera
             self.game_state.update(outs=self.game_state.outs + 1)
         elif result == 'hitrun':
-            self.game_state.update(runner_on_third=True, runner_on_first=True)
+            self.game_state.update(runner_on_third=self.game_state.runner_on_first,
+                                   runner_on_first=self.game_state.batter)
 
         self.game_state.update(score_difference=abs(self.game_state.home_score - self.game_state.away_score))
 
@@ -241,6 +242,14 @@ class GameSimulator:
             batting_team = self.home_team
         else:
             batting_team = self.away_team
+
+        runner_on_first = (f"{self.game_state.runner_on_first.first_name} {self.game_state.runner_on_first.last_name}"
+                           if self.game_state.runner_on_first else None)
+        runner_on_second = (f"{self.game_state.runner_on_second.first_name} {self.game_state.runner_on_second.last_name}"
+                            if self.game_state.runner_on_second else None)
+        runner_on_third = (f"{self.game_state.runner_on_third.first_name} {self.game_state.runner_on_third.last_name}"
+                           if self.game_state.runner_on_third else None)
+
         self.log.append({
             'Inning': self.game_state.inning,
             'Batting Team': batting_team,
@@ -251,9 +260,9 @@ class GameSimulator:
             'Outs': self.game_state.outs,
             'Batter': f"{batter.first_name} {batter.last_name}",
             'Pitcher': f"{pitcher.first_name} {pitcher.last_name}",
-            'Runner on First': self.game_state.runner_on_first,
-            'Runner on Second': self.game_state.runner_on_second,
-            'Runner on Third': self.game_state.runner_on_third,
+            'Runner on First': runner_on_first,
+            'Runner on Second': runner_on_second,
+            'Runner on Third': runner_on_third,
             'Manager Action': action,
             'Action Result': action_result,
             'Result': result

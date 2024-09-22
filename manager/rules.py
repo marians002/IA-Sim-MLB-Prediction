@@ -3,7 +3,7 @@ from simulator.game_state import *
 
 # Regla del Cambio de Pitcher Basado en el Conteo de Lanzamientos
 def change_pitcher_rule(game_state: GameState):
-    if game_state.batting_team == 1:
+    if game_state.home_team_batting:
         if game_state.pitch_count_away >= 90:
             return True
     elif game_state.pitch_count_home >= 90:
@@ -56,10 +56,10 @@ def bullpen_usage_rule(game_state: GameState):
 def pinch_hitter_rule(game_state: GameState):
     if game_state.inning >= 8 and game_state.batter.avg < 0.200:
         score_difference = game_state.home_score - game_state.away_score
-        if game_state.batting_team == 0:  # Batean los visitantes
-            return score_difference == 1 or score_difference == 2
-        else:  # Batean los locales
+        if game_state.home_team_batting:
             return score_difference == -1 or score_difference == -2
+        else:
+            return score_difference == 1 or score_difference == 2
 
 
 # Estrategia de Corrido y Bateo: Si hay un corredor solo en primera base y menos de 2 outs, considerar la

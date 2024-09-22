@@ -131,17 +131,17 @@ class GameSimulator:
         else:
             self.current_batter = 1
 
-        if self.game_state.batting_team == 1:
+        if self.game_state.home_team_batting:
             return self.home_team_lineup[self.current_batter]
         return self.away_team_lineup[self.current_batter]
 
     def get_current_pitcher(self):
-        if self.game_state.batting_team == 1:
+        if self.game_state.home_team_batting:
             return self.a_pitcher
         return self.h_pitcher
 
     def swap_teams(self):
-        if self.game_state.batting_team == 1:
+        if self.game_state.home_team_batting:
             self.game_state.update(batting_team=0)
         else:
             self.game_state.update(batting_team=1)
@@ -149,10 +149,10 @@ class GameSimulator:
     def apply_manager_decision(self, decision):
         # Handle decisions
         if decision == "change_pitcher_rule":
-            bullpen = self.pitchers_t2 if self.game_state.batting_team == 1 else self.pitchers_t1
+            bullpen = self.pitchers_t2 if self.game_state.home_team_batting else self.pitchers_t1
             new_pitcher, action_result = change_pitcher(self.game_state, bullpen)
             if new_pitcher:
-                if self.game_state.batting_team == 1:
+                if self.game_state.home_team_batting:
                     self.a_pitcher = new_pitcher
                     self.game_state.pitch_count_away = 0
                 else:
@@ -167,7 +167,7 @@ class GameSimulator:
             return bunt_rule(self.game_state)
 
         elif decision == "pinch_hitter_rule":
-            if self.game_state.batting_team == 1:
+            if self.game_state.home_team_batting:
                 return None, pinch_hitter_rule(self.game_state, self.batters_t1, self.home_team_lineup,
                                                self.current_batter)
             else:
@@ -212,12 +212,12 @@ class GameSimulator:
         self.game_state.update(score_difference=abs(self.game_state.home_score - self.game_state.away_score))
 
     def get_pitch_count(self):
-        if self.game_state.batting_team == 1:
+        if self.game_state.home_team_batting:
             return self.game_state.pitch_count_away
         return self.game_state.pitch_count_home
 
     def update_pitch_count(self, pitches=1):
-        if self.game_state.batting_team == 1:
+        if self.game_state.home_team_batting:
             self.game_state.update(pitch_count_away=self.game_state.pitch_count_away + pitches)
         else:
             self.game_state.update(pitch_count_home=self.game_state.pitch_count_home + pitches)
@@ -228,15 +228,19 @@ class GameSimulator:
             self.game_state.update(outs=0)
             self.game_state.reset_bases()
             self.swap_teams()
-            if self.game_state.batting_team == 1:
+            if self.game_state.home_team_batting:
                 self.game_state.update(inning=self.game_state.inning + 1)
                 return True
         return False
 
     def update_log(self, batter, pitcher, action, result, action_result):
+        if self.game_state.home_team_batting:
+            batting_team = 'Home'
+        else:
+            batting_team = 'Away'
         self.log.append({
             'Inning': self.game_state.inning,
-            'Batting Team': self.game_state.batting_team,
+            'Batting Team': batting_team,
             'Home Score': self.game_state.home_score,
             'Away Score': self.game_state.away_score,
             'Pitch Count Home': self.game_state.pitch_count_home,

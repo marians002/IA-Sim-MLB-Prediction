@@ -72,8 +72,10 @@ def determine_pitch_result(batter, pitcher, pitch_count):
 
 
 class GameSimulator:
-    def __init__(self, manager, batters_t1, pitchers_t1, batters_t2, pitchers_t2, h_lineup, a_lineup):
+    def __init__(self, manager, t1, t2, batters_t1, pitchers_t1, batters_t2, pitchers_t2, h_lineup, a_lineup):
         self.manager = manager
+        self.home_team = t1.team_name
+        self.away_team = t2.team_name
         self.batters_t1 = batters_t1
         self.pitchers_t1 = pitchers_t1
         self.batters_t2 = batters_t2
@@ -87,7 +89,7 @@ class GameSimulator:
         self.current_batter = 0  # Bateadores comienzan en el 1 del lineup y el pitcher en el 0
 
     def simulate_game(self):
-        # Example simulation logic
+        self.log.append({'Game between: ': f"{self.home_team} and {self.away_team}"})
         for inning in range(1, 10):
             self.game_state.inning = inning
             self.simulate_inning()
@@ -95,6 +97,8 @@ class GameSimulator:
             if self.game_state.score_difference >= 15:
                 self.log.append({'Final result': "The game ended by Super KO"})
                 break
+        self.log.append({'Final result': f"{self.home_team}: {self.game_state.home_score}  "
+                                         f"{self.away_team}: {self.game_state.away_score}"})
 
     def simulate_inning(self):
         while self.game_state.outs < 3:
@@ -180,7 +184,6 @@ class GameSimulator:
         elif decision == "intentional_walk_rule":
             return intentional_walk_rule(self.game_state)
 
-
         elif decision == "No action":
             return None, 'No action taken.'
         # Add more decision handling as needed
@@ -235,9 +238,9 @@ class GameSimulator:
 
     def update_log(self, batter, pitcher, action, result, action_result):
         if self.game_state.home_team_batting:
-            batting_team = 'Home'
+            batting_team = self.home_team
         else:
-            batting_team = 'Away'
+            batting_team = self.away_team
         self.log.append({
             'Inning': self.game_state.inning,
             'Batting Team': batting_team,

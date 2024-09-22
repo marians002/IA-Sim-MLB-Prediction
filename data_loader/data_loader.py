@@ -1,11 +1,33 @@
-import json
 import os
 import statsapi
+import jsonpickle
 
 import pandas as pd
 
 from data_loader.player import *
 from data_loader.team import Team
+
+
+def print_players(team):
+    for player in team.players:
+        print(f" \033[91m Player:\033[0m {player.first_name + ' ' + player.last_name}, Position: {player.pos}")
+
+
+def print_team_rosters(team_rosters):
+    for team in team_rosters:
+        print("\033[96mTeam: \033[0m" + team.team_name)
+        print_players(team)
+        print()
+
+
+def load_csv():
+    # Get the path to the CSV file
+    current_dir = os.path.dirname(__file__)
+    csv_path = os.path.join(current_dir, '../stats csv', 'pitchers 2022 PA50.csv')
+    pitchers = pd.read_csv(csv_path).drop('year', axis=1)
+    csv_path = os.path.join(current_dir, '../stats csv', 'batters 2022 PA50.csv')
+    batters = pd.read_csv(csv_path).drop(['year', 'player_age'], axis=1)
+    return pitchers, batters
 
 
 # Fill the players list
@@ -66,24 +88,6 @@ def add_players_to_teams(team_rosters, players):
     return teams
 
 
-def print_team_rosters(team_rosters):
-    for team in team_rosters:
-        print(f"Team: {team['team_name']}")
-        for player in team['players']:
-            print(f"  Player: {player['first_name'] + ' ' + player['last_name']}, Position: {player['pos']}")
-        print()
-
-
-def load_csv():
-    # Get the path to the CSV file
-    current_dir = os.path.dirname(__file__)
-    csv_path = os.path.join(current_dir, '../stats csv', 'pitchers 2022 PA50.csv')
-    pitchers = pd.read_csv(csv_path)
-    csv_path = os.path.join(current_dir, '../stats csv', 'batters 2022 PA50.csv')
-    batters = pd.read_csv(csv_path)
-    return pitchers, batters
-
-
 def get_teams():
     pitchers, batters = load_csv()
 
@@ -101,14 +105,22 @@ def get_teams():
     return teams, players
 
 
-def load_from_json(filename):
-    with open(filename, 'r') as f:
-        return json.load(f)
+def save_to_json(data, file_path):
+    with open(file_path, 'w') as file:
+        json_data = jsonpickle.encode(data)
+        file.write(json_data)
 
 
-def save_to_json(data, filename):
-    with open(filename, 'w') as f:
-        json.dump(data, f, indent=4)
+def load_from_json(file_path):
+    with open(file_path, 'r') as file:
+        json_data = file.read()
+        return jsonpickle.decode(json_data)
+
+
+def separate_pitchers_batters(team):
+    pitchers = [player for player in team.players if isinstance(player, Pitcher)]
+    batters = [player for player in team.players if isinstance(player, Batter)]
+    return pitchers, batters
 
 
 def load_data():
@@ -117,20 +129,16 @@ def load_data():
 
     if os.path.exists(teams_file) and os.path.exists(players_file):
         # Load teams and players from JSON files
-        teams_dict = load_from_json(teams_file)
-        players_dict = load_from_json(players_file)
+        teams = load_from_json(teams_file)
+        players = load_from_json(players_file)
     else:
         # Load teams and players
         teams, players = get_teams()
 
-        # Convert teams and players to dictionaries
-        teams_dict = [team.to_dict() for team in teams]
-        players_dict = [player.to_dict() for player in players]
-
         # Save teams and players to JSON files
-        save_to_json(teams_dict, teams_file)
-        save_to_json(players_dict, players_file)
+        save_to_json(teams, teams_file)
+        save_to_json(players, players_file)
 
-    # print_team_rosters(teams_dict)
-    print("Teams and players data loaded successfully.")
-    return teams_dict, players_dict
+    print("\033[92mTeams and players data loaded successfully.\033[0m")
+    print()
+    return teams

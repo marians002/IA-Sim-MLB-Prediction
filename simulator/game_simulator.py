@@ -1,74 +1,7 @@
 import json
-from simulator.apply_rules import *
-
 import random
-
-
-def determine_pitch_result(batter, pitcher, pitch_count):
-    strikes = 0
-    balls = 0
-    total_pitches = 0
-
-    # Calculate probabilities for each pitch outcome
-    strike_prob = (pitcher.k_percent + batter.k_percent) / 200
-    ball_prob = (pitcher.bb_percent + batter.bb_percent) / 200
-    foul_prob = 0.2  # Initial probability of a foul ball
-    hit_prob = (batter.avg + pitcher.avg) / 2
-    out_prob = 1 - (strike_prob + ball_prob + foul_prob + hit_prob)
-    outcomes = ['strike', 'ball', 'foul', 'hit', 'out']
-
-    # Increase hit probability after 70 pitches
-    if pitch_count > 70:
-        hit_prob *= 1.1
-
-    batter_single_rate = batter.single / batter.ab
-    batter_double_rate = batter.double / batter.ab
-    batter_triple_rate = batter.triple / batter.ab
-    batter_home_run_rate = batter.home_run / batter.ab
-    pitcher_single_rate = pitcher.single / pitcher.ab
-    pitcher_double_rate = pitcher.double / pitcher.ab
-    pitcher_triple_rate = pitcher.triple / pitcher.ab
-    pitcher_home_run_rate = pitcher.home_run / pitcher.ab
-
-    single_prob = (batter_single_rate + pitcher_single_rate) / 2
-    double_prob = (batter_double_rate + pitcher_double_rate) / 2
-    triple_prob = (batter_triple_rate + pitcher_triple_rate) / 2
-    home_run_prob = (batter_home_run_rate + pitcher_home_run_rate) / 2
-
-    # Normalize hit probabilities
-    hit_total_prob = single_prob + double_prob + triple_prob + home_run_prob
-    hit_probabilities = [single_prob / hit_total_prob, double_prob / hit_total_prob, triple_prob / hit_total_prob,
-                         home_run_prob / hit_total_prob]
-    while True:
-        total_pitches += 1
-
-        # Normalize probabilities to sum to 1
-        total_prob = strike_prob + ball_prob + foul_prob + hit_prob + out_prob
-        probabilities = [strike_prob / total_prob, ball_prob / total_prob, foul_prob / total_prob,
-                         hit_prob / total_prob, out_prob / total_prob]
-
-        pitch_result = random.choices(outcomes, probabilities)[0]
-
-        if pitch_result == 'strike':
-            strikes += 1
-            if strikes >= 3:
-                return 'strikeout', total_pitches
-        elif pitch_result == 'ball':
-            balls += 1
-            if balls >= 4:
-                return 'walk', total_pitches
-        elif pitch_result == 'foul':
-            # Decrease probability of a foul ball each time to prevent infinite at-bats
-            foul_prob *= 0.8
-            if strikes < 2:
-                strikes += 1
-        elif pitch_result == 'hit':
-            # Determine type of hit
-            hit_outcomes = ['single', 'double', 'triple', 'home_run']
-            hit_result = random.choices(hit_outcomes, hit_probabilities)[0]
-            return hit_result, total_pitches
-        elif pitch_result == 'out':
-            return 'out', total_pitches
+from simulator.apply_rules import *
+from simulator.calculate_probs import *
 
 
 class GameSimulator:
@@ -86,6 +19,8 @@ class GameSimulator:
         self.away_team_lineup = a_lineup
         self.h_pitcher = h_lineup[0]  # El primero en la rotación
         self.a_pitcher = a_lineup[0]  # El primero en la rotación
+        self.defensive_rate_home = calculate_defensive_rate(h_lineup)
+        self.defensive_rate_away = calculate_defensive_rate(a_lineup)
         self.current_batter = 0  # Bateadores comienzan en el 1 del lineup y el pitcher en el 0
 
     def simulate_game(self):
@@ -108,8 +43,6 @@ class GameSimulator:
             self.game_state.update(pitcher=pitcher, batter=batter)
 
             # Evaluate the rules and make decisions
-
-            # decision del manager
             action = self.manager.evaluate_rules(self.game_state)
 
             # result: string['out', 'single', 'double', 'triple', 'home_run', 'walk', 'strikeout', 'bunt']
@@ -118,7 +51,8 @@ class GameSimulator:
 
             # Si la acción del manager permite que el bateador batee, efectuar el pitcheo
             if result is None:
-                result, pitches = determine_pitch_result(batter, pitcher, self.get_pitch_count())
+                result, pitches = determine_pitch_result(batter, pitcher, self.game_state.runner_on_first,
+                                                         self.get_pitch_count(), self.get_def_rate())
                 self.update_pitch_count(pitches)
             else:
                 self.update_pitch_count()
@@ -126,7 +60,8 @@ class GameSimulator:
             self.update_log(batter, pitcher, action, result, action_result)
             self.update_game_state(result)
             if self.reset_inning():
-                self.update_log(batter, pitcher, 'No action', 'Change teams', 'Change teams')
+                self.update_log(self.game_state.batter, self.game_state.pitcher, 'No action', 'Change teams',
+                                'Change teams')
                 break
 
     def get_next_batter(self):
@@ -143,6 +78,11 @@ class GameSimulator:
         if self.game_state.home_team_batting:
             return self.a_pitcher
         return self.h_pitcher
+
+    def get_def_rate(self):
+        if self.game_state.home_team_batting:
+            return self.defensive_rate_away
+        return self.defensive_rate_home
 
     def swap_teams(self):
         if self.game_state.home_team_batting:
@@ -172,17 +112,26 @@ class GameSimulator:
 
         elif decision == "pinch_hitter_rule":
             if self.game_state.home_team_batting:
-                return None, pinch_hitter_rule(self.game_state, self.batters_t1, self.home_team_lineup,
-                                               self.current_batter)
+                text = pinch_hitter_rule(self.game_state, self.batters_t1, self.home_team_lineup,
+                                         self.current_batter)
+                # Como hubo un cambio en el line-up, hay que recalcular la defensa
+                self.defensive_rate_home = calculate_defensive_rate(self.home_team_lineup)
+                return None, text
             else:
-                return None, pinch_hitter_rule(self.game_state, self.batters_t2, self.away_team_lineup,
-                                               self.current_batter)
+                text = pinch_hitter_rule(self.game_state, self.batters_t2, self.away_team_lineup,
+                                         self.current_batter)
+                # Como hubo un cambio en el line-up, hay que recalcular la defensa
+                self.defensive_rate_away = calculate_defensive_rate(self.away_team_lineup)
+                return None, text
 
         elif decision == "hit_and_run_rule":
             return hit_and_run_rule(self.game_state)
 
         elif decision == "intentional_walk_rule":
             return intentional_walk_rule(self.game_state)
+
+        elif decision == "pickoff_rule":
+            return pickoff_rule(self.game_state)
 
         elif decision == "No action":
             return None, 'No action taken.'
@@ -205,6 +154,9 @@ class GameSimulator:
             self.game_state.advance_runners(home_run=True)
         elif result == 'out':
             self.game_state.update(outs=self.game_state.outs + 1)
+        elif result == 'double_play':
+            self.game_state.update(outs=self.game_state.outs + 2)
+            self.game_state.remove_runners(1)
         elif result == 'bunt':
             self.game_state.advance_runners(bases=1)
             self.game_state.remove_runners(1)  # Porque al avanzar a los corredores una base, se queda uno en primera
@@ -212,7 +164,12 @@ class GameSimulator:
         elif result == 'hitrun':
             self.game_state.update(runner_on_third=self.game_state.runner_on_first,
                                    runner_on_first=self.game_state.batter)
-
+        elif result == 'pickoff_1':
+            self.game_state.update(outs=self.game_state.outs + 1)
+            self.game_state.remove_runners(1)
+        elif result == 'pickoff_3':
+            self.game_state.update(outs=self.game_state.outs + 1)
+            self.game_state.remove_runners(3)
         self.game_state.update(score_difference=abs(self.game_state.home_score - self.game_state.away_score))
 
     def get_pitch_count(self):
@@ -245,8 +202,9 @@ class GameSimulator:
 
         runner_on_first = (f"{self.game_state.runner_on_first.first_name} {self.game_state.runner_on_first.last_name}"
                            if self.game_state.runner_on_first else None)
-        runner_on_second = (f"{self.game_state.runner_on_second.first_name} {self.game_state.runner_on_second.last_name}"
-                            if self.game_state.runner_on_second else None)
+        runner_on_second = (
+            f"{self.game_state.runner_on_second.first_name} {self.game_state.runner_on_second.last_name}"
+            if self.game_state.runner_on_second else None)
         runner_on_third = (f"{self.game_state.runner_on_third.first_name} {self.game_state.runner_on_third.last_name}"
                            if self.game_state.runner_on_third else None)
 

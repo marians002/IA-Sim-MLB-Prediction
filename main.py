@@ -11,7 +11,7 @@ def main():
     # Select two random teams:
     # They will be fixed by the moment
     t1 = teams[12]
-    t2 = teams[13]
+    t2 = teams[10]
     # dl.print_team_rosters([t1, t2])
 
     t1_pitchers, t1_batters = dl.separate_pitchers_batters(t1)
@@ -20,7 +20,7 @@ def main():
     manager = BaseballManager()
     rules = [change_pitcher_rule, steal_base_rule, bunt_rule, challenge_rule, defensive_shift_rule,
              bullpen_usage_rule, pinch_hitter_rule, hit_and_run_rule, intentional_walk_rule, infield_in_rule,
-             defensive_positioning_rule]
+             defensive_positioning_rule, pickoff_rule]
     for rule in rules:
         manager.add_rule(rule)
     # t = get_lineup(t1_pitchers, t1_batters)

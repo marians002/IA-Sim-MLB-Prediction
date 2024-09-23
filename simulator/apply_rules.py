@@ -2,8 +2,8 @@ import random
 from simulator.game_state import *
 
 
-def speed_rate(batter):
-    return batter.sprint_speed / 35  # Assuming 35 mph as an upper limit
+def speed_rate(runner):
+    return runner.sprint_speed / 35  # Assuming 35 mph as an upper limit
 
 
 def change_pitcher(game_state: GameState, bullpen):
@@ -16,15 +16,20 @@ def change_pitcher(game_state: GameState, bullpen):
 
 # Modify the batter for the runner on 1st base
 def steal_base_rule(game_state: GameState):
-    steal_probability = speed_rate(game_state.batter)
+    steal_probability = speed_rate(game_state.runner_on_first)
     if random.random() < steal_probability:
+        name = game_state.runner_on_first.first_name
+        last_name = game_state.runner_on_first.last_name
         game_state.advance_runners(bases=1)
         game_state.remove_runners(1)
-        return f"{game_state.batter.first_name} {game_state.batter.last_name} successfully stole the base!"
+        return (f"{name} {last_name} successfully stole "
+                f"the base!")
     else:
+        name = game_state.runner_on_first.first_name
+        last_name = game_state.runner_on_first.last_name
         game_state.remove_runners(bases=1)
         game_state.update(outs=game_state.outs + 1)
-        return f"{game_state.batter.first_name} {game_state.batter.last_name} was caught stealing."
+        return f"{name} {last_name} was caught stealing."
 
 
 def bunt_rule(game_state: GameState):
@@ -58,13 +63,23 @@ def pinch_hitter_rule(game_state: GameState, batters, lineup, current_batter):
 
 
 def hit_and_run_rule(game_state: GameState):
-    speed = speed_rate(game_state.batter)
-    hit_run_prob = (game_state.batter.avg + speed) / 2
+    speed = speed_rate(game_state.batter) + speed_rate(game_state.runner_on_first)
+    hit_run_prob = (game_state.batter.avg + speed) / 3
     if random.random() < hit_run_prob:
-        return 'hitrun', f"{game_state.batter.first_name} {game_state.batter.last_name} successfully executed a hit and run!"
+        return 'hitrun', (f"{game_state.batter.first_name} {game_state.batter.last_name} successfully executed a hit "
+                          f"and run!")
     return 'out', f"{game_state.batter.first_name} {game_state.batter.last_name} failed to execute a hit and run."
 
 
 def intentional_walk_rule(game_state: GameState):
     return 'walk', (f"The manager decided to intentionally walk the batter "
                     f"{game_state.batter.first_name} {game_state.batter.last_name}.")
+
+
+def pickoff_rule(game_state: GameState):
+    gotcha = random.random() < 0.3
+    if game_state.pitcher.pitch_hand == 'L' and gotcha:
+        return 'pickoff_1', f"The pitcher picked off the runner on first base!"
+    elif game_state.pitcher.pitch_hand == 'R' and gotcha:
+        return 'pickoff_3', f"The pitcher picked off the runner on third base!"
+    return None, "The pitcher tried to pickoff the runner but he is save."

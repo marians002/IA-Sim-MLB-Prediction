@@ -13,11 +13,8 @@ Listos:
 
 Pendientes:
 
-
-
 - Hacer motor de inferencia del manager.
 
 - Hacer algoritmo para elegir pitcher relevista.
-
 
 - Agregar close_play y con ello los challenges.

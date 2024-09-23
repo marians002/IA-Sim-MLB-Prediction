@@ -1,7 +1,8 @@
 from data_loader import data_loader as dl
 from simulator.game_simulator import *
 from manager.baseball_manager import *
-from manager.rules import *
+from manager.RuleClass import *
+from manager.rules_conditions import *
 from genetica.mlbeticA import *
 
 
@@ -17,19 +18,30 @@ def main():
     t1_pitchers, t1_batters = dl.separate_pitchers_batters(t1)
     t2_pitchers, t2_batters = dl.separate_pitchers_batters(t2)
 
-    manager = BaseballManager()
-    rules = [change_pitcher_rule, steal_base_rule, bunt_rule, challenge_rule, defensive_shift_rule,
-             bullpen_usage_rule, pinch_hitter_rule, hit_and_run_rule, intentional_walk_rule, infield_in_rule,
-             defensive_positioning_rule, pickoff_rule]
-    for rule in rules:
-        manager.add_rule(rule)
+    rules = [
+        Rule("Change Pitcher", change_pitcher_condition, change_pitcher_action),
+        Rule("Steal Base", steal_base_condition, steal_base_action),
+        Rule("Bunt", bunt_condition, bunt_action),
+        Rule("Pinch Hitter", pinch_hitter_condition, pinch_hitter_action),
+        Rule("Hit and Run", hit_and_run_condition, hit_and_run_action),
+        Rule("Intentional Walk", intentional_walk_condition, intentional_walk_action),
+        Rule("Pickoff", pickoff_condition, pickoff_action)
+        # Rule("Infield In", infield_in_condition, infield_in_action),
+        # Rule("Defensive Positioning", defensive_positioning_condition, defensive_positioning_action),
+        # Rule("Challenge", challenge_condition, challenge_action),
+        # Rule("Defensive Shift", defensive_shift_condition, defensive_shift_action),
+        # Rule("Bullpen Usage", bullpen_usage_condition, bullpen_usage_action),
+    ]
+
+    manager = BaseballManager(rules)
+
     # t = get_lineup(t1_pitchers, t1_batters)
 
     # Test lineup (Default batters and pitchers)
     h_lineup = [t1_pitchers[0]]
-    t1_pitchers.pop(0)    # Remove the opening pitcher from the bullpen
+    t1_pitchers.pop(0)  # Remove the opening pitcher from the bullpen
     a_lineup = [t2_pitchers[0]]
-    t2_pitchers.pop(0)    # Remove the opening pitcher from the bullpen
+    t2_pitchers.pop(0)  # Remove the opening pitcher from the bullpen
 
     # Posteriormente hay que cambiar las dos lineas de arriba para que se elija un pitcher y ese pitcher se coloque en
     # la posicion 0 del listado de pitchers para hacer cositas con los cambios de pitcher luego
@@ -38,7 +50,8 @@ def main():
         h_lineup.append(t1_batters[i])
         a_lineup.append(t2_batters[i])
 
-    game_simulator = GameSimulator(manager, t1, t2, t1_batters, t1_pitchers, t2_batters, t2_pitchers, h_lineup, a_lineup)
+    game_simulator = GameSimulator(manager, t1, t2, t1_batters, t1_pitchers, t2_batters, t2_pitchers, h_lineup,
+                                   a_lineup)
     game_simulator.simulate_game()
     game_simulator.save_log('game_log.json')
 

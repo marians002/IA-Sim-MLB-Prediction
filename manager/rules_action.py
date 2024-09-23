@@ -6,7 +6,7 @@ def speed_rate(runner):
     return runner.sprint_speed / 35  # Assuming 35 mph as an upper limit
 
 
-def change_pitcher(game_state: GameState, bullpen):
+def change_pitcher_action(game_state: GameState, bullpen):
     if len(bullpen) > 1:
         new_pitcher = bullpen.pop(random.randint(1, len(bullpen) - 1))
         game_state.update(pitch_count=0, pitcher=new_pitcher)
@@ -14,25 +14,24 @@ def change_pitcher(game_state: GameState, bullpen):
     return None, 'No more pitchers available.'
 
 
-# Modify the batter for the runner on 1st base
-def steal_base_rule(game_state: GameState):
+def steal_base_action(game_state: GameState):
     steal_probability = speed_rate(game_state.runner_on_first)
     if random.random() < steal_probability:
         name = game_state.runner_on_first.first_name
         last_name = game_state.runner_on_first.last_name
         game_state.advance_runners(bases=1)
         game_state.remove_runners(1)
-        return (f"{name} {last_name} successfully stole "
-                f"the base!")
+        return None, (f"{name} {last_name} successfully stole "
+                      f"the base!")
     else:
         name = game_state.runner_on_first.first_name
         last_name = game_state.runner_on_first.last_name
         game_state.remove_runners(bases=1)
         game_state.update(outs=game_state.outs + 1)
-        return f"{name} {last_name} was caught stealing."
+        return None, f"{name} {last_name} was caught stealing."
 
 
-def bunt_rule(game_state: GameState):
+def bunt_action(game_state: GameState):
     # Convert sprint_speed from mph to a percentage (assuming 35 mph as an upper limit)
     speed = speed_rate(game_state.batter)
     # Calculate probabilities
@@ -53,7 +52,7 @@ def bunt_rule(game_state: GameState):
                           f"and runners advance!")
 
 
-def pinch_hitter_rule(game_state: GameState, batters, lineup, current_batter):
+def pinch_hitter_action(game_state: GameState, batters, lineup, current_batter):
     # Get the batter with the highest average if it is not in the current lineup
     new_batter = max(batters, key=lambda x: x.avg if x not in lineup else 0)
     if new_batter.avg > game_state.batter.avg:
@@ -62,7 +61,7 @@ def pinch_hitter_rule(game_state: GameState, batters, lineup, current_batter):
         return f"Pinch hitter {new_batter.first_name} {new_batter.last_name} is coming in!"
 
 
-def hit_and_run_rule(game_state: GameState):
+def hit_and_run_action(game_state: GameState):
     speed = speed_rate(game_state.batter) + speed_rate(game_state.runner_on_first)
     hit_run_prob = (game_state.batter.avg + speed) / 3
     if random.random() < hit_run_prob:
@@ -71,12 +70,12 @@ def hit_and_run_rule(game_state: GameState):
     return 'out', f"{game_state.batter.first_name} {game_state.batter.last_name} failed to execute a hit and run."
 
 
-def intentional_walk_rule(game_state: GameState):
+def intentional_walk_action(game_state: GameState):
     return 'walk', (f"The manager decided to intentionally walk the batter "
                     f"{game_state.batter.first_name} {game_state.batter.last_name}.")
 
 
-def pickoff_rule(game_state: GameState):
+def pickoff_action(game_state: GameState):
     gotcha = random.random() < 0.3
     if game_state.pitcher.pitch_hand == 'L' and gotcha:
         return 'pickoff_1', f"The pitcher picked off the runner on first base!"

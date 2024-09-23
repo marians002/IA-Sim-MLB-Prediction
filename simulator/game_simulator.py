@@ -1,6 +1,5 @@
 import json
-import random
-from simulator.apply_rules import *
+from manager.rules_action import *
 from simulator.calculate_probs import *
 
 
@@ -84,6 +83,15 @@ class GameSimulator:
             return self.defensive_rate_away
         return self.defensive_rate_home
 
+    def update_pitcher(self, new_pitcher):
+        if new_pitcher:
+            if self.game_state.home_team_batting:
+                self.a_pitcher = new_pitcher
+                self.game_state.pitch_count_away = 0
+            else:
+                self.h_pitcher = new_pitcher
+                self.game_state.pitch_count_home = 0
+
     def swap_teams(self):
         if self.game_state.home_team_batting:
             self.game_state.update(home_team_batting=False)
@@ -92,46 +100,40 @@ class GameSimulator:
 
     def apply_manager_decision(self, decision):
         # Handle decisions
-        if decision == "change_pitcher_rule":
+        if decision == "change_pitcher_action":
             bullpen = self.pitchers_t2 if self.game_state.home_team_batting else self.pitchers_t1
-            new_pitcher, action_result = change_pitcher(self.game_state, bullpen)
-            if new_pitcher:
-                if self.game_state.home_team_batting:
-                    self.a_pitcher = new_pitcher
-                    self.game_state.pitch_count_away = 0
-                else:
-                    self.h_pitcher = new_pitcher
-                    self.game_state.pitch_count_home = 0
+            new_pitcher, action_result = change_pitcher_action(self.game_state, bullpen)
+            self.update_pitcher(new_pitcher)
             return None, action_result
 
-        elif decision == "steal_base_rule":
-            return None, steal_base_rule(self.game_state)
+        elif decision == "steal_base_action":
+            return steal_base_action(self.game_state)
 
-        elif decision == "bunt_rule":
-            return bunt_rule(self.game_state)
+        elif decision == "bunt_action":
+            return bunt_action(self.game_state)
 
-        elif decision == "pinch_hitter_rule":
+        elif decision == "pinch_hitter_action":
             if self.game_state.home_team_batting:
-                text = pinch_hitter_rule(self.game_state, self.batters_t1, self.home_team_lineup,
-                                         self.current_batter)
+                text = pinch_hitter_action(self.game_state, self.batters_t1, self.home_team_lineup,
+                                           self.current_batter)
                 # Como hubo un cambio en el line-up, hay que recalcular la defensa
                 self.defensive_rate_home = calculate_defensive_rate(self.home_team_lineup)
                 return None, text
             else:
-                text = pinch_hitter_rule(self.game_state, self.batters_t2, self.away_team_lineup,
-                                         self.current_batter)
+                text = pinch_hitter_action(self.game_state, self.batters_t2, self.away_team_lineup,
+                                           self.current_batter)
                 # Como hubo un cambio en el line-up, hay que recalcular la defensa
                 self.defensive_rate_away = calculate_defensive_rate(self.away_team_lineup)
                 return None, text
 
-        elif decision == "hit_and_run_rule":
-            return hit_and_run_rule(self.game_state)
+        elif decision == "hit_and_run_action":
+            return hit_and_run_action(self.game_state)
 
-        elif decision == "intentional_walk_rule":
-            return intentional_walk_rule(self.game_state)
+        elif decision == "intentional_walk_action":
+            return intentional_walk_action(self.game_state)
 
-        elif decision == "pickoff_rule":
-            return pickoff_rule(self.game_state)
+        elif decision == "pickoff_action":
+            return pickoff_action(self.game_state)
 
         elif decision == "No action":
             return None, 'No action taken.'
@@ -227,5 +229,6 @@ class GameSimulator:
         })
 
     def save_log(self, filename):
+        # print(self.log)
         with open(filename, 'w') as f:
             json.dump(self.log, f, indent=4)

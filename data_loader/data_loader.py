@@ -1,5 +1,5 @@
 import os
-import statsapi
+# import statsapi
 import jsonpickle
 
 import pandas as pd

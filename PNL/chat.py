@@ -9,6 +9,31 @@ os.environ["GOOGLE_API_KEY"] = "AIzaSyAtG48JDc-lIyx8gmjFkIFUbWcVir8LuK8"
 model_name = "gemini-1.5-flash"  # Modelo correcto
 model = ChatGoogleGenerativeAI(model=model_name)
 
+<<<<<<< Updated upstream
+=======
+
+def generate_prompt_from_game_log(file_path,team1,team2):
+    """
+    Generates a prompt for the baseball game between two teams using the game log.
+
+    :param file_path: Path to the game log JSON file.
+    :param team1: Name of the first team.
+    :param team2: Name of the second team.
+    :return: Generated prompt string.
+    """
+    try:
+        with open(file_path, 'r') as file:
+            game_log = json.load(file)
+
+        prompt = f"Generate the comments for the following baseball game:\n\n"
+        prompt += json.dumps(game_log, indent=4)
+
+        return prompt
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+
+>>>>>>> Stashed changes
 def get_gemini_response(prompt):
     """
     Esta función toma un prompt como entrada, lo envía al modelo de Google Generative AI,
@@ -28,14 +53,34 @@ def get_gemini_response(prompt):
     except Exception as e:
         return f"Error: {str(e)}"
 
+<<<<<<< Updated upstream
 # Ejemplo de uso en este mismo script
 if __name__ == "__main__":
     # Solicita al usuario que introduzca un prompt
     prompt = input("Introduce tu prompt: ")
+=======
 
-    # Obtén la respuesta del modelo
-    respuesta = get_gemini_response(prompt)
+>>>>>>> Stashed changes
 
+
+<<<<<<< Updated upstream
     # Muestra la respuesta al usuario
     print("Respuesta del modelo:")
     print(respuesta)
+=======
+# # Ejemplo de uso en este mismo script
+# if __name__ == "__main__":
+#     # Solicita al usuario que introduzca un prompt
+#     file_path = '../game_log.json'
+#     prompt = generate_prompt_from_game_log(file_path)
+
+#     # Obtén la respuesta del modelo
+#     respuesta = get_gemini_response(prompt)
+
+#     # Muestra la respuesta al usuario
+#     print("Respuesta del modelo:")
+#     print(respuesta)
+#     # Guardar respuesta como archivo md
+#     with open('Commentary.md', 'w') as file:
+#         file.write(respuesta)
+>>>>>>> Stashed changes

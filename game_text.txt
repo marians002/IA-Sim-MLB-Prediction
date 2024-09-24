@@ -1,0 +1,137 @@
+ Chicago White Sox vs. Philadelphia Phillies Game Commentary
+
+Top of the 1st:
+
+ Alvarado starts on the mound for the Phillies, Banks for the White Sox.
+ Abreu grounds into a double play to end the inning. 
+ Alvarado gets Anderson to strike out to end the inning. 
+
+Bottom of the 1st:
+
+ Castellanos grounds into a double play. 
+ Gregorius grounds into a double play to end the inning. 
+
+Top of the 2nd:
+
+ Banks is still on the mound for the White Sox, but Alvarado has been replaced by [New Pitcher Name] for the Phillies.
+ Engel strikes out.
+ Gonzalez strikes out.
+ Grandal hits an out to end the inning.
+
+Bottom of the 2nd:
+
+ Hoskins hits a home run! Phillies take a 1-0 lead.
+ Marsh hits a single.
+ Bohm successfully executes a hit and run, advancing Marsh to third. 
+ Camargo grounds into a double play.
+ Castellanos hits an out to end the inning.
+
+Top of the 3rd:
+
+ [New Pitcher Name] is still on the mound for the Phillies.
+ Burger hits a home run! White Sox tie the game 1-1.
+ Engel hits a single.
+ Gonzalez successfully bunted, advancing both runners.
+ Grandal grounds into a double play. 
+ Jimenez grounds into a double play to end the inning.
+
+Bottom of the 3rd:
+
+ Marsh grounds into a double play.
+ Bohm hits an out to end the inning.
+
+Top of the 4th:
+
+ [New Pitcher Name] is still on the mound for the Phillies.
+ Anderson strikes out.
+ Andrus hits a single.
+ Burger hits a single, advancing Andrus to second.
+ Engel grounds into a double play to end the inning.
+
+Bottom of the 4th:
+
+ Harper hits a single.
+ Herrera is out on a bunt attempt.
+ Hoskins hits a bunt, advancing Harper to second.
+ Marsh hits a single, scoring Harper. Phillies take a 2-1 lead.
+ Bohm hits a single, advancing Marsh to second.
+ The pitcher tries to pick off the runner, but he is safe.
+ Camargo hits a single, scoring Marsh. Phillies extend their lead to 3-1.
+ Castellanos hits a home run! Phillies now lead 6-1.
+ Gregorius hits a single.
+ Hall hits an out to end the inning.
+
+Top of the 5th:
+
+ [New Pitcher Name] is still on the mound for the Phillies.
+ Gonzalez grounds into a double play. 
+ Grandal hits a single.
+ Jimenez hits a home run! White Sox score two runs, bringing the score to 6-3.
+ McGuire grounds into a double play to end the inning.
+
+Bottom of the 5th:
+
+ Bohm hits a single.
+ Camargo successfully bunted, advancing both runners.
+ Castellanos hits a single, advancing all runners.
+ Gregorius grounds into a double play.
+ Hall hits a single, scoring Camargo. Phillies take a 7-3 lead.
+ Harper hits a double play to end the inning.
+
+Top of the 6th:
+
+ [New Pitcher Name] is still on the mound for the Phillies.
+ Grandal hits a triple.
+ Jimenez grounds into a double play. 
+ McGuire grounds into a double play to end the inning.
+
+Bottom of the 6th:
+
+ Bohm hits an out.
+ Camargo hits a double.
+ Castellanos grounds into a double play to end the inning.
+
+Top of the 7th:
+
+ [New Pitcher Name] is still on the mound for the Phillies.
+ Burger hits an out.
+ Engel hits a single.
+ Gonzalez successfully bunted, advancing both runners.
+ Grandal grounds into a double play to end the inning.
+
+Bottom of the 7th:
+
+ Hoskins hits a single.
+ Marsh is out on a bunt attempt.
+ Bohm grounds into a double play to end the inning.
+
+Top of the 8th:
+
+ [New Pitcher Name] is still on the mound for the Phillies.
+ Anderson hits a home run! White Sox score one run, bringing the score to 7-4. 
+ Andrus grounds into a double play.
+ Burger grounds into a double play to end the inning.
+
+Bottom of the 8th:
+
+ Hall grounds into a double play.
+ Harper hits an out to end the inning.
+
+Top of the 9th:
+
+ [New Pitcher Name] is still on the mound for the Phillies.
+ Grandal strikes out.
+ Jimenez hits an out.
+ McGuire hits an out to end the inning.
+
+Bottom of the 9th:
+
+ Bohm hits an out.
+ Camargo strikes out.
+ Castellanos hits a single.
+ Gregorius hits a single, advancing Castellanos to second.
+ Hall grounds into a double play to end the game.
+
+Final Result:
+
+Philadelphia Phillies win 7-4! 

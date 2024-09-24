@@ -3,7 +3,7 @@ from simulator.game_simulator import *
 from manager.baseball_manager import *
 from manager.rules import *
 from genetica.mlbeticA import *
-
+from pnl.audio_an_text_procesing import*
 
 def main():
     teams = dl.load_data()
@@ -38,7 +38,9 @@ def main():
     game_simulator = GameSimulator(manager, t1_batters, t1_pitchers, t2_batters, t2_pitchers, h_lineup, a_lineup)
     game_simulator.simulate_game()
     game_simulator.save_log('game_log.json')
+    generate_text_and_audio("game_log.json", t1.team_name, t2.team_name)
 
+    
 
 if __name__ == "__main__":
     main()

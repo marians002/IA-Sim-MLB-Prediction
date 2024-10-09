@@ -50,8 +50,7 @@ def main():
         h_lineup.append(t1_batters[i])
         a_lineup.append(t2_batters[i])
 
-    game_simulator = GameSimulator(manager, t1, t2, t1_batters, t1_pitchers, t2_batters, t2_pitchers, h_lineup,
-                                   a_lineup)
+    game_simulator = GameSimulator(manager, t1, t2, t1_batters, t1_pitchers, t2_batters, t2_pitchers, h_lineup, a_lineup)
     game_simulator.simulate_game()
     game_simulator.save_log('game_log.json')
 

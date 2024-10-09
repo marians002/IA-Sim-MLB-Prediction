@@ -4,18 +4,21 @@ def get_state_representation(game_state):
 
 
 class BaseballManager:
-    def __init__(self, rules, learning_agent):
+    def __init__(self, rules):
         self.rules = rules
-        self.learning_agent = learning_agent
+        # self.learning_agent = learning_agent
 
     def add_rule(self, rule):
         self.rules.append(rule)
 
     def evaluate_rules(self, game_state):
-        state = get_state_representation(game_state)
-        action_name = self.learning_agent.choose_action(state)
-        action = next((rule.action for rule in self.rules if rule.action.__name__ == action_name), None)
-        if action:
-            return action
+        # state = get_state_representation(game_state)
+        # action_name = self.learning_agent.choose_action(state)
+        # action = next((rule.action for rule in self.rules if rule.action.__name__ == action_name), None)
+        # if action:
+            # return action
+        for rule in self.rules:
+            if rule.condition(game_state):
+                return rule.name
         return "No action"
 

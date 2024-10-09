@@ -1,12 +1,24 @@
+def get_state_representation(game_state):
+    # Convert game state to a tuple or string representation
+    return game_state.inning, game_state.outs, game_state.score_difference
+
+
 class BaseballManager:
-    def __init__(self):
-        self.rules = []
+    def __init__(self, rules):
+        self.rules = rules
+        # self.learning_agent = learning_agent
 
     def add_rule(self, rule):
         self.rules.append(rule)
 
     def evaluate_rules(self, game_state):
+        # state = get_state_representation(game_state)
+        # action_name = self.learning_agent.choose_action(state)
+        # action = next((rule.action for rule in self.rules if rule.action.__name__ == action_name), None)
+        # if action:
+            # return action
         for rule in self.rules:
-            if rule(game_state):
-                return rule.__name__
+            if rule.condition(game_state):
+                return rule.name
         return "No action"
+

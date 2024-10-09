@@ -24,9 +24,9 @@ def load_csv():
     # Get the path to the CSV file
     current_dir = os.path.dirname(__file__)
     csv_path = os.path.join(current_dir, '../stats csv', 'pitchers 2022 PA50.csv')
-    pitchers = pd.read_csv(csv_path)
+    pitchers = pd.read_csv(csv_path).drop('year', axis=1)
     csv_path = os.path.join(current_dir, '../stats csv', 'batters 2022 PA50.csv')
-    batters = pd.read_csv(csv_path)
+    batters = pd.read_csv(csv_path).drop(['year', 'player_age'], axis=1)
     return pitchers, batters
 
 

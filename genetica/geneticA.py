@@ -80,6 +80,7 @@ def mutate(child, pool):
         candidates = []
         
         i = random.randint(a=0, b=(len(child)-2))
+        # region Fix this
         if child[i].pos[0] == 'DH':
             return child
         

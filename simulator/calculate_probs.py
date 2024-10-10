@@ -42,12 +42,12 @@ def determine_pitch_result(batter, pitcher, first_runner, pitch_count, defensive
     else:
         double_play_prob = 0.1
 
-    out_prob = 1 - (strike_prob + ball_prob + foul_prob + hit_prob + double_play_prob)
-    outcomes = ['strike', 'ball', 'foul', 'hit', 'out', 'double_play']
-
     # Increase hit probability after 70 pitches
     if pitch_count > 70:
-        hit_prob *= 1.1
+        hit_prob *= 1.05
+
+    out_prob = 1 - (strike_prob + ball_prob + foul_prob + hit_prob + double_play_prob)
+    outcomes = ['strike', 'ball', 'foul', 'hit', 'out', 'double_play']
 
     batter_single_rate = batter.single / batter.ab
     batter_double_rate = batter.double / batter.ab

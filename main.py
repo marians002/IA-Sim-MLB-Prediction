@@ -13,7 +13,7 @@ def main():
     # They will be fixed by the moment
     t1 = teams[12]
     t2 = teams[10]
-    # dl.print_team_rosters([t1, t2])
+    dl.print_team_rosters([t1, t2])
 
     t1_pitchers, t1_batters = dl.separate_pitchers_batters(t1)
     t2_pitchers, t2_batters = dl.separate_pitchers_batters(t2)

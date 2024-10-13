@@ -1,9 +1,7 @@
 from data_loader import data_loader as dl
 from simulator.game_simulator import *
 from manager.baseball_manager import *
-from manager.RuleClass import *
-from manager.rules_conditions import *
-from genetica.mlbeticA import *
+# from genetica.mlbeticA import *
 
 
 def main():
@@ -13,27 +11,13 @@ def main():
     # They will be fixed by the moment
     t1 = teams[12]
     t2 = teams[10]
-    dl.print_team_rosters([t1, t2])
+    # dl.print_team_rosters([t1, t2])
 
     t1_pitchers, t1_batters = dl.separate_pitchers_batters(t1)
     t2_pitchers, t2_batters = dl.separate_pitchers_batters(t2)
 
-    rules = [
-        Rule("Change Pitcher", change_pitcher_condition, change_pitcher_action),
-        Rule("Steal Base", steal_base_condition, steal_base_action),
-        Rule("Bunt", bunt_condition, bunt_action),
-        Rule("Pinch Hitter", pinch_hitter_condition, pinch_hitter_action),
-        Rule("Hit and Run", hit_and_run_condition, hit_and_run_action),
-        Rule("Intentional Walk", intentional_walk_condition, intentional_walk_action),
-        Rule("Pickoff", pickoff_condition, pickoff_action)
-        # Rule("Infield In", infield_in_condition, infield_in_action),
-        # Rule("Defensive Positioning", defensive_positioning_condition, defensive_positioning_action),
-        # Rule("Challenge", challenge_condition, challenge_action),
-        # Rule("Defensive Shift", defensive_shift_condition, defensive_shift_action),
-        # Rule("Bullpen Usage", bullpen_usage_condition, bullpen_usage_action),
-    ]
-
-    manager = BaseballManager(rules)
+    manager_t1 = BaseballManager()
+    manager_t2 = BaseballManager()
 
     # t = get_lineup(t1_pitchers, t1_batters)
 
@@ -50,7 +34,8 @@ def main():
         h_lineup.append(t1_batters[i])
         a_lineup.append(t2_batters[i])
 
-    game_simulator = GameSimulator(manager, t1, t2, t1_batters, t1_pitchers, t2_batters, t2_pitchers, h_lineup, a_lineup)
+    game_simulator = GameSimulator(manager_t1, manager_t2, t1, t2, t1_batters, t1_pitchers, t2_batters, t2_pitchers,
+                                   h_lineup, a_lineup)
     game_simulator.simulate_game()
     game_simulator.save_log('game_log.json')
 

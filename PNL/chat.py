@@ -67,3 +67,5 @@ if __name__ == "__main__":
     # Guardar respuesta como archivo md
     with open('Commentary.md', 'w') as file:
         file.write(respuesta)
+    with open('Commentary.txt', 'w') as file:
+        file.write(respuesta)

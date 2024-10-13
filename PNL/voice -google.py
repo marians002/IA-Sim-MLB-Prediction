@@ -1,14 +1,10 @@
 from gtts import gTTS
 import pygame
 import io
-from chat import *
 
-file_path = 'game_log.json'
-team1 = 'Orioles'
-team2 = 'Yankees'
-prompt = generate_prompt_from_game_log(file_path, team1, team2)
-
-ans = get_gemini_response(prompt)
+# Read commentary.txt
+with open('Commentary.txt', 'r') as file:
+    ans = file.read()
 # Crear un objeto gTTS
 tts = gTTS(ans, lang="en-us")
 

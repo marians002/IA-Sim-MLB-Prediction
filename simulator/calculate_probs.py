@@ -35,16 +35,18 @@ def determine_pitch_result(batter, pitcher, first_runner, pitch_count, defensive
     # Adjust hit probability based on defensive rate
     hit_prob *= (1 - defensive_rate / 90)
 
-    # Increase the double play probability if first_runner and batter are slow players
-    if (first_runner and first_runner.sprint_speed and first_runner.sprint_speed < 30
-            and batter.sprint_speed and batter.sprint_speed < 30):
-        double_play_prob = 0.15
-    else:
-        double_play_prob = 0.1
-
     # Increase hit probability after 70 pitches
     if pitch_count > 70:
         hit_prob *= 1.05
+
+    # Increase the double play probability if first_runner and batter are slow players
+    if first_runner:
+        double_play_prob = 0.02
+        if (first_runner.sprint_speed and first_runner.sprint_speed < 30 and
+                batter.sprint_speed and batter.sprint_speed < 30):
+            double_play_prob += 0.13
+    else:
+        double_play_prob = 0
 
     out_prob = 1 - (strike_prob + ball_prob + foul_prob + hit_prob + double_play_prob)
     outcomes = ['strike', 'ball', 'foul', 'hit', 'out', 'double_play']

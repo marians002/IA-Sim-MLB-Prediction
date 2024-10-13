@@ -1,4 +1,6 @@
 import random
+from collections import defaultdict
+
 
 def generate_schedule(teams : list):
     num_teams = len(teams)
@@ -20,25 +22,40 @@ def generate_schedule(teams : list):
 
     return full_schedule
 
-def get_takeover(closers :list, reliefs :list, inning):
-    if inning >=8:
-        pitcher = closers.pop(0)
-        closers.append(pitcher)
-        return pitcher
-    pitcher = reliefs.pop(0)
-    reliefs.append(pitcher)
-    return pitcher
-
-def select_starting_pitcher(rotation : list):
-    # Seleccionar el abridor con el mejor rendimiento reciente
-    pitcher = rotation.pop()
-    rotation.insert(1, pitcher)  # Rotate teams
-
-def pitcher_val(pitcher): return pitcher.k_percent * (1-pitcher.bb_percent) * (1-pitcher.avg) * pitcher.pa
-
-def categorize_pitchers(pitchers : list):
-    # Categorizar a los pitchers en abridores, cerradores y relevistas
-    non_oppeners = list(sorted(pitchers, key=pitcher_val, reverse=True)[4])
-    non_oppeners.sort(key=lambda p: categorize_pitchers(p) * p.gf, reverse=True)
+def determine_postseason_teams(divisions, standings):
+    # Determine division winners
+    division_winners = []
+    wild_cards = []
     
-    return pitchers[:4], non_oppeners[:3], non_oppeners[3:]
+    for division in divisions:
+        division_standings = sorted(division, key=lambda x: standings[x], reverse=True)
+        division_winners.append(division_standings[0])
+        wild_cards.extend(division_standings[1:])
+    
+    # Determine wild card teams
+    wild_cards = sorted(wild_cards, key=lambda x: standings[x], reverse=True)[:2]
+    
+    return division_winners, wild_cards
+
+def determine_postseason_structure(division_winners):
+    """Determine the postseason structure based on MLB rules."""
+    # Sort teams by standings
+    sf_winner1 = None
+    sf_winner2 = None
+    for division in division_winners:
+        # Wild Card Round
+        wc_winner1 = simulate_series(sorted_teams[2], sorted_teams[5], 3)
+        wc_winner2 = simulate_series(sorted_teams[3], sorted_teams[4], 3)
+        
+        # Division Series
+        ds_winner1 = simulate_series(sorted_teams[0], wc_winner2, 3)
+        ds_winner2 = simulate_series(sorted_teams[1], wc_winner1, 3)
+        
+        # Semifinals
+        sf_winner1 = simulate_series(ds_winner1, ds_winner2, 3)
+        
+        # Final
+    final_winner = simulate_series(sf_winner1, sf_winner1, 7)
+    
+    return final_winner
+

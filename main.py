@@ -1,7 +1,7 @@
 from data_loader import data_loader as dl
 from simulator.game_simulator import *
 from manager.baseball_manager import *
-# from genetica.mlbeticA import *
+from genetica.mlbeticA import *
 
 
 def main():
@@ -19,7 +19,7 @@ def main():
     manager_t1 = BaseballManager()
     manager_t2 = BaseballManager()
 
-    # t = get_lineup(t1_pitchers, t1_batters)
+    t = get_lineup(t1_pitchers, t1_batters)
 
     # Test lineup (Default batters and pitchers)
     h_lineup = [t1_pitchers[0]]

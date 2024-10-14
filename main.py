@@ -1,6 +1,5 @@
 from simulator.postseason import *
 from simulator.schedule import *
-from simulator.series_simulator import *
 from metrics.utils import *
 
 

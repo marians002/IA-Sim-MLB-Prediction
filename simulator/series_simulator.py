@@ -4,6 +4,7 @@ from data_loader import data_loader as dl
 from data_loader.team import Team
 from manager.baseball_manager import BaseballManager
 from genetica.mlbeticA import get_lineup
+from manager.pitcher_selection import *
 
 
 def simulate_series(team1: Team, team2: Team, games, type, log_dir="logs/Series"):
@@ -38,11 +39,17 @@ def simulate_game(team1, team2):
     t1_pitchers, t1_batters = dl.separate_pitchers_batters(team1)
     t2_pitchers, t2_batters = dl.separate_pitchers_batters(team2)
 
-    h_lineup = get_lineup(t1_batters, t1_pitchers)
-    a_lineup = get_lineup(t2_batters, t2_pitchers)
+    # Get pitchers
+    rotation_t1, bullpen_t1, rotation_t2, bullpen_t2 = get_rotations_bullpens(t1_pitchers, t2_pitchers)
 
-    game_simulator = GameSimulator(BaseballManager(), team1, team2, t1_batters, t1_pitchers, t2_batters, t2_pitchers,
-                                   h_lineup, a_lineup)
+    h_lineup = get_lineup(t1_pitchers, t1_batters)
+    a_lineup = get_lineup(t2_pitchers, t2_batters)
+
+    h_lineup[0] = rotation_t1[0]
+    a_lineup[0] = rotation_t2[0]
+
+    game_simulator = GameSimulator(BaseballManager(), team1, team2, t1_batters, t2_batters,
+                                   h_lineup, a_lineup, bullpen_t1, bullpen_t2)
     game_simulator.simulate_game()
     game_simulator.save_log()
     return game_simulator

@@ -85,13 +85,8 @@ def mutate(child, pool):
             return child
         
         for player in pool:
-            if child[i].player_id != player.player_id:
-                
-                """ a = child[i].pos[0] in ('RF', 'CF', 'LF') and player.pos[0] == 'OF'
-                b = child[i].pos[0] == 'OF' and player.pos[0] in ('RF', 'CF', 'LF') """
-                
-                if child[i].pos[0] == player.pos[0]:
-                    candidates.append(player)
+            if child[i].player_id != player.player_id and child[i].pos[0] == player.pos[0]:
+                candidates.append(player)
                     
         if len(candidates) == 0: return child
         child[i] = random.sample(candidates, k=1)[0]

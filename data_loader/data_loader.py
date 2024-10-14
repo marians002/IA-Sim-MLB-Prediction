@@ -120,8 +120,9 @@ def load_from_json(file_path):
 
 
 def separate_pitchers_batters(team):
-    pitchers = [player for player in team.players if isinstance(player, Pitcher)]
-    batters = [player for player in team.players if isinstance(player, Batter)]
+    pitchers = [player for player in team.players if isinstance(player, Pitcher) and not isinstance(player, Batter)]
+    batters = [player for player in team.players if isinstance(player, Batter) and not isinstance(player, Pitcher)]
+    batters = [player for player in batters if player.first_name != "Shohei"]
     return pitchers, batters
 
 

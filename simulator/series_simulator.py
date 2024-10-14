@@ -44,9 +44,16 @@ def simulate_game(team1, team2):
 
     h_lineup = get_lineup(t1_pitchers, t1_batters)
     a_lineup = get_lineup(t2_pitchers, t2_batters)
+    # h_lineup = [rotation_t1[0]]
+    # a_lineup = [rotation_t2[0]]
 
     h_lineup[0] = rotation_t1[0]
     a_lineup[0] = rotation_t2[0]
+
+    # Fill lineups with first 9 batters
+    # for i in range(10):
+    #     h_lineup.append(t1_batters[i])
+    #     a_lineup.append(t2_batters[i])
 
     game_simulator = GameSimulator(BaseballManager(), team1, team2, t1_batters, t2_batters,
                                    h_lineup, a_lineup, bullpen_t1, bullpen_t2)

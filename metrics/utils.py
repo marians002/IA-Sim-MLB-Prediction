@@ -19,6 +19,7 @@ def save_final_statistics(schedule, filename='final_statistics.json'):
 
     return all_game_stats
 
+
 def create_dataframes_from_results(results):
     # Initialize empty dictionaries for victories and losses
     victories = {}

@@ -11,7 +11,7 @@ def main():
 
     # Create DataFrames for each division and league
     # (nl_east_df, nl_west_df, nl_central_df, nl_overall_df,
-    #  al_east_df, al_west_df, al_central_df, al_overall_df) = create_dataframes_from_results(results)
+     # al_east_df, al_west_df, al_central_df, al_overall_df) = create_dataframes_from_results(results)
 
     # # Print the American League DataFrames
     # print("AL East DataFrame:")

@@ -74,9 +74,11 @@ def get_team_rosters(year=2022):
 
 def add_players_to_teams(team_rosters, players):
     teams = []
+    i = 1
 
     for team_name, team_players in team_rosters.items():
-        new_team = Team(team_name)
+        new_team = Team(team_name, id=i)
+        i += 1
         for player_name, player_position in team_players:
             for player in players:
                 if player.first_name + ' ' + player.last_name == player_name:
@@ -118,8 +120,9 @@ def load_from_json(file_path):
 
 
 def separate_pitchers_batters(team):
-    pitchers = [player for player in team.players if isinstance(player, Pitcher)]
-    batters = [player for player in team.players if isinstance(player, Batter)]
+    pitchers = [player for player in team.players if isinstance(player, Pitcher) and not isinstance(player, Batter)]
+    batters = [player for player in team.players if isinstance(player, Batter) and not isinstance(player, Pitcher)]
+    batters = [player for player in batters if player.first_name != "Shohei"]
     return pitchers, batters
 
 

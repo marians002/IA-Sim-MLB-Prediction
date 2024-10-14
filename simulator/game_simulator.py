@@ -1,20 +1,18 @@
 import json
-from manager.intentions import *
 from manager.BDI import *
 from simulator.calculate_probs import *
 
 
 class GameSimulator:
-    def __init__(self, manager_t1, manager_t2, t1, t2, batters_t1, pitchers_t1, batters_t2, pitchers_t2, h_lineup,
-                 a_lineup):
-        self.manager_t1 = manager_t1
-        self.manager_t2 = manager_t2
+    def __init__(self, manager, t1, t2, batters_t1, batters_t2, h_lineup,
+                 a_lineup, h_bullpen, a_bullpen):
+        self.manager = manager
         self.home_team = t1.team_name
         self.away_team = t2.team_name
         self.batters_t1 = batters_t1
-        self.pitchers_t1 = pitchers_t1
         self.batters_t2 = batters_t2
-        self.pitchers_t2 = pitchers_t2
+        self.bullpen_h = h_bullpen
+        self.bullpen_a = a_bullpen
         self.game_state = GameState()
         self.log = []
         self.home_team_lineup = h_lineup
@@ -45,13 +43,10 @@ class GameSimulator:
             self.game_state.update(pitcher=pitcher, batter=batter)
 
             # Evaluate the rules and make decisions
-            self.set_batting()
-            intention = self.manager_t1.run(self.game_state)
-            # action_t2 = self.manager_t2.evaluate_rules(self.game_state)
+            intention = self.manager.run(self.game_state)
 
             # result: string['out', 'single', 'double', 'triple', 'home_run', 'walk', 'strikeout', 'bunt']
             # action_result: string explaining result
-
             result, action_result = self.apply_manager_decision(intention)
 
             # Si la acción del manager permite que el bateador batee, efectuar el pitcheo
@@ -104,17 +99,9 @@ class GameSimulator:
         else:
             self.game_state.update(home_team_batting=True)
 
-    def set_batting(self):
-        if self.game_state.home_team_batting:
-            self.manager_t1.set_batting(True)
-            self.manager_t2.set_batting(False)
-        else:
-            self.manager_t1.set_batting(False)
-            self.manager_t2.set_batting(True)
-
     def apply_manager_decision(self, decision: Intention):
         if decision.name == "Change Pitcher":
-            bullpen = self.pitchers_t2 if self.game_state.home_team_batting else self.pitchers_t1
+            bullpen = self.bullpen_a if self.game_state.home_team_batting else self.bullpen_h
             new_pitcher, action_result = decision.action(self.game_state, bullpen)
             self.update_pitcher(new_pitcher)
             return None, action_result
@@ -132,6 +119,10 @@ class GameSimulator:
                 # Como hubo un cambio en el line-up, hay que recalcular la defensa
                 self.defensive_rate_away = calculate_defensive_rate(self.away_team_lineup)
                 return None, text
+
+        elif decision.name == "Infield In":
+            result, text = decision.action(self.game_state, self.get_pitch_count(), self.get_def_rate())
+            return result, text
 
         elif (decision.name == "Steal Base" or decision.name == "Bunt" or decision.name == "Pickoff"
               or decision.name == "Intentional Walk" or decision.name == "Hit and Run"
@@ -199,6 +190,20 @@ class GameSimulator:
                 return True
         return False
 
+    def get_final_statistics(self):
+        # return home team: score, away team: score
+        return {
+            'Home Team': self.home_team,
+            'Home Score': self.game_state.home_score,
+            'Away Team': self.away_team,
+            'Away Score': self.game_state.away_score,
+        }
+
+    def get_winner(self):
+        if self.game_state.home_score > self.game_state.away_score:
+            return self.home_team
+        return self.away_team
+
     def update_log(self, batter, pitcher, action, result, action_result):
         if self.game_state.home_team_batting:
             batting_team = self.home_team
@@ -231,7 +236,7 @@ class GameSimulator:
             'Result': result
         })
 
-    def save_log(self, filename):
+    def save_log(self, filename='game_log.json'):
         # print(self.log)
         with open(filename, 'w') as f:
             json.dump(self.log, f, indent=4)

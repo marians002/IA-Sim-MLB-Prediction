@@ -1,5 +1,16 @@
 *.log
+*.xml
 *.pyc
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.tex
+*.bib
 /.idea
+__pycache__
 /__pycache__
 /manager/__pycache__
+/PNL/__pycache__

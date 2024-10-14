@@ -16,31 +16,31 @@ from genetica import geneticA
 
 def fitness_lineup(lineup):
     val = 0
-    val += 250*lineup[0].on_base_percent + lineup[0].avg_best_speed
-    val += 250*lineup[1].on_base_percent + 250* lineup[1].avg
-    val += 500*lineup[2].avg
-    val += 500*lineup[3].slg_percent
-    val += 250*lineup[4].avg + 300*lineup[4].home_run
+    val += 250 * lineup[0].on_base_percent + lineup[0].avg_best_speed
+    val += 250 * lineup[1].on_base_percent + 250 * lineup[1].avg
+    val += 500 * lineup[2].avg
+    val += 500 * lineup[3].slg_percent
+    val += 250 * lineup[4].avg + 300 * lineup[4].home_run
     # 6th player
     if lineup[5].oaa is not None:
-        val += 250*lineup[5].avg + 4*lineup[5].oaa+60
+        val += 250 * lineup[5].avg + 4 * lineup[5].oaa + 60
     else:
-        val += 500*lineup[5].avg
+        val += 500 * lineup[5].avg
     # 7th player
     if lineup[6].oaa is not None:
-        val += 250*lineup[6].avg + 4*lineup[6].oaa+60
+        val += 250 * lineup[6].avg + 4 * lineup[6].oaa + 60
     else:
-        val += 500*lineup[6].avg
+        val += 500 * lineup[6].avg
     # 8th player
     if lineup[7].oaa is not None:
-        val += 8*lineup[7].oaa+120
+        val += 8 * lineup[7].oaa + 120
     else:
-        val += 500*lineup[7].avg
+        val += 500 * lineup[7].avg
     # 9th player
     if lineup[8].oaa is not None:
-        val += 8*lineup[8].oaa+120
+        val += 8 * lineup[8].oaa + 120
     else:
-        val += lineup[8].avg_best_speed + 250*lineup[8].avg
+        val += lineup[8].avg_best_speed + 250 * lineup[8].avg
     return val
 
 
@@ -80,11 +80,11 @@ def initial_population(pitchers, batters, n=20):
             OF.append(batter)
         else:
             DH.append(batter)
-    
+
     base_replacement = [p for sublist in [B1, B2, B3, SS] if len(sublist) >= 2 for p in sublist]
     field_replacement = [p for sublist in [LF, CF, RF, OF] if len(sublist) >= 2 for p in sublist]
-    DH_replacement = base_replacement + field_replacement 
-         
+    DH_replacement = base_replacement + field_replacement
+
     change = True
     while change:
         change = False
@@ -161,7 +161,7 @@ def initial_population(pitchers, batters, n=20):
                     elif SS[0] in B2:
                         B2.remove(SS[0])
                     else:
-                        B3.remove(SS[0])                    
+                        B3.remove(SS[0])
                 elif idx == 8:
                     DH.append(random.choice(DH_replacement))
                     DH_replacement.remove(DH[0])
@@ -183,9 +183,9 @@ def initial_population(pitchers, batters, n=20):
                             CF.remove(DH[0])
                         else:
                             RF.remove(DH[0])
-                    
+
                     DH[0].pos[0] = 'DH'
-                
+
     # region TO CHANGE
     for _ in range(n):
         lineup = [None] * 10
@@ -194,7 +194,7 @@ def initial_population(pitchers, batters, n=20):
         for idx in range(len(rols)):
             lineup[idx] = random.choice(rols[idx])
         population.append(lineup)
-        
+
     return population
 
 
@@ -202,9 +202,10 @@ def get_lineup(pitchers, batters):
     population = initial_population(pitchers, batters)
     pool = list(batters)
     pool.extend(pitchers)
-    return shift(geneticA.genetic_algo(population, fitness_lineup, pool, search_t=10))
+    return shift(geneticA.genetic_algo(population, fitness_lineup, pool, search_t=1))
 
-def shift(iterable:list):
+
+def shift(iterable: list):
     next_e = iterable[-1]
     for i in range(len(iterable)):
         iterable[i], next_e = next_e, iterable[i]

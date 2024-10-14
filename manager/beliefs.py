@@ -5,9 +5,9 @@ from simulator.game_state import *
 # Regla del Cambio de Pitcher Basado en el Conteo de Lanzamientos
 def change_pitcher_condition(game_state: GameState):
     if game_state.home_team_batting:
-        if game_state.pitch_count_away >= 90:
+        if game_state.pitch_count_away >= 70:
             return True
-    elif game_state.pitch_count_home >= 90:
+    elif game_state.pitch_count_home >= 70:
         return True
     return False
 

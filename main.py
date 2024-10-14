@@ -2,7 +2,7 @@ from data_loader import data_loader as dl
 from simulator.game_simulator import *
 from manager.baseball_manager import *
 from manager.pitcher_selection import *
-# from genetica.mlbeticA import *
+from genetica.mlbeticA import *
 
 
 def main():
@@ -17,17 +17,14 @@ def main():
     t1_pitchers, t1_batters = dl.separate_pitchers_batters(t1)
     t2_pitchers, t2_batters = dl.separate_pitchers_batters(t2)
 
-    # t = get_lineup(t1_pitchers, t1_batters)
-
     # Get pitchers
     rotation_t1, bullpen_t1, rotation_t2, bullpen_t2 = get_rotations_bullpens(t1_pitchers, t2_pitchers)
 
-    h_lineup = [rotation_t1[0]]
-    a_lineup = [rotation_t2[0]]
+    h_lineup = get_lineup(t1_pitchers, t1_batters)
+    a_lineup = get_lineup(t2_pitchers, t2_batters)
 
-    for i in range(10):
-        h_lineup.append(t1_batters[i])
-        a_lineup.append(t2_batters[i])
+    h_lineup[0] = rotation_t1[0]
+    a_lineup[0] = rotation_t2[0]
 
     game_simulator = GameSimulator(BaseballManager(), t1, t2, t1_batters, t2_batters,
                                    h_lineup, a_lineup, bullpen_t1, bullpen_t2)
@@ -37,22 +34,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Genetic algorithm example
-# pool = players
-# init_population = []
-# for i in range(20):
-#     init_population.append(random.sample(players, 9))
-# fitness = fitness_lineup
-# ans = geneticA.genetic_algo(population=init_population, fitness=fitness, pool=pool)
-
-# Case of use
-# Fitness function is max when numeric array is ordered
-# numbers = list(range(1, 11))
-# permutations = list(itertools.permutations(numbers))
-# parents = random.sample(permutations, 2)
-# child1, child2 = geneticA.order_one_crossover(parents[0], parents[1])
-# pool = numbers
-# init_population = random.sample(permutations, 20)
-# ans = geneticA.genetic_algo(init_population, geneticA.fitness_sort, pool)
-# print(ans)

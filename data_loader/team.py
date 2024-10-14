@@ -9,5 +9,5 @@ class Team:
         self.players.append(player)
         
     def __str__(self):
-        print(self.team_name)
+        return self.team_name
 

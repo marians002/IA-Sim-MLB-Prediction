@@ -1,4 +1,22 @@
 import pandas as pd
+from simulator.series_simulator import *
+
+
+def save_final_statistics(schedule, filename='final_statistics.json'):
+    all_game_stats = []
+
+    for game in schedule:
+        game_simulator = simulate_game(game[0], game[1])
+
+        # Collect final statistics
+        game_stats = game_simulator.get_final_statistics()
+        all_game_stats.append(game_stats)
+
+    # Save all game statistics to a JSON file
+    with open(filename, 'w') as f:
+        json.dump(all_game_stats, f, indent=4)
+
+    return all_game_stats
 
 def create_dataframes_from_results(results):
     # Initialize empty dictionaries for victories and losses
@@ -52,7 +70,6 @@ def create_dataframes_from_results(results):
 
     # Populate the lists with team data
     for team, wins in victories.items():
-        league, division = get_league_and_division(team)
         team_data = {'Team': team, 'Victories': wins, 'Losses': losses[team]}
 
         if league == 'NL':
@@ -85,20 +102,3 @@ def create_dataframes_from_results(results):
     al_overall_df = pd.DataFrame(al_overall_data)
 
     return nl_east_df, nl_west_df, nl_central_df, nl_overall_df, al_east_df, al_west_df, al_central_df, al_overall_df
-
-def get_league_and_division(team_name):
-         # Define the divisions
-        if team_name in ["Baltimore Orioles", "Boston Red Sox", "New York Yankees", "Tampa Bay Rays", "Toronto Blue Jays"]:
-            return "AL", "AL East"
-        elif team_name in ["Chicago White Sox", "Cleveland Guardians", "Detroit Tigers", "Kansas City Royals", "Minnesota Twins"]:
-            return "AL", "AL Central"
-        elif team_name in ["Houston Astros", "Los Angeles Angels", "Oakland Athletics", "Seattle Mariners", "Texas Rangers"]:
-            return "AL", "AL West"
-        elif team_name in ["Atlanta Braves", "Miami Marlins", "New York Mets", "Philadelphia Phillies", "Washington Nationals"]:
-            return "NL", "NL East"
-        elif team_name in ["Chicago Cubs", "Cincinnati Reds", "Milwaukee Brewers", "Pittsburgh Pirates", "St. Louis Cardinals"]:
-            return "NL", "NL Central"
-        elif team_name in ["Arizona Diamondbacks", "Colorado Rockies", "Los Angeles Dodgers", "San Diego Padres", "San Francisco Giants"]:
-            return "NL", "NL West"
-        else:
-            raise Exception("Team not found in any division")

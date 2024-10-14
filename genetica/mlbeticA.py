@@ -202,7 +202,7 @@ def get_lineup(pitchers, batters):
     population = initial_population(pitchers, batters)
     pool = list(batters)
     pool.extend(pitchers)
-    return shift(geneticA.genetic_algo(population, fitness_lineup, pool, search_t=10))
+    return shift(geneticA.genetic_algo(population, fitness_lineup, pool, search_t=1))
 
 
 def shift(iterable: list):

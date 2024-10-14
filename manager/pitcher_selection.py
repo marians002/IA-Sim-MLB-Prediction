@@ -1,5 +1,3 @@
-# pitcher_selection.py
-
 from data_loader.player import Pitcher
 
 
@@ -27,10 +25,23 @@ def select_starting_pitchers(pitchers, rotation_size=5):
     return starting_rotation
 
 
-# Example usage
-if __name__ == "__main__":
-    # Assume we have a list of Pitcher objects
-    pitchers = [...]  # List of Pitcher objects
-    rotation = select_starting_pitchers(pitchers)
-    for pitcher in rotation:
-        print(pitcher)
+def bullpen_management(starters, all_pitchers):
+    # Calculate scores for each pitcher
+    pitchers = [p for p in all_pitchers if p not in starters]
+    pitcher_scores = [(p, calculate_pitcher_score(p)) for p in pitchers]
+
+    # Sort pitchers by score in descending order
+    sorted_pitchers = sorted(pitcher_scores, key=lambda x: x[1], reverse=True)
+
+    # Select the top N pitchers for the rotation
+    return [p for p, score in sorted_pitchers]
+
+
+def get_rotations_bullpens(t1_pitchers, t2_pitchers):
+    rotation_t1 = select_starting_pitchers(t1_pitchers)
+    bullpen_t1 = bullpen_management(rotation_t1, t1_pitchers)
+
+    rotation_t2 = select_starting_pitchers(t2_pitchers)
+    bullpen_t2 = bullpen_management(rotation_t2, t2_pitchers)
+
+    return rotation_t1, bullpen_t1, rotation_t2, bullpen_t2

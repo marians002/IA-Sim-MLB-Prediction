@@ -1,6 +1,7 @@
 from data_loader import data_loader as dl
 from simulator.game_simulator import *
 from manager.baseball_manager import *
+from manager.pitcher_selection import *
 # from genetica.mlbeticA import *
 
 
@@ -16,26 +17,20 @@ def main():
     t1_pitchers, t1_batters = dl.separate_pitchers_batters(t1)
     t2_pitchers, t2_batters = dl.separate_pitchers_batters(t2)
 
-    manager_t1 = BaseballManager()
-    manager_t2 = BaseballManager()
-
     # t = get_lineup(t1_pitchers, t1_batters)
 
-    # Test lineup (Default batters and pitchers)
-    h_lineup = [t1_pitchers[0]]
-    t1_pitchers.pop(0)  # Remove the opening pitcher from the bullpen
-    a_lineup = [t2_pitchers[0]]
-    t2_pitchers.pop(0)  # Remove the opening pitcher from the bullpen
+    # Get pitchers
+    rotation_t1, bullpen_t1, rotation_t2, bullpen_t2 = get_rotations_bullpens(t1_pitchers, t2_pitchers)
 
-    # Posteriormente hay que cambiar las dos lineas de arriba para que se elija un pitcher y ese pitcher se coloque en
-    # la posicion 0 del listado de pitchers para hacer cositas con los cambios de pitcher luego
+    h_lineup = [rotation_t1[0]]
+    a_lineup = [rotation_t2[0]]
 
     for i in range(10):
         h_lineup.append(t1_batters[i])
         a_lineup.append(t2_batters[i])
 
-    game_simulator = GameSimulator(manager_t1, manager_t2, t1, t2, t1_batters, t1_pitchers, t2_batters, t2_pitchers,
-                                   h_lineup, a_lineup)
+    game_simulator = GameSimulator(BaseballManager(), t1, t2, t1_batters, t2_batters,
+                                   h_lineup, a_lineup, bullpen_t1, bullpen_t2)
     game_simulator.simulate_game()
     game_simulator.save_log('game_log.json')
 

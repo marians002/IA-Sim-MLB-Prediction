@@ -9,7 +9,7 @@ def speed_rate(runner):
 
 def change_pitcher_action(game_state: GameState, bullpen):
     if len(bullpen) > 1:
-        new_pitcher = bullpen.pop(random.randint(1, len(bullpen) - 1))
+        new_pitcher = bullpen.pop(0)
         game_state.update(pitch_count=0, pitcher=new_pitcher)
         return new_pitcher, f"New pitcher is now {new_pitcher.first_name} {new_pitcher.last_name}"
     return None, 'No more pitchers available.'

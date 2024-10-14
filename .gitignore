@@ -1,5 +1,13 @@
 *.log
 *.pyc
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.tex
+*.bib
 /.idea
 /__pycache__
 /manager/__pycache__

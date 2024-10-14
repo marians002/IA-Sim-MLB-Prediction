@@ -1,11 +1,14 @@
 import json
-from manager.rules_action import *
+from manager.intentions import *
+from manager.BDI import *
 from simulator.calculate_probs import *
 
 
 class GameSimulator:
-    def __init__(self, manager, t1, t2, batters_t1, pitchers_t1, batters_t2, pitchers_t2, h_lineup, a_lineup):
-        self.manager = manager
+    def __init__(self, manager_t1, manager_t2, t1, t2, batters_t1, pitchers_t1, batters_t2, pitchers_t2, h_lineup,
+                 a_lineup):
+        self.manager_t1 = manager_t1
+        self.manager_t2 = manager_t2
         self.home_team = t1.team_name
         self.away_team = t2.team_name
         self.batters_t1 = batters_t1
@@ -42,11 +45,14 @@ class GameSimulator:
             self.game_state.update(pitcher=pitcher, batter=batter)
 
             # Evaluate the rules and make decisions
-            action = self.manager.evaluate_rules(self.game_state)
+            self.set_batting()
+            intention = self.manager_t1.run(self.game_state)
+            # action_t2 = self.manager_t2.evaluate_rules(self.game_state)
 
             # result: string['out', 'single', 'double', 'triple', 'home_run', 'walk', 'strikeout', 'bunt']
             # action_result: string explaining result
-            result, action_result = self.apply_manager_decision(action)
+
+            result, action_result = self.apply_manager_decision(intention)
 
             # Si la acción del manager permite que el bateador batee, efectuar el pitcheo
             if result is None:
@@ -56,7 +62,7 @@ class GameSimulator:
             else:
                 self.update_pitch_count()
 
-            self.update_log(batter, pitcher, action, result, action_result)
+            self.update_log(batter, pitcher, intention.name, result, action_result)
             self.update_game_state(result)
             if self.reset_inning():
                 self.update_log(self.game_state.batter, self.game_state.pitcher, 'No action', 'Change teams',
@@ -98,45 +104,42 @@ class GameSimulator:
         else:
             self.game_state.update(home_team_batting=True)
 
-    def apply_manager_decision(self, decision):
-        # Handle decisions
-        if decision == "change_pitcher_action":
+    def set_batting(self):
+        if self.game_state.home_team_batting:
+            self.manager_t1.set_batting(True)
+            self.manager_t2.set_batting(False)
+        else:
+            self.manager_t1.set_batting(False)
+            self.manager_t2.set_batting(True)
+
+    def apply_manager_decision(self, decision: Intention):
+        if decision.name == "Change Pitcher":
             bullpen = self.pitchers_t2 if self.game_state.home_team_batting else self.pitchers_t1
-            new_pitcher, action_result = change_pitcher_action(self.game_state, bullpen)
+            new_pitcher, action_result = decision.action(self.game_state, bullpen)
             self.update_pitcher(new_pitcher)
             return None, action_result
 
-        elif decision == "steal_base_action":
-            return steal_base_action(self.game_state)
-
-        elif decision == "bunt_action":
-            return bunt_action(self.game_state)
-
-        elif decision == "pinch_hitter_action":
+        elif decision.name == "Pinch Hitter":
             if self.game_state.home_team_batting:
-                text = pinch_hitter_action(self.game_state, self.batters_t1, self.home_team_lineup,
-                                           self.current_batter)
+                text = decision.action(self.game_state, self.batters_t1, self.home_team_lineup,
+                                       self.current_batter)
                 # Como hubo un cambio en el line-up, hay que recalcular la defensa
                 self.defensive_rate_home = calculate_defensive_rate(self.home_team_lineup)
                 return None, text
             else:
-                text = pinch_hitter_action(self.game_state, self.batters_t2, self.away_team_lineup,
-                                           self.current_batter)
+                text = decision.action(self.game_state, self.batters_t2, self.away_team_lineup,
+                                       self.current_batter)
                 # Como hubo un cambio en el line-up, hay que recalcular la defensa
                 self.defensive_rate_away = calculate_defensive_rate(self.away_team_lineup)
                 return None, text
 
-        elif decision == "hit_and_run_action":
-            return hit_and_run_action(self.game_state)
+        elif (decision.name == "Steal Base" or decision.name == "Bunt" or decision.name == "Pickoff"
+              or decision.name == "Intentional Walk" or decision.name == "Hit and Run"
+              or decision.name == "No action"):
+            return decision.action(self.game_state)
 
-        elif decision == "intentional_walk_action":
-            return intentional_walk_action(self.game_state)
-
-        elif decision == "pickoff_action":
-            return pickoff_action(self.game_state)
-
-        elif decision == "No action":
-            return None, 'No action taken.'
+        # elif decision.name == "No action":
+        #     return None, 'No action taken.'
         # Add more decision handling as needed
         else:
             return None, "Decision not recognized or not implemented yet."

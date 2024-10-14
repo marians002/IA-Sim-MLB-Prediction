@@ -1,63 +1,90 @@
-def get_state_representation(game_state):
-    # Convert game state to a tuple or string representation
-    return game_state.inning, game_state.outs, game_state.score_difference
+from manager.BDI import Belief, Desire, Intention
+from manager.intentions import *
+from manager.beliefs import *
+from manager.desires import *
+import random
 
 
-# class BaseballManager:
-#     def __init__(self, rules):
-#         self.rules = rules
-#         # self.learning_agent = learning_agent
-#
-#     def add_rule(self, rule):
-#         self.rules.append(rule)
-#
-#     def evaluate_rules(self, game_state):
-#         # state = get_state_representation(game_state)
-#         # action_name = self.learning_agent.choose_action(state)
-#         # action = next((rule.action for rule in self.rules if rule.action.__name__ == action_name), None)
-#         # if action:
-#             # return action
-#         for rule in self.rules:
-#             if rule.condition(game_state):
-#                 return rule.name
-#         return "No action"
+def define_bdi():
+    b_change_pitcher = Belief("Change Pitcher", change_pitcher_condition)
+    b_steal_base = Belief("Steal Base", steal_base_condition)
+    b_bunt = Belief("Bunt", bunt_condition)
+    b_pinch_hitter = Belief("Pinch Hitter", pinch_hitter_condition)
+    b_hit_and_run = Belief("Hit and Run", hit_and_run_condition)
+    b_intentional_walk = Belief("Intentional Walk", intentional_walk_condition)
+    b_pickoff = Belief("Pickoff", pickoff_condition)
+
+    b = [b_change_pitcher, b_steal_base, b_bunt, b_pinch_hitter, b_hit_and_run, b_intentional_walk, b_pickoff]
+    # Create desire instances for different types of managers
+
+    conservative_desires = [
+        Desire("Change Pitcher", b_change_pitcher),
+        Desire("Intentional Walk", b_intentional_walk)
+    ]
+    aggressive_desires = [
+        Desire("Steal Base", b_steal_base),
+        Desire("Hit and Run", b_hit_and_run),
+        Desire("Pinch Hitter", b_pinch_hitter)
+    ]
+    defensive_desires = [
+        Desire("Bunt", b_bunt),
+        Desire("Pickoff", b_pickoff)
+    ]
+    neutral_desires = conservative_desires + aggressive_desires + defensive_desires
+
+    d = {
+        "conservative": conservative_desires,
+        "aggressive": aggressive_desires,
+        "defensive": defensive_desires,
+        "neutral": neutral_desires
+    }
+
+    i = [
+        Intention("Change Pitcher", change_pitcher_action),
+        Intention("Steal Base", steal_base_action),
+        Intention("Bunt", bunt_action),
+        Intention("Pinch Hitter", pinch_hitter_action),
+        Intention("Hit and Run", hit_and_run_action),
+        Intention("Intentional Walk", intentional_walk_action),
+        Intention("Pickoff", pickoff_action),
+    ]
+    return b, d, i
 
 
 class BaseballManager:
-    def __init__(self, beliefs, desires, intentions):
-        self.beliefs = beliefs
-        self.desires = desires
-        self.intentions = intentions
+    def __init__(self):
+        self.team_batting = False
+        self.beliefs, self.desires, self.intentions = define_bdi()
 
-    def perceive(self, game_state):
-        for belief in self.beliefs:
-            if belief.evaluate(game_state):
-                print(f"Belief {belief.name} is true")
+    def set_batting(self, flag: bool):
+        self.team_batting = flag
 
-    def generate_desires(self, game_state):
-        active_desires = []
-        for desire in self.desires:
-            if desire.evaluate(game_state):
-                active_desires.append(desire)
-                print(f"Desire {desire.name} is active")
-        return active_desires
+    def generate_desire(self, game_state, selected_rules):
+        for desire in selected_rules:
+            if desire.goal.evaluate(game_state):
+                return desire.name
+        return "No action"
 
-    def filter_intentions(self, active_desires):
-        active_intentions = []
-        for desire in active_desires:
-            for intention in self.intentions:
-                if intention.name == desire.name:
-                    active_intentions.append(intention)
-                    print(f"Intention {intention.name} is selected")
-        return active_intentions
+    def filter_intentions(self, active_desire):
+        for intention in self.intentions:
+            if intention.name == active_desire:
+                return intention
+        return Intention("No action", lambda x: (None, 'No action taken'))
 
-    def execute_intentions(self, game_state, active_intentions):
-        for intention in active_intentions:
-            result = intention.execute(game_state)
-            print(f"Executed intention {intention.name}: {result}")
+    def get_manager_rules(self, game_state):
+        percentages = evaluate_manager_types(game_state)
+        types = ["conservative", "aggressive", "defensive", "neutral"]
+        num_rules = 2  # Total number of rules to select
+        selected_rules = []
+
+        for i, manager_type in enumerate(types):
+            num_type_rules = round((percentages[manager_type] / 100) * num_rules)
+            selected_rules.extend(random.sample(self.desires[manager_type], num_type_rules))
+
+        return selected_rules
 
     def run(self, game_state):
-        self.perceive(game_state)
-        active_desires = self.generate_desires(game_state)
-        active_intentions = self.filter_intentions(active_desires)
-        self.execute_intentions(game_state, active_intentions)
+        selected_rules = self.get_manager_rules(game_state)
+        active_desire = self.generate_desire(game_state, selected_rules)
+        return self.filter_intentions(active_desire)
+

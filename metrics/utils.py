@@ -6,6 +6,7 @@ def save_final_statistics(schedule, filename='final_statistics.json'):
     all_game_stats = []
 
     for game in schedule:
+        print("Simulating game: ", game[0].team_name, " vs. ", game[1].team_name)
         game_simulator = simulate_game(game[0], game[1])
 
         # Collect final statistics

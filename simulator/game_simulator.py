@@ -208,6 +208,11 @@ class GameSimulator:
             'Away Score': self.game_state.away_score,
         }
 
+    def get_winner(self):
+        if self.game_state.home_score > self.game_state.away_score:
+            return self.home_team
+        return self.away_team
+
     def update_log(self, batter, pitcher, action, result, action_result):
         if self.game_state.home_team_batting:
             batting_team = self.home_team

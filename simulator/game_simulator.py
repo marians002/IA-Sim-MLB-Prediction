@@ -190,6 +190,20 @@ class GameSimulator:
                 return True
         return False
 
+    def get_final_statistics(self):
+        # return home team: score, away team: score
+        return {
+            'Home Team': self.home_team,
+            'Home Score': self.game_state.home_score,
+            'Away Team': self.away_team,
+            'Away Score': self.game_state.away_score,
+        }
+
+    def get_winner(self):
+        if self.game_state.home_score > self.game_state.away_score:
+            return self.home_team
+        return self.away_team
+
     def update_log(self, batter, pitcher, action, result, action_result):
         if self.game_state.home_team_batting:
             batting_team = self.home_team
@@ -222,7 +236,7 @@ class GameSimulator:
             'Result': result
         })
 
-    def save_log(self, filename):
+    def save_log(self, filename='game_log.json'):
         # print(self.log)
         with open(filename, 'w') as f:
             json.dump(self.log, f, indent=4)

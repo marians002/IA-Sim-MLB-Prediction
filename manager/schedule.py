@@ -37,25 +37,25 @@ def determine_postseason_teams(divisions, standings):
     
     return division_winners, wild_cards
 
-def determine_postseason_structure(division_winners):
-    """Determine the postseason structure based on MLB rules."""
-    # Sort teams by standings
-    sf_winner1 = None
-    sf_winner2 = None
-    for division in division_winners:
-        # Wild Card Round
-        wc_winner1 = simulate_series(sorted_teams[2], sorted_teams[5], 3)
-        wc_winner2 = simulate_series(sorted_teams[3], sorted_teams[4], 3)
+# def determine_postseason_structure(division_winners):
+#     """Determine the postseason structure based on MLB rules."""
+#     # Sort teams by standings
+#     sf_winner1 = None
+#     sf_winner2 = None
+#     for division in division_winners:
+#         # Wild Card Round
+#         wc_winner1 = simulate_series(sorted_teams[2], sorted_teams[5], 3)
+#         wc_winner2 = simulate_series(sorted_teams[3], sorted_teams[4], 3)
         
-        # Division Series
-        ds_winner1 = simulate_series(sorted_teams[0], wc_winner2, 3)
-        ds_winner2 = simulate_series(sorted_teams[1], wc_winner1, 3)
+#         # Division Series
+#         ds_winner1 = simulate_series(sorted_teams[0], wc_winner2, 3)
+#         ds_winner2 = simulate_series(sorted_teams[1], wc_winner1, 3)
         
-        # Semifinals
-        sf_winner1 = simulate_series(ds_winner1, ds_winner2, 3)
+#         # Semifinals
+#         sf_winner1 = simulate_series(ds_winner1, ds_winner2, 3)
         
-        # Final
-    final_winner = simulate_series(sf_winner1, sf_winner1, 7)
+#         # Final
+#     final_winner = simulate_series(sf_winner1, sf_winner1, 7)
     
-    return final_winner
+#     return final_winner
 

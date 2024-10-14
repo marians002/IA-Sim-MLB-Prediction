@@ -7,4 +7,7 @@ class Team:
 
     def add_player(self, player):
         self.players.append(player)
+        
+    def __str__(self):
+        print(self.team_name)
 

@@ -4,10 +4,15 @@ from manager.baseball_manager import *
 from manager.RuleClass import *
 from manager.rules_conditions import *
 from genetica.mlbeticA import *
+from manager.schedule import *
 
 
 def main():
     teams = dl.load_data()
+    
+    schedule = generate_schedule(teams)
+    for team in schedule:
+        print(team)
 
     # Select two random teams:
     # They will be fixed by the moment

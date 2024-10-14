@@ -45,15 +45,15 @@ def main():
     # print("\nAL Overall DataFrame:")
     # print(al_overall_df)
     
-    # # Load the original CSV data
-    # nl_overall_df_original = pd.read_csv('NL_OVERALL.CSV')
-    # nl_central_df_original = pd.read_csv('NL_CENTRAL_DIVISION.CSV')
-    # nl_east_df_original = pd.read_csv('NL_EAST_DIVISION.CSV')
-    # nl_west_df_original = pd.read_csv('NL_WEST_DIVISION.CSV')
-    # al_overall_df_original = pd.read_csv('AL_OVERALL.CSV')
-    # al_central_df_original = pd.read_csv('AL_CENTRAL_DIVISION.CSV')
-    # al_east_df_original = pd.read_csv('AL_EAST_DIVISION.CSV')
-    # al_west_df_original = pd.read_csv('AL_WEST_DIVISION.CSV')
+    # Load the original CSV data
+    nl_overall_df_original = pd.read_csv('NL_OVERALL.CSV')
+    nl_central_df_original = pd.read_csv('NL_CENTRAL_DIVISION.CSV')
+    nl_east_df_original = pd.read_csv('NL_EAST_DIVISION.CSV')
+    nl_west_df_original = pd.read_csv('NL_WEST_DIVISION.CSV')
+    al_overall_df_original = pd.read_csv('AL_OVERALL.CSV')
+    al_central_df_original = pd.read_csv('AL_CENTRAL_DIVISION.CSV')
+    al_east_df_original = pd.read_csv('AL_EAST_DIVISION.CSV')
+    al_west_df_original = pd.read_csv('AL_WEST_DIVISION.CSV')
     
     
     al_postseason_teams, nl_postseason_teams = get_postseason_teams(teams)

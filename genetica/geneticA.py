@@ -15,11 +15,42 @@ def order_one_crossover(parent1, parent2):
     child2[cx_point1:cx_point2] = parent2[cx_point1:cx_point2]
 
     # Step 3: Fill remaining positions
-    fill_positions(child1, parent2)
-    fill_positions(child2, parent1)
+    fill_positions_mlb(child1, parent2)
+    fill_positions_mlb(child2, parent1)
 
     return child1, child2
 
+def valid_pos(pos, child):
+    """ Returns true if player pos different from the pitcher is not in child """
+    if pos == 'P': return False
+    
+    for p in child:
+        if p is not None and p.pos[0] == pos :
+            return False
+    return True
+
+
+def fill_positions_mlb(child, parent):
+    """ fills missing positions of child with the players of the parent  """
+    filling_p = []
+    for p in parent:
+        if valid_pos(p.pos[0], child):
+            filling_p.append(p)
+            
+    random.shuffle(filling_p)
+            
+    if child[-1] is None:
+        child[-1] = parent[-1]
+        
+    for p in filling_p:
+        putted = False
+        for i in range(len(child)-1):
+            if putted: break
+            if child[i] is None:
+                child[i] = p
+                putted = True
+            
+                
 def fill_positions(child, parent):
     for elem in parent:
         if elem not in child:
@@ -40,32 +71,29 @@ def fitness_sort(object):
 
     return val
 
-
 def weighted_by(population, fitness):
     """ Returns the weight of each individual"""
     return [fitness(p) for p in population]
 
-def spot(population):
-    for t in population:
-        for p in t:
-            if p is None:
-                return True
-    return False
-
 def mutate(child, pool):
     if random.random() < 0.05:
         candidates = []
-        i = random.choice(range(len(child)-1))
+        
+        i = random.randint(a=0, b=(len(child)-2))
+        # region Fix this
+        if child[i].pos[0] == 'DH':
+            return child
         
         for player in pool:
-            if player.pos[0] == child[i].pos[0]:
+            if child[i].player_id != player.player_id and child[i].pos[0] == player.pos[0]:
                 candidates.append(player)
-        
+                    
         if len(candidates) == 0: return child
-        child[i] = random.choice(candidates)
-        return child
-    
+        child[i] = random.sample(candidates, k=1)[0]
     return child
+
+""" def mutate(child, pool):
+    return child """
 
 def wheel_selection(population, weights):
     # Spin the wheel, bigger portion to most weighted individuals
@@ -94,24 +122,22 @@ def genetic_algo(population, fitness, pool, search_t=20):
     start_time = time.time()
     max_individual = None
     max_val = -math.inf
-    iters = 0
+    
     while True:
-        iters += 1
-        if spot(population):
-            print(iters)
         weigths = weighted_by(population, fitness)
         new_population = []
 
+        # Get new population
         for i in range(len(population) // 2):
             parent1, parent2 = tournament_selection(population, weigths), tournament_selection(population, weigths)
 
             child1, child2 = order_one_crossover(parent1, parent2)
 
             child1 = mutate(child1, pool)
-            child2 = mutate(child2, pool)
+            child1 = mutate(child2, pool)
 
-            new_population.extend([child1, child2])
-
+            new_population.append(child1)
+            new_population.append(child2)
         # elitism: keep the 2 best individuals
 
         population.sort(key=fitness, reverse=True)

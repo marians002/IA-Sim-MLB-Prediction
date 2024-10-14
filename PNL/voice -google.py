@@ -1,11 +1,12 @@
 from gtts import gTTS
 import pygame
 import io
-from chat import get_gemini_response
 
-ans = get_gemini_response("hola")
+# Read commentary.txt
+with open('Commentary.txt', 'r') as file:
+    ans = file.read()
 # Crear un objeto gTTS
-tts = gTTS(ans, lang="es")
+tts = gTTS(ans, lang="en-us")
 
 # Guardar el objeto de audio en un buffer en memoria
 audio_buffer = io.BytesIO()
@@ -25,4 +26,4 @@ pygame.mixer.music.play()
 
 # Esperar hasta que termine la reproducción
 while pygame.mixer.music.get_busy():
-    pygame.time.Clock().tick(10)
+    pygame.time.Clock().tick(5)

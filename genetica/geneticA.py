@@ -20,12 +20,13 @@ def order_one_crossover(parent1, parent2):
 
     return child1, child2
 
+
 def valid_pos(pos, child):
     """ Returns true if player pos different from the pitcher is not in child """
     if pos == 'P': return False
-    
+
     for p in child:
-        if p is not None and p.pos[0] == pos :
+        if p is not None and p.pos[0] == pos:
             return False
     return True
 
@@ -36,21 +37,21 @@ def fill_positions_mlb(child, parent):
     for p in parent:
         if valid_pos(p.pos[0], child):
             filling_p.append(p)
-            
+
     random.shuffle(filling_p)
-            
+
     if child[-1] is None:
         child[-1] = parent[-1]
-        
+
     for p in filling_p:
         putted = False
-        for i in range(len(child)-1):
+        for i in range(len(child) - 1):
             if putted: break
             if child[i] is None:
                 child[i] = p
                 putted = True
-            
-                
+
+
 def fill_positions(child, parent):
     for elem in parent:
         if elem not in child:
@@ -60,6 +61,7 @@ def fill_positions(child, parent):
                     putted = True
                     child[i] = elem
                 if putted: break
+
 
 def fitness_sort(object):
     """ most valued elements goes back """
@@ -71,34 +73,33 @@ def fitness_sort(object):
 
     return val
 
+
 def weighted_by(population, fitness):
     """ Returns the weight of each individual"""
     return [fitness(p) for p in population]
 
+
 def mutate(child, pool):
     if random.random() < 0.05:
         candidates = []
-        
-        i = random.randint(a=0, b=(len(child)-2))
+
+        i = random.randint(a=0, b=(len(child) - 2))
         # region Fix this
         if child[i].pos[0] == 'DH':
             return child
-        
+
         for player in pool:
-            if child[i].player_id != player.player_id:
-                
-                """ a = child[i].pos[0] in ('RF', 'CF', 'LF') and player.pos[0] == 'OF'
-                b = child[i].pos[0] == 'OF' and player.pos[0] in ('RF', 'CF', 'LF') """
-                
-                if child[i].pos[0] == player.pos[0]:
-                    candidates.append(player)
-                    
+            if child[i].player_id != player.player_id and child[i].pos[0] == player.pos[0]:
+                candidates.append(player)
+
         if len(candidates) == 0: return child
         child[i] = random.sample(candidates, k=1)[0]
     return child
 
+
 """ def mutate(child, pool):
     return child """
+
 
 def wheel_selection(population, weights):
     # Spin the wheel, bigger portion to most weighted individuals
@@ -115,6 +116,7 @@ def wheel_selection(population, weights):
 
     return population[0]
 
+
 def tournament_selection(population, weights, n=4):
     # Random selection among n individuals, stays the one with highest weight
     # n must be less or equal tha the size of the population/wheights
@@ -123,11 +125,12 @@ def tournament_selection(population, weights, n=4):
 
     return winner[0]
 
-def genetic_algo(population, fitness, pool, search_t=20):
+
+def genetic_algo(population, fitness, pool, search_t=1):
     start_time = time.time()
     max_individual = None
     max_val = -math.inf
-    
+
     while True:
         weigths = weighted_by(population, fitness)
         new_population = []
@@ -139,7 +142,7 @@ def genetic_algo(population, fitness, pool, search_t=20):
             child1, child2 = order_one_crossover(parent1, parent2)
 
             child1 = mutate(child1, pool)
-            child1 = mutate(child2, pool)
+            child2 = mutate(child2, pool)
 
             new_population.append(child1)
             new_population.append(child2)
@@ -158,9 +161,11 @@ def genetic_algo(population, fitness, pool, search_t=20):
 
         if fitness(best) > max_val:
             max_individual = best
-        if time.time() - start_time > search_t: break
+        if time.time() - start_time > search_t:
+            break
 
     return max_individual
+
 
 # region PSUDOCODE
 """ function GENETIC ALGORITHM(population, ﬁtness) returns an individual

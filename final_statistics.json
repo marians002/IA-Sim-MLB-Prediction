@@ -1494,7 +1494,7 @@
         "Away Score": 10
     },
     {
-        "Home Team": "Los Angeles Dodgers",
+        "Home Team": "Los Angeles Angels",
         "Home Score": 11,
         "Away Team": "St. Louis Cardinals",
         "Away Score": 0
@@ -1890,6 +1890,12 @@
         "Away Score": 16
     },
     {
+        "Home Team": "Milwaukee Brewers",
+        "Home Score": 18,
+        "Away Team": "Washington Nationals",
+        "Away Score": 6
+    },
+    {
         "Home Team": "San Diego Padres",
         "Home Score": 6,
         "Away Team": "Cincinnati Reds",
@@ -1898,6 +1904,8 @@
     {
         "Home Team": "Toronto Blue Jays",
         "Home Score": 4,
+        "Away Team": "Los Angeles Dodgers",
+        "Away Score": 23
         "Away Team": "Los Angeles Dodgers",
         "Away Score": 23
     },
@@ -2454,6 +2462,12 @@
         "Away Score": 6
     },
     {
+        "Home Team": "Cleveland Guardians",
+        "Home Score": 7,
+        "Away Team": "Los Angeles Dodgers",
+        "Away Score": 19
+    },
+    {
         "Home Team": "Houston Astros",
         "Home Score": 10,
         "Away Team": "Minnesota Twins",
@@ -4087,6 +4101,7 @@
     },
     {
         "Home Team": "Pittsburgh Pirates",
+        "Home Team": "Pittsburgh Pirates",
         "Home Score": 2,
         "Away Team": "Philadelphia Phillies",
         "Away Score": 23
@@ -4186,6 +4201,12 @@
         "Home Score": 14,
         "Away Team": "Cincinnati Reds",
         "Away Score": 4
+    },
+    {
+        "Home Team": "Washington Nationals",
+        "Home Score": 5,
+        "Away Team": "Chicago Cubs",
+        "Away Score": 5
     },
     {
         "Home Team": "Pittsburgh Pirates",
@@ -4743,6 +4764,7 @@
         "Home Team": "New York Yankees",
         "Home Score": 23,
         "Away Team": "Toronto Blue Jays",
+        "Away Score": 8
         "Away Score": 8
     },
     {
@@ -6348,6 +6370,7 @@
         "Away Score": 6
     },
     {
+        "Home Team": "Baltimore Orioles",
         "Home Team": "Baltimore Orioles",
         "Home Score": 6,
         "Away Team": "Philadelphia Phillies",
@@ -7618,6 +7641,12 @@
         "Home Score": 12,
         "Away Team": "Toronto Blue Jays",
         "Away Score": 14
+    },
+    {
+        "Home Team": "Houston Astros",
+        "Home Score": 15,
+        "Away Team": "Colorado Rockies",
+        "Away Score": 13
     },
     {
         "Home Team": "Cincinnati Reds",
@@ -9505,6 +9534,7 @@
     },
     {
         "Home Team": "Kansas City Royals",
+        "Home Team": "Kansas City Royals",
         "Home Score": 8,
         "Away Team": "Los Angeles Angels",
         "Away Score": 4
@@ -9894,7 +9924,7 @@
         "Away Score": 24
     },
     {
-        "Home Team": "Cincinnati Reds",
+        "Home Team": "Colorado Rockies",
         "Home Score": 4,
         "Away Team": "Boston Red Sox",
         "Away Score": 8
@@ -10410,6 +10440,12 @@
         "Away Score": 1
     },
     {
+        "Home Team": "Pittsburgh Pirates",
+        "Home Score": 7,
+        "Away Team": "Chicago White Sox",
+        "Away Score": 4
+    },
+    {
         "Home Team": "Philadelphia Phillies",
         "Home Score": 3,
         "Away Team": "New York Mets",
@@ -10618,6 +10654,12 @@
         "Home Score": 5,
         "Away Team": "Cleveland Guardians",
         "Away Score": 10
+    },
+    {
+        "Home Team": "Miami Marlins",
+        "Home Score": 8,
+        "Away Team": "Baltimore Orioles",
+        "Away Score": 9
     },
     {
         "Home Team": "Tampa Bay Rays",

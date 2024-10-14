@@ -5,9 +5,9 @@ from simulator.game_state import *
 # Regla del Cambio de Pitcher Basado en el Conteo de Lanzamientos
 def change_pitcher_condition(game_state: GameState):
     if game_state.home_team_batting:
-        if game_state.pitch_count_away >= 90:
+        if game_state.pitch_count_away >= 70:
             return True
-    elif game_state.pitch_count_home >= 90:
+    elif game_state.pitch_count_home >= 70:
         return True
     return False
 
@@ -26,28 +26,6 @@ def steal_base_condition(game_state: GameState):
 def bunt_condition(game_state: GameState):
     if (game_state.runner_on_first and not game_state.runner_on_third and not game_state.runner_on_second and
             game_state.outs < 2 and game_state.batter.avg < 0.250):
-        return True
-    return False
-
-
-# Regla del Desafío del Manager:
-def challenge_condition(game_state: GameState):
-    if game_state.close_play and game_state.challenges_left > 0:
-        return True
-    return False
-
-
-# Regla del Cambio Defensivo
-def defensive_shift_condition(game_state: GameState):
-    # if game_state.opponent_batter == 'left' and game_state.inning > 7 and game_state.score_difference <= 2:
-    #     return True
-    return False
-
-
-# Uso del Bullpen: Si el lanzador abridor ha permitido más de 3 carreras en las últimas 2 entradas, considerar
-# cambiar al relevista.
-def bullpen_usage_condition(game_state: GameState):
-    if game_state.runs_allowed_last_2_innings > 3:
         return True
     return False
 
@@ -82,29 +60,18 @@ def intentional_walk_condition(game_state: GameState):
     return False
 
 
-# Defensa en el Infield: Si hay un corredor en tercera base y menos de 2 outs, jugar con la defensa del infield
-# adentro para prevenir una carrera
+# Defensa en el Infield: Si hay corredor en primera base y menos de 2 outs, considerar la defensa en el infield.
 def infield_in_condition(game_state: GameState):
-    if game_state.runner_on_third and game_state.outs < 2:
-        return True
-    return False
-
-
-# Cambio de Posición Defensiva: Si el bateador contrario tiene una alta tendencia a batear hacia el lado derecho del
-# campo, ajustar la defensa hacia ese lado.
-def defensive_positioning_condition(game_state: GameState):
-    # if game_state.opponent_batter_tendency == 'right':
-    #     return True
-    return False
+    return game_state.runner_on_first and game_state.outs < 2
 
 
 # Regla de tirar a primera base o tercera base según si el pitcher es zurdo o derecho.
 def pickoff_condition(game_state: GameState):
     if (game_state.pitcher.pitch_hand == 'L'
-            and game_state.runner_on_first and game_state.runner_on_first.sprint_speed > 28):
+            and game_state.runner_on_first and game_state.runner_on_first.sprint_speed > 27):
         # Se vira a primera con probabilidad del 0.2
         return random.random() < 0.2
     elif (game_state.pitcher.pitch_hand == 'R'
-          and game_state.runner_on_third and game_state.runner_on_third.sprint_speed > 28):
+          and game_state.runner_on_third and game_state.runner_on_third.sprint_speed > 27):
         # Se vira a tercera con probabilidad del 0.1
         return random.random() < 0.1

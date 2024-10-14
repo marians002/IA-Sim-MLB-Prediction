@@ -1,23 +1,47 @@
-def get_takeover(closers :list, reliefs :list, inning):
-    if inning >=8:
-        pitcher = closers.pop(0)
-        closers.append(pitcher)
-        return pitcher
-    pitcher = reliefs.pop(0)
-    reliefs.append(pitcher)
-    return pitcher
+from data_loader.player import Pitcher
 
-def select_starting_pitcher(rotation : list):
-    # Seleccionar el abridor con el mejor rendimiento reciente
-    pitcher = rotation.pop()
-    rotation.insert(1, pitcher)  # Rotate teams
 
-def pitcher_val(pitcher):
-    return pitcher.k_percent * (1-pitcher.bb_percent) * (1-pitcher.avg) * pitcher.pa
+def calculate_pitcher_score(pitcher: Pitcher):
+    # Example scoring function, adjust weights as needed
+    score = (
+            pitcher.avg_best_speed * 0.2 +
+            pitcher.whiff_percent * 0.3 +
+            pitcher.strikeout * 0.25 -
+            pitcher.walk * 0.15
+    )
+    return score
 
-def categorize_pitchers(pitchers : list):
-    # Categorizar a los pitchers en abridores, cerradores y relevistas
-    non_oppeners = list(sorted(pitchers, key=pitcher_val, reverse=True)[4])
-    non_oppeners.sort(key=lambda p: categorize_pitchers(p) * p.gf, reverse=True)
-    
-    return pitchers[:4], non_oppeners[:3], non_oppeners[3:]
+
+def select_starting_pitchers(pitchers, rotation_size=5):
+    # Calculate scores for each pitcher
+    pitcher_scores = [(p, calculate_pitcher_score(p)) for p in pitchers]
+
+    # Sort pitchers by score in descending order
+    sorted_pitchers = sorted(pitcher_scores, key=lambda x: x[1], reverse=True)
+
+    # Select the top N pitchers for the rotation
+    starting_rotation = [p for p, score in sorted_pitchers[:rotation_size]]
+
+    return starting_rotation
+
+
+def bullpen_management(starters, all_pitchers):
+    # Calculate scores for each pitcher
+    pitchers = [p for p in all_pitchers if p not in starters]
+    pitcher_scores = [(p, calculate_pitcher_score(p)) for p in pitchers]
+
+    # Sort pitchers by score in descending order
+    sorted_pitchers = sorted(pitcher_scores, key=lambda x: x[1], reverse=True)
+
+    # Select the top N pitchers for the rotation
+    return [p for p, score in sorted_pitchers]
+
+
+def get_rotations_bullpens(t1_pitchers, t2_pitchers):
+    rotation_t1 = select_starting_pitchers(t1_pitchers)
+    bullpen_t1 = bullpen_management(rotation_t1, t1_pitchers)
+
+    rotation_t2 = select_starting_pitchers(t2_pitchers)
+    bullpen_t2 = bullpen_management(rotation_t2, t2_pitchers)
+
+    return rotation_t1, bullpen_t1, rotation_t2, bullpen_t2

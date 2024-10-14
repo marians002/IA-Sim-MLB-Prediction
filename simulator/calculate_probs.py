@@ -21,7 +21,7 @@ def calculate_defensive_rate(players: list[Batter]):
     return total_defensive_metric / count
 
 
-def determine_pitch_result(batter, pitcher, first_runner, pitch_count, defensive_rate):
+def determine_pitch_result(batter, pitcher, first_runner, pitch_count, defensive_rate, tamper_dp=0):
     strikes = 0
     balls = 0
     total_pitches = 0
@@ -41,7 +41,7 @@ def determine_pitch_result(batter, pitcher, first_runner, pitch_count, defensive
 
     # Increase the double play probability if first_runner and batter are slow players
     if first_runner:
-        double_play_prob = 0.02
+        double_play_prob = 0.02 + tamper_dp
         if (first_runner.sprint_speed and first_runner.sprint_speed < 30 and
                 batter.sprint_speed and batter.sprint_speed < 30):
             double_play_prob += 0.13
@@ -50,7 +50,6 @@ def determine_pitch_result(batter, pitcher, first_runner, pitch_count, defensive
 
     out_prob = 1 - (strike_prob + ball_prob + foul_prob + hit_prob + double_play_prob)
     outcomes = ['strike', 'ball', 'foul', 'hit', 'out', 'double_play']
-
 
     batter_single_rate = batter.single / batter.ab
     batter_double_rate = batter.double / batter.ab
@@ -62,7 +61,7 @@ def determine_pitch_result(batter, pitcher, first_runner, pitch_count, defensive
     pitcher_home_run_rate = pitcher.home_run / pitcher.ab
 
     single_prob = (batter_single_rate + pitcher_single_rate) / 2
-    double_prob = (batter_double_rate + pitcher_double_rate) / 2
+    double_prob = (batter_double_rate + pitcher_double_rate + tamper_dp) / 2
     triple_prob = (batter_triple_rate + pitcher_triple_rate) / 2
     home_run_prob = (batter_home_run_rate + pitcher_home_run_rate) / 2
 

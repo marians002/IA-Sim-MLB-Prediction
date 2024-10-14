@@ -1,5 +1,6 @@
 import random
 from simulator.game_state import *
+from simulator.calculate_probs import determine_pitch_result
 
 
 def speed_rate(runner):
@@ -82,3 +83,13 @@ def pickoff_action(game_state: GameState):
     elif game_state.pitcher.pitch_hand == 'R' and gotcha:
         return 'pickoff_3', f"The pitcher picked off the runner on third base!"
     return None, "The pitcher tried to pickoff the runner but he is save."
+
+
+def infield_in_action(game_state: GameState, pitch_count, def_rate):
+    tamper_dp = 0.15
+    result, pitches = determine_pitch_result(game_state.batter, game_state.pitcher, game_state.runner_on_first, pitch_count, def_rate, tamper_dp)
+    if result in ['double_play']:
+        return result, "The manager decided to bring the infield in and he was right!"
+    elif result in ['hit', 'single', 'double', 'triple', 'home_run']:
+        return result, "The manager decided to bring the infield in but the shot backfired."
+    return result, "The manager decided to bring the infield in."

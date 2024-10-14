@@ -10,7 +10,7 @@ def conservative_manager(game_state):
 
 def aggressive_manager(game_state):
     conditions = [
-        game_state.inning < 7,
+        game_state.inning >= 5,
         game_state.score_difference < 0,
         game_state.runner_on_first is not None,
         game_state.outs < 2
@@ -22,8 +22,8 @@ def defensive_manager(game_state):
     conditions = [
         game_state.inning >= 7,
         game_state.score_difference > 2,
-        game_state.runner_on_first is not None,
-        game_state.outs >= 2
+        game_state.runner_on_second is not None,
+        game_state.runner_on_third is not None
     ]
     return sum(conditions)
 

@@ -133,6 +133,10 @@ class GameSimulator:
                 self.defensive_rate_away = calculate_defensive_rate(self.away_team_lineup)
                 return None, text
 
+        elif decision.name == "Infield In":
+            result, text = decision.action(self.game_state, self.get_pitch_count(), self.get_def_rate())
+            return result, text
+
         elif (decision.name == "Steal Base" or decision.name == "Bunt" or decision.name == "Pickoff"
               or decision.name == "Intentional Walk" or decision.name == "Hit and Run"
               or decision.name == "No action"):

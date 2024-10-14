@@ -16,31 +16,31 @@ from genetica import geneticA
 
 def fitness_lineup(lineup):
     val = 0
-    val += lineup[0].on_base_percent + lineup[0].avg_best_speed
-    val += 0.5 * lineup[1].on_base_percent + 0.5 * lineup[1].avg
-    val += lineup[2].avg
-    val += lineup[3].slg_percent
-    val += 0.5 * lineup[4].avg + 0.5 * lineup[4].home_run
+    val += 250*lineup[0].on_base_percent + lineup[0].avg_best_speed
+    val += 250*lineup[1].on_base_percent + 250* lineup[1].avg
+    val += 500*lineup[2].avg
+    val += 500*lineup[3].slg_percent
+    val += 250*lineup[4].avg + 300*lineup[4].home_run
     # 6th player
     if lineup[5].oaa is not None:
-        val += 0.3 * lineup[5].avg + 0.7 * lineup[5].oaa
+        val += 250*lineup[5].avg + 4*lineup[5].oaa+60
     else:
-        val += lineup[5].avg
+        val += 500*lineup[5].avg
     # 7th player
     if lineup[6].oaa is not None:
-        val += 0.3 * lineup[6].avg + 0.7 * lineup[6].oaa
+        val += 250*lineup[6].avg + 4*lineup[6].oaa+60
     else:
-        val += lineup[6].avg
+        val += 500*lineup[6].avg
     # 8th player
     if lineup[7].oaa is not None:
-        val += lineup[7].oaa
+        val += 8*lineup[7].oaa+120
     else:
-        val += lineup[7].avg
+        val += 500*lineup[7].avg
     # 9th player
     if lineup[8].oaa is not None:
-        val += lineup[8].oaa
+        val += 8*lineup[8].oaa+120
     else:
-        val += lineup[8].avg_best_speed + lineup[8].avg
+        val += lineup[8].avg_best_speed + 250*lineup[8].avg
     return val
 
 
@@ -194,13 +194,8 @@ def initial_population(pitchers, batters, n=20):
 
         for idx in range(len(rols)):
             lineup[idx] = random.choice(rols[idx])
-        population.append(lineup) 
-    """ a = []
-    for individual in population:
-        a.append([p.pos[0] for p in individual])
-    print(a)
-    print(len(a)) """
-    
+        population.append(lineup)
+        
     return population
 
 

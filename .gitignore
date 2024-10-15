@@ -3,6 +3,7 @@
 *.pyc
 *.aux
 *.bbl
+*.out
 *.blg
 *.fls
 *.fdb_latexmk

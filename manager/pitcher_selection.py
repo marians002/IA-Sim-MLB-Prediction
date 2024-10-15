@@ -72,13 +72,15 @@ def bullpen_management(starters, all_pitchers):
     return [p for p, score in sorted_pitchers]
 
 
-def get_rotations_bullpens(t1_pitchers, t2_pitchers):
+def get_rotations_bullpens(t1_pitchers, t2_pitchers, rot_t1=0, rot_t2=0):
     """
     Determines the starting rotations and bullpens for two teams of pitchers.
 
     Args:
         t1_pitchers (list): A list of pitchers for team 1.
         t2_pitchers (list): A list of pitchers for team 2.
+        rot_t1 (int, optional): The current rotation index for team 1. Defaults to 0.
+        rot_t2 (int, optional): The current rotation index for team 2. Defaults to 0.
 
     Returns:
         tuple: A tuple containing four elements:
@@ -93,4 +95,7 @@ def get_rotations_bullpens(t1_pitchers, t2_pitchers):
     rotation_t2 = select_starting_pitchers(t2_pitchers)
     bullpen_t2 = bullpen_management(rotation_t2, t2_pitchers)
 
-    return rotation_t1, bullpen_t1, rotation_t2, bullpen_t2
+    starter_t1 = rotation_t1[rot_t1 % len(rotation_t1)]
+    starter_t2 = rotation_t2[rot_t2 % len(rotation_t2)]
+
+    return rotation_t1, bullpen_t1, rotation_t2, bullpen_t2, starter_t1, starter_t2

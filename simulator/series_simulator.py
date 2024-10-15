@@ -7,9 +7,6 @@ from genetica.mlbeticA import get_lineup
 from manager.pitcher_selection import *
 
 
-rotations = {}
-
-
 def simulate_series(team1: Team, team2: Team, games):
     """
     Simulate a series of games between two teams.
@@ -30,11 +27,15 @@ def simulate_series(team1: Team, team2: Team, games):
     """
     team1_wins = 0
     team2_wins = 0
+    rot_t1 = 0
+    rot_t2 = 0
     required_wins = (games // 2) + 1
     all_games_stats = []
 
     for _ in range(games):
-        game_simulator = simulate_game(team1, team2)
+        game_simulator = simulate_game(team1, team2, rot_t1, rot_t2)
+        rot_t1 += 1
+        rot_t2 += 1
 
         # Collect final statistics
         game_stats = game_simulator.get_final_statistics()
@@ -54,7 +55,7 @@ def simulate_series(team1: Team, team2: Team, games):
     return random.choice([team1, team2]), all_games_stats
 
 
-def simulate_game(team1, team2):
+def simulate_game(team1, team2, rot_t1=0, rot_t2=0):
     """
     Simulate a single game between two teams.
 
@@ -64,6 +65,10 @@ def simulate_game(team1, team2):
         The first team participating in the game.
     team2 : Team
         The second team participating in the game.
+    rot_t1 : int, optional
+        The current rotation index for team 1. Defaults to 0.
+    rot_t2 : int, optional
+        The current rotation index for team 2. Defaults to
 
     Returns:
     --------
@@ -74,10 +79,15 @@ def simulate_game(team1, team2):
     t2_pitchers, t2_batters = dl.separate_pitchers_batters(team2)
 
     # Get pitchers
-    rotation_t1, bullpen_t1, rotation_t2, bullpen_t2 = get_rotations_bullpens(t1_pitchers, t2_pitchers)
+    rotation_t1, bullpen_t1, rotation_t2, bullpen_t2, starter_t1, starter_t2 = get_rotations_bullpens(t1_pitchers, t2_pitchers, rot_t1, rot_t2)
 
+    # Get lineups
     h_lineup = get_lineup(team1)
     a_lineup = get_lineup(team2)
+
+    # Set pitcher according to rotation:
+    h_lineup[0] = starter_t1
+    a_lineup[0] = starter_t2
 
     game_simulator = GameSimulator(BaseballManager(), team1, team2, t1_batters, t2_batters,
                                    h_lineup, a_lineup, bullpen_t1, bullpen_t2)

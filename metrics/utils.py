@@ -2,7 +2,6 @@ import pandas as pd
 import json, os
 from simulator.series_simulator import *
 
-
 def save_final_statistics(schedule, filename='final_statistics.json', verbose=False):
     """
     Simulates a series of games, collects their final statistics, and saves them to a JSON file.
@@ -16,11 +15,22 @@ def save_final_statistics(schedule, filename='final_statistics.json', verbose=Fa
         list: A list of dictionaries containing the final statistics for each game.
     """
     all_games_stats = []
+    rotations = {}
 
     for game in schedule:
         if verbose:
             print("\033[91mSimulating game:\033[0m ", game[0].team_name, " vs. ", game[1].team_name)
-        game_simulator = simulate_game(game[0], game[1])
+
+        if game[0] not in rotations:
+            rotations[game[0]] = 0
+        else:
+            rotations[game[0]] += 1
+        if game[1] not in rotations:
+            rotations[game[1]] = 0
+        else:
+            rotations[game[1]] += 1
+
+        game_simulator = simulate_game(game[0], game[1], rotations[game[0]], rotations[game[1]])
 
         # Collect final statistics
         game_stats = game_simulator.get_final_statistics()

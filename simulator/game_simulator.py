@@ -97,6 +97,13 @@ class GameSimulator:
             if self.game_state.score_difference >= 15:
                 self.log.append({'Final result': "The game ended by Super KO"})
                 break
+        # Simulate tiebreaker
+        while self.game_state.home_score == self.game_state.away_score and self.game_state.inning < 12:
+            self.simulate_tiebreaker()
+            if self.game_state.inning == 12:
+                self.log.append({'No winner': "The game ended in a tie"})
+                break
+
         self.log.append({'Final result': f"{self.home_team}: {self.game_state.home_score}  "
                                          f"{self.away_team}: {self.game_state.away_score}"})
 
@@ -131,6 +138,13 @@ class GameSimulator:
                 self.update_log(self.game_state.batter, self.game_state.pitcher, 'No action', 'Change teams',
                                 'Change teams')
                 break
+
+    def simulate_tiebreaker(self):
+        """
+        Simulates a tiebreaker inning.
+        """
+        self.game_state.inning += 1
+        self.simulate_inning()
 
     def get_next_batter(self):
         """

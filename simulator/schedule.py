@@ -1,50 +1,60 @@
 import json
 import random
 from simulator.series_simulator import simulate_series
+from data_loader.team import Team
 
-
-def generate_schedule(teams: list, verbose=False):
+def generate_schedule(teams : list[Team]):
     """
-    Generate a round-robin schedule for the given teams.
-
-    Parameters:
-    -----------
-    teams : list
-        A list of team objects.
-    verbose : bool, optional
-        If True, prints the generated schedule (default is False).
-
+    Generate the MLB schedule for 2022 without dates.
+    
+    Args:
+    teams (list): List of Team objects.
+    geographic_rivals (dict): Dictionary mapping team names to their geographic rivals.
+    
     Returns:
-    --------
-    list
-        A list of tuples representing the schedule, where each tuple contains two teams.
+    list: List of tuples (home, away) where home and away are Team objects.
     """
-    num_teams = len(teams)
     schedule = []
 
-    # Round-robin algorithm to generate matchups
-    for round in range(num_teams - 1):
-        for i in range(num_teams // 2):
-            home = teams[i]
-            away = teams[num_teams - 1 - i]
-            schedule.append((home, away))
-        teams.insert(1, teams.pop())  # Rotate teams
+    # Create a dictionary to map team names to Team objects
+    team_dict = {team.team_name: team for team in teams}
 
-    # Repeat the schedule to ensure each team plays 162 games
-    full_schedule = schedule * (162 // (num_teams - 1))
+    # Generate division matchups (13 games each)
+    divisions = {}
+    for team in teams:
+        if team.division not in divisions:
+            divisions[team.division] = []
+        divisions[team.division].append(team)
 
-    # Shuffle the schedule to distribute home and away games
-    random.shuffle(full_schedule)
+    for division_teams in divisions.values():
+        for i, team1 in enumerate(division_teams):
+            for team2 in division_teams[i+1:]:
+                k = random.randint(0, 1)
+                schedule.extend([(team1, team2)] * (6 + k))  
+                schedule.extend([(team2, team1)] * (7 - k))
+            
+    # Generate league matchups (6 games to 6 teams and 7 games to the remainding 4 teams for each team in league)
+    al_teams = [team for team in teams if team.league == 'AL']
+    nl_teams = [team for team in teams if team.league == 'NL']
+    leagues = [al_teams, nl_teams]
 
-    if verbose:
-        print("\033[91m Generated schedule:\033[0m")
-        for game in full_schedule:
-            print(game[0].team_name, " vs. ", game[1].team_name)
+    for league_teams in leagues:
+        for i, team in enumerate(league_teams):
+            opponents = [t for t in league_teams if t.division != team.division]
+            for opponent in opponents:
+                schedule.append((team, opponent))
+                schedule.extend([(opponent , team)] * 2)
 
-    print("\033[92mSchedule generated successfully.\033[0m")
-    print()
-    return full_schedule
-
+    # Generate geographic rival matchups (4 games each)
+    for team in teams:
+        schedule.extend([(team, team_dict[team.geographic_rival])] * 2)  # 2 home games for team
+        
+    # Generate interleague matchups (3 games each for 15 pairs)
+    for team1 in nl_teams:
+        for team2 in al_teams:
+            schedule.extend([(team1, team2)] * 2 )  
+            schedule.extend([(team2, team1)] * 2)
+    return schedule
 
 def create_postseason_structure(nl_teams, al_teams):
     """

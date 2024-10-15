@@ -37,6 +37,9 @@ def main():
     (nl_overall_df_original, al_overall_df_original, nl_central_df_original, nl_east_df_original,
      nl_west_df_original, al_central_df_original, al_east_df_original, al_west_df_original) = load_databases()
 
+    print(nl_overall_df_original)
+    print()
+    print(al_overall_df)
     # Compare metrics
     n = 5
     compare_metrics(nl_overall_df, al_overall_df, nl_overall_df_original, al_overall_df_original, n, graphics=verbose)

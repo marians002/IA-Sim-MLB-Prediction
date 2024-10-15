@@ -2,13 +2,10 @@ from simulator.postseason import *
 from simulator.schedule import *
 from metrics.utils import *
 
-
 def main():
     teams = dl.load_data()
-
     schedule = generate_schedule(teams)
     results = save_final_statistics(schedule)
-
     # Create DataFrames for each division and league
     # (nl_east_df, nl_west_df, nl_central_df, nl_overall_df,
      # al_east_df, al_west_df, al_central_df, al_overall_df) = create_dataframes_from_results(results)

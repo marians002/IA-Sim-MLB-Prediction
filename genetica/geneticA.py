@@ -111,7 +111,7 @@ def wheel_selection(population, weights):
 
 def tournament_selection(population, weights, n=4):
     # Random selection among n individuals, stays the one with highest weight
-    # n must be less or equal tha the size of the population/wheights
+    # n must be less or equal to the size of the population/wheights
     indices = random.sample(range(len(population)), k=n)
     winner = max([(population[i], weights[i]) for i in indices], key=lambda x: x[1])
 

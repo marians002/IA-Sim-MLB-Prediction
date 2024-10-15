@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 from tabulate import tabulate
-import matplotlib.pyplot as plt
 from scipy.stats import pearsonr
 
 # Mapping dictionary for full team names to abbreviations
@@ -158,52 +157,6 @@ def calculate_position_similarity(df1, df2):
     similarity_score = position_diffs.mean()
 
     return similarity_score
-
-
-def create_graphics(nl_df, nl_df_original, league_name):
-    """
-    Create graphics to compare metrics between two DataFrames.
-
-    Args:
-    nl_df (pd.DataFrame): DataFrame containing current team statistics.
-    nl_df_original (pd.DataFrame): DataFrame containing original team statistics.
-    league_name (str): Name of the league (e.g., "NL" or "AL").
-    """
-    metrics = {
-        "Top N Teams Overlap": top_n_comparison(nl_df, nl_df_original, 5)[1],
-        "Pearson Correlation": pearson_similarity(nl_df, nl_df_original),
-        "Mean Squared Error": calculate_mean_squared_error(nl_df, nl_df_original),
-        "Position Similarity": calculate_position_similarity(nl_df, nl_df_original)
-    }
-
-    fig, axs = plt.subplots(2, 2, figsize=(12, 10))
-    fig.suptitle(f'{league_name} Metrics Comparison')
-
-    # Top N Teams Overlap
-    axs[0, 0].bar(["Top N Teams Overlap"], [metrics["Top N Teams Overlap"]])
-    axs[0, 0].set_title("Top N Teams Overlap (%)")
-    axs[0, 0].set_ylim(0, 100)
-
-    # Pearson Correlation
-    axs[0, 1].bar(["Pearson Correlation"], [metrics["Pearson Correlation"]])
-    axs[0, 1].set_title("Pearson Correlation")
-    axs[0, 1].set_ylim(-1, 1)
-
-    # Mean Squared Error
-    axs[1, 0].bar(["Mean Squared Error"], [metrics["Mean Squared Error"]])
-    axs[1, 0].set_title("Mean Squared Error")
-
-    # Position Similarity
-    axs[1, 1].bar(["Position Similarity"], [metrics["Position Similarity"]])
-    axs[1, 1].set_title("Position Similarity")
-
-    for ax in axs.flat:
-        ax.set_ylabel('Value')
-        for label in ax.get_xticklabels():
-            label.set_rotation(45)
-
-    plt.tight_layout(rect=[0, 0, 1, 0.96])
-    plt.show()
 
 
 def compare_metrics(nl_overall_df, al_overall_df, nl_overall_df_original, al_overall_df_original, n, graphics=False):

@@ -1,4 +1,5 @@
-import random, json
+import json
+import random
 from simulator.series_simulator import simulate_series
 
 

@@ -29,9 +29,8 @@ def generate_schedule(teams : list[Team], verbose=False):
     for division_teams in divisions.values():
         for i, team1 in enumerate(division_teams):
             for team2 in division_teams[i+1:]:
-                k = random.randint(0, 1)
-                schedule.extend([(team1, team2)] * (6 + k))  
-                schedule.extend([(team2, team1)] * (7 - k))
+                schedule.extend([(team1, team2)] * 6)
+                schedule.extend([(team2, team1)] * 6)
             
     # Generate league matchups (6 games to 6 teams and 7 games to the remainding 4 teams for each team in league)
     al_teams = [team for team in teams if team.league == 'AL']

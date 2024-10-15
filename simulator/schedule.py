@@ -2,7 +2,7 @@ import random, json
 from simulator.series_simulator import simulate_series
 
 
-def generate_schedule(teams : list):
+def generate_schedule(teams: list):
     num_teams = len(teams)
     schedule = []
 
@@ -25,11 +25,11 @@ def generate_schedule(teams : list):
 
 def create_postseason_structure(nl_teams, al_teams):
     all_stats = []
-    nl_champion, stats = postseason_round(nl_teams, "NL")
+    nl_champion, stats = postseason_round(nl_teams)
     all_stats.append(stats)
-    al_champion, stats = postseason_round(al_teams, "AL")
+    al_champion, stats = postseason_round(al_teams)
     all_stats.append(stats)
-    
+
     world_series_winner, stats = simulate_series(nl_champion, al_champion, 7, "World Series", "logs/World Series")
     all_stats.append(stats)
 
@@ -40,13 +40,13 @@ def create_postseason_structure(nl_teams, al_teams):
     return world_series_winner
 
 
-def postseason_round(teams, league):
+def postseason_round(teams):
     all_stats = []
     wc_winner1, stats = simulate_series(teams[3], teams[4], 3, "Wild Card", "logs/Wild Card")
     all_stats.append(stats)
     wc_winner2, stats = simulate_series(teams[2], teams[5], 3, "Wild Card", "logs/Wild Card")
     all_stats.append(stats)
-    
+
     ds_winner1, stats = simulate_series(teams[0], wc_winner1, 5, "Division Series", "logs/Division Series")
     all_stats.append(stats)
     ds_winner2, stats = simulate_series(teams[1], wc_winner2, 5, "Division Series", "logs/Division Series")
@@ -56,4 +56,3 @@ def postseason_round(teams, league):
     all_stats.append(stats)
 
     return cs_winner, all_stats
-

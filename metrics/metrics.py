@@ -1,4 +1,7 @@
 import pandas as pd
+import numpy as np
+from tabulate import tabulate
+import matplotlib.pyplot as plt
 from scipy.stats import pearsonr
 
 # Mapping dictionary for full team names to abbreviations
@@ -38,21 +41,20 @@ team_abbreviation_mapping = {
 
 def convert_to_abbreviations(df, mapping):
     """
-    Convert full team names to abbreviations.
-    
+    Convert full team names to abbreviations in a DataFrame.
+
     Args:
-    df (pd.DataFrame): DataFrame containing full team names.
+    df (pd.DataFrame): DataFrame containing team names.
     mapping (dict): Dictionary mapping full team names to abbreviations.
-    
+
     Returns:
-    pd.DataFrame: DataFrame with team abbreviations.
+    pd.DataFrame: DataFrame with team names converted to abbreviations.
     """
-    reverse_mapping = {v: k for k, v in mapping.items()}
-    df['Team'] = df['Team'].map(reverse_mapping)
+    df['Team'] = df['Team'].map(mapping)
     return df
 
 
-def top_n_comparison(df1, df2, n, mapping):
+def top_n_comparison(df1, df2, n):
     """
     Compare the top N teams from two DataFrames.
     
@@ -65,11 +67,8 @@ def top_n_comparison(df1, df2, n, mapping):
     Returns:
     tuple: Overlap count and percentage of overlap.
     """
-    df1 = convert_to_abbreviations(df1, mapping)
-    df2 = convert_to_abbreviations(df2, mapping)
-
     top_n_df1 = df1.head(n)['Team']
-    top_n_df2 = df2.head(n)['Team']
+    top_n_df2 = df2.head(n)['Tm']
 
     overlap = set(top_n_df1).intersection(set(top_n_df2))
     overlap_count = len(overlap)
@@ -78,7 +77,7 @@ def top_n_comparison(df1, df2, n, mapping):
     return overlap_count, overlap_percentage
 
 
-def pearson_similarity(df1, df2, mapping):
+def pearson_similarity(df1, df2):
     """
     Calculate the Pearson correlation coefficient between the rankings of two DataFrames.
     
@@ -90,16 +89,14 @@ def pearson_similarity(df1, df2, mapping):
     Returns:
     float: Pearson correlation coefficient.
     """
-    df1 = convert_to_abbreviations(df1, mapping)
-    df2 = convert_to_abbreviations(df2, mapping)
 
     # Ensure both DataFrames have the same teams in the same order
     df1_sorted = df1.sort_values(by='Team').reset_index(drop=True)
-    df2_sorted = df2.sort_values(by='Team').reset_index(drop=True)
+    df2_sorted = df2.sort_values(by='Tm').reset_index(drop=True)
 
     # Extract the rankings
     rankings_df1 = df1_sorted['Victories']
-    rankings_df2 = df2_sorted['Victories']
+    rankings_df2 = df2_sorted['W']
 
     # Calculate Pearson correlation coefficient
     correlation, _ = pearsonr(rankings_df1, rankings_df2)
@@ -107,26 +104,137 @@ def pearson_similarity(df1, df2, mapping):
     return correlation
 
 
-def compare_metrics(nl_overall_df, al_overall_df, nl_overall_df_original, al_overall_df_original, n,
-                    team_abbreviation_mapping):
+def calculate_mean_squared_error(df1, df2):
+    """
+    Calculate the mean squared error (MSE) of win matches between two DataFrames.
+
+    Args:
+    df1 (pd.DataFrame): First DataFrame containing team statistics.
+    df2 (pd.DataFrame): Second DataFrame containing team statistics.
+
+    Returns:
+    float: Mean squared error of win matches between the two DataFrames.
+    """
+    # Ensure both DataFrames have the same teams in the same order
+    df1_sorted = df1.sort_values(by='Team').reset_index(drop=True)
+    df2_sorted = df2.sort_values(by='Tm').reset_index(drop=True)
+
+    # Extract the number of wins
+    wins_df1 = df1_sorted['Victories']
+    wins_df2 = df2_sorted['W']
+
+    # Calculate the squared differences
+    squared_diffs = (wins_df1 - wins_df2) ** 2
+
+    # Calculate the mean squared error
+    mse = np.mean(squared_diffs)
+
+    return mse
+
+
+def calculate_position_similarity(df1, df2):
+    """
+    Calculate the similarity of final positions between two DataFrames.
+
+    Args:
+    df1 (pd.DataFrame): First DataFrame containing team statistics.
+    df2 (pd.DataFrame): Second DataFrame containing team statistics.
+
+    Returns:
+    float: Similarity score based on the average position differences between the two DataFrames.
+    """
+    # Ensure both DataFrames have the same teams in the same order
+    df1_sorted = df1.sort_values(by='Team').reset_index(drop=True)
+    df2_sorted = df2.sort_values(by='Tm').reset_index(drop=True)
+
+    # Extract the final positions
+    positions_df1 = df1_sorted['Position']
+    positions_df2 = df2_sorted['Position']
+
+    # Calculate the absolute differences in positions
+    position_diffs = (positions_df1 - positions_df2).abs()
+
+    # Calculate the average position difference
+    similarity_score = position_diffs.mean()
+
+    return similarity_score
+
+
+def create_graphics(nl_df, nl_df_original, league_name):
+    """
+    Create graphics to compare metrics between two DataFrames.
+
+    Args:
+    nl_df (pd.DataFrame): DataFrame containing current team statistics.
+    nl_df_original (pd.DataFrame): DataFrame containing original team statistics.
+    league_name (str): Name of the league (e.g., "NL" or "AL").
+    """
+    metrics = {
+        "Top N Teams Overlap": top_n_comparison(nl_df, nl_df_original, 5)[1],
+        "Pearson Correlation": pearson_similarity(nl_df, nl_df_original),
+        "Mean Squared Error": calculate_mean_squared_error(nl_df, nl_df_original),
+        "Position Similarity": calculate_position_similarity(nl_df, nl_df_original)
+    }
+
+    fig, axs = plt.subplots(2, 2, figsize=(12, 10))
+    fig.suptitle(f'{league_name} Metrics Comparison')
+
+    # Top N Teams Overlap
+    axs[0, 0].bar(["Top N Teams Overlap"], [metrics["Top N Teams Overlap"]])
+    axs[0, 0].set_title("Top N Teams Overlap (%)")
+    axs[0, 0].set_ylim(0, 100)
+
+    # Pearson Correlation
+    axs[0, 1].bar(["Pearson Correlation"], [metrics["Pearson Correlation"]])
+    axs[0, 1].set_title("Pearson Correlation")
+    axs[0, 1].set_ylim(-1, 1)
+
+    # Mean Squared Error
+    axs[1, 0].bar(["Mean Squared Error"], [metrics["Mean Squared Error"]])
+    axs[1, 0].set_title("Mean Squared Error")
+
+    # Position Similarity
+    axs[1, 1].bar(["Position Similarity"], [metrics["Position Similarity"]])
+    axs[1, 1].set_title("Position Similarity")
+
+    for ax in axs.flat:
+        ax.set_ylabel('Value')
+        for label in ax.get_xticklabels():
+            label.set_rotation(45)
+
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
+    plt.show()
+
+
+def compare_metrics(nl_overall_df, al_overall_df, nl_overall_df_original, al_overall_df_original, n, graphics=False):
     # Convert team names to abbreviations
     nl_overall_df = convert_to_abbreviations(nl_overall_df, team_abbreviation_mapping)
     al_overall_df = convert_to_abbreviations(al_overall_df, team_abbreviation_mapping)
-    nl_overall_df_original = convert_to_abbreviations(nl_overall_df_original, team_abbreviation_mapping)
-    al_overall_df_original = convert_to_abbreviations(al_overall_df_original, team_abbreviation_mapping)
 
     # Compare top N teams
-    nl_overlap_count, nl_overlap_percentage = top_n_comparison(nl_overall_df, nl_overall_df_original, n,
-                                                               team_abbreviation_mapping)
-    al_overlap_count, al_overlap_percentage = top_n_comparison(al_overall_df, al_overall_df_original, n,
-                                                               team_abbreviation_mapping)
+    nl_overlap_count, nl_overlap_percentage = top_n_comparison(nl_overall_df, nl_overall_df_original, n)
+    al_overlap_count, al_overlap_percentage = top_n_comparison(al_overall_df, al_overall_df_original, n)
 
     # Calculate Pearson similarity
-    nl_pearson = pearson_similarity(nl_overall_df, nl_overall_df_original, team_abbreviation_mapping)
-    al_pearson = pearson_similarity(al_overall_df, al_overall_df_original, team_abbreviation_mapping)
+    nl_pearson = pearson_similarity(nl_overall_df, nl_overall_df_original)
+    al_pearson = pearson_similarity(al_overall_df, al_overall_df_original)
 
-    # Print results
-    print(f"NL Top {n} Teams Overlap: {nl_overlap_count} teams, {nl_overlap_percentage:.2f}%")
-    print(f"AL Top {n} Teams Overlap: {al_overlap_count} teams, {al_overlap_percentage:.2f}%")
-    print(f"NL Pearson Correlation: {nl_pearson:.2f}")
-    print(f"AL Pearson Correlation: {al_pearson:.2f}")
+    # Calculate Mean Squared Error
+    nl_mse = calculate_mean_squared_error(nl_overall_df, nl_overall_df_original)
+    al_mse = calculate_mean_squared_error(al_overall_df, al_overall_df_original)
+
+    # Calculate Position Similarity
+    nl_position_similarity = calculate_position_similarity(nl_overall_df, nl_overall_df_original)
+    al_position_similarity = calculate_position_similarity(al_overall_df, al_overall_df_original)
+
+    # Print results in a table-like format
+    metrics = [
+        ["Metric", "NL", "AL"],
+        [f"Top {n} Teams Overlap", f"{nl_overlap_count} teams, {nl_overlap_percentage:.2f}%",
+         f"{al_overlap_count} teams, {al_overlap_percentage:.2f}%"],
+        ["Pearson Correlation", f"{nl_pearson:.2f}", f"{al_pearson:.2f}"],
+        ["Mean Squared Error", f"{nl_mse:.2f}", f"{al_mse:.2f}"],
+        ["Position Similarity", f"{nl_position_similarity:.2f}", f"{al_position_similarity:.2f}"]
+    ]
+
+    print(tabulate(metrics, headers="firstrow", tablefmt="grid"))

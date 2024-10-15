@@ -1,4 +1,5 @@
 import pandas as pd
+import json, os
 from simulator.series_simulator import *
 
 
@@ -88,15 +89,15 @@ def create_dataframes_from_results(results, teams):
             al_divisions[t.division].append(team_data)
 
     # Sort the lists by victories
-    nl_east_data = sorted(nl_east_data, key=lambda x: x['Victories'], reverse=True)
-    nl_west_data = sorted(nl_west_data, key=lambda x: x['Victories'], reverse=True)
-    nl_central_data = sorted(nl_central_data, key=lambda x: x['Victories'], reverse=True)
-    nl_overall_data = sorted(nl_overall_data, key=lambda x: x['Victories'], reverse=True)
+    for data in [nl_east_data, nl_west_data, nl_central_data, nl_overall_data,
+                 al_east_data, al_west_data, al_central_data, al_overall_data]:
+        data.sort(key=lambda x: x['Victories'], reverse=True)
 
-    al_east_data = sorted(al_east_data, key=lambda x: x['Victories'], reverse=True)
-    al_west_data = sorted(al_west_data, key=lambda x: x['Victories'], reverse=True)
-    al_central_data = sorted(al_central_data, key=lambda x: x['Victories'], reverse=True)
-    al_overall_data = sorted(al_overall_data, key=lambda x: x['Victories'], reverse=True)
+    # Create a column for positions
+    for data in [nl_east_data, nl_west_data, nl_central_data, nl_overall_data,
+                 al_east_data, al_west_data, al_central_data, al_overall_data]:
+        for i, team_data in enumerate(data):
+            team_data['Position'] = i + 1
 
     # Create DataFrames for each division and league
     nl_east_df = pd.DataFrame(nl_east_data)
@@ -125,5 +126,11 @@ def load_databases():
     al_central_df_original = pd.read_csv(os.path.join(current_dir, path, 'AL_central_division.csv'))
     al_east_df_original = pd.read_csv(os.path.join(current_dir, path, 'AL_east_division.csv'))
     al_west_df_original = pd.read_csv(os.path.join(current_dir, path, 'AL_west_division.csv'))
+
+    # Add a positions column to the original DataFrames
+    for df in [nl_overall_df_original, nl_central_df_original, nl_east_df_original, nl_west_df_original,
+               al_overall_df_original, al_central_df_original, al_east_df_original, al_west_df_original]:
+        df['Position'] = range(1, len(df) + 1)
+
     return (nl_overall_df_original, al_overall_df_original, nl_central_df_original, nl_east_df_original,
             nl_west_df_original, al_central_df_original, al_east_df_original, al_west_df_original)

@@ -1,0 +1,7 @@
+pygame~=2.6.0
+gTTS~=2.5.3
+pandas~=2.2.2
+numpy~=1.26.4
+tabulate~=0.8.10
+SciPy~=1.11.4
+jsonpickle~=3.3.0

@@ -189,5 +189,5 @@ def compare_metrics(nl_overall_df, al_overall_df, nl_overall_df_original, al_ove
         ["Mean Squared Error", f"{nl_mse:.2f}", f"{al_mse:.2f}"],
         ["Position Similarity", f"{nl_position_similarity:.2f}", f"{al_position_similarity:.2f}"]
     ]
-
-    print(tabulate(metrics, headers="firstrow", tablefmt="grid"))
+    if graphics:
+        print(tabulate(metrics, headers="firstrow", tablefmt="grid"))

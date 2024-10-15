@@ -2,114 +2,126 @@
     [
         [
             {
-                "Home Team": "Arizona Diamondbacks",
-                "Home Score": 15,
-                "Away Team": "Chicago Cubs",
-                "Away Score": 10
-            },
-            {
-                "Home Team": "Arizona Diamondbacks",
-                "Home Score": 5,
-                "Away Team": "Chicago Cubs",
+                "Home Team": "Milwaukee Brewers",
+                "Home Score": 4,
+                "Away Team": "Arizona Diamondbacks",
                 "Away Score": 7
             },
             {
-                "Home Team": "Arizona Diamondbacks",
-                "Home Score": 10,
-                "Away Team": "Chicago Cubs",
-                "Away Score": 8
+                "Home Team": "Milwaukee Brewers",
+                "Home Score": 2,
+                "Away Team": "Arizona Diamondbacks",
+                "Away Score": 13
             }
         ],
         [
             {
                 "Home Team": "Atlanta Braves",
-                "Home Score": 12,
+                "Home Score": 11,
                 "Away Team": "Los Angeles Dodgers",
-                "Away Score": 12
+                "Away Score": 11
             },
             {
                 "Home Team": "Atlanta Braves",
-                "Home Score": 10,
-                "Away Team": "Los Angeles Dodgers",
-                "Away Score": 12
-            }
-        ],
-        [
-            {
-                "Home Team": "San Diego Padres",
                 "Home Score": 9,
+                "Away Team": "Los Angeles Dodgers",
+                "Away Score": 12
+            }
+        ],
+        [
+            {
+                "Home Team": "San Diego Padres",
+                "Home Score": 13,
                 "Away Team": "Arizona Diamondbacks",
-                "Away Score": 10
+                "Away Score": 5
             },
             {
                 "Home Team": "San Diego Padres",
-                "Home Score": 6,
+                "Home Score": 3,
                 "Away Team": "Arizona Diamondbacks",
-                "Away Score": 4
+                "Away Score": 1
             },
             {
                 "Home Team": "San Diego Padres",
-                "Home Score": 12,
-                "Away Team": "Arizona Diamondbacks",
-                "Away Score": 3
-            },
-            {
-                "Home Team": "San Diego Padres",
-                "Home Score": 14,
+                "Home Score": 8,
                 "Away Team": "Arizona Diamondbacks",
                 "Away Score": 5
             }
         ],
         [
+            {
+                "Home Team": "St. Louis Cardinals",
+                "Home Score": 15,
+                "Away Team": "Los Angeles Dodgers",
+                "Away Score": 12
+            },
+            {
+                "Home Team": "St. Louis Cardinals",
+                "Home Score": 4,
+                "Away Team": "Los Angeles Dodgers",
+                "Away Score": 9
+            },
+            {
+                "Home Team": "St. Louis Cardinals",
+                "Home Score": 2,
+                "Away Team": "Los Angeles Dodgers",
+                "Away Score": 9
+            },
             {
                 "Home Team": "St. Louis Cardinals",
                 "Home Score": 16,
                 "Away Team": "Los Angeles Dodgers",
-                "Away Score": 2
+                "Away Score": 5
             },
             {
                 "Home Team": "St. Louis Cardinals",
-                "Home Score": 7,
+                "Home Score": 4,
                 "Away Team": "Los Angeles Dodgers",
-                "Away Score": 6
-            },
-            {
-                "Home Team": "St. Louis Cardinals",
-                "Home Score": 18,
-                "Away Team": "Los Angeles Dodgers",
-                "Away Score": 1
+                "Away Score": 9
             }
         ],
         [
             {
                 "Home Team": "San Diego Padres",
-                "Home Score": 12,
-                "Away Team": "St. Louis Cardinals",
-                "Away Score": 9
-            },
-            {
-                "Home Team": "San Diego Padres",
-                "Home Score": 6,
-                "Away Team": "St. Louis Cardinals",
-                "Away Score": 9
-            },
-            {
-                "Home Team": "San Diego Padres",
-                "Home Score": 11,
-                "Away Team": "St. Louis Cardinals",
-                "Away Score": 3
-            },
-            {
-                "Home Team": "San Diego Padres",
-                "Home Score": 6,
-                "Away Team": "St. Louis Cardinals",
-                "Away Score": 2
-            },
-            {
-                "Home Team": "San Diego Padres",
-                "Home Score": 11,
-                "Away Team": "St. Louis Cardinals",
+                "Home Score": 4,
+                "Away Team": "Los Angeles Dodgers",
                 "Away Score": 10
+            },
+            {
+                "Home Team": "San Diego Padres",
+                "Home Score": 6,
+                "Away Team": "Los Angeles Dodgers",
+                "Away Score": 10
+            },
+            {
+                "Home Team": "San Diego Padres",
+                "Home Score": 7,
+                "Away Team": "Los Angeles Dodgers",
+                "Away Score": 1
+            },
+            {
+                "Home Team": "San Diego Padres",
+                "Home Score": 13,
+                "Away Team": "Los Angeles Dodgers",
+                "Away Score": 6
+            },
+            {
+                "Home Team": "San Diego Padres",
+                "Home Score": 9,
+                "Away Team": "Los Angeles Dodgers",
+                "Away Score": 12
+            },
+            {
+                "Home Team": "San Diego Padres",
+                "Home Score": 10,
+                "Away Team": "Los Angeles Dodgers",
+                "Away Score": 6
+            },
+            {
+                "Home Team": "San Diego Padres",
+                "Home Score": 3,
+                "Away Team": "Los Angeles Dodgers",
+                "Away Score": 7
             }
         ]
     ],
@@ -117,134 +129,164 @@
         [
             {
                 "Home Team": "New York Yankees",
-                "Home Score": 12,
-                "Away Team": "Los Angeles Angels",
-                "Away Score": 6
+                "Home Score": 11,
+                "Away Team": "Detroit Tigers",
+                "Away Score": 1
             },
             {
                 "Home Team": "New York Yankees",
-                "Home Score": 10,
-                "Away Team": "Los Angeles Angels",
-                "Away Score": 9
+                "Home Score": 7,
+                "Away Team": "Detroit Tigers",
+                "Away Score": 7
+            },
+            {
+                "Home Team": "New York Yankees",
+                "Home Score": 5,
+                "Away Team": "Detroit Tigers",
+                "Away Score": 13
             }
         ],
         [
+            {
+                "Home Team": "Minnesota Twins",
+                "Home Score": 9,
+                "Away Team": "Houston Astros",
+                "Away Score": 12
+            },
+            {
+                "Home Team": "Minnesota Twins",
+                "Home Score": 9,
+                "Away Team": "Houston Astros",
+                "Away Score": 1
+            },
+            {
+                "Home Team": "Minnesota Twins",
+                "Home Score": 2,
+                "Away Team": "Houston Astros",
+                "Away Score": 7
+            }
+        ],
+        [
+            {
+                "Home Team": "Seattle Mariners",
+                "Home Score": 10,
+                "Away Team": "Detroit Tigers",
+                "Away Score": 7
+            },
+            {
+                "Home Team": "Seattle Mariners",
+                "Home Score": 6,
+                "Away Team": "Detroit Tigers",
+                "Away Score": 6
+            },
+            {
+                "Home Team": "Seattle Mariners",
+                "Home Score": 4,
+                "Away Team": "Detroit Tigers",
+                "Away Score": 6
+            },
+            {
+                "Home Team": "Seattle Mariners",
+                "Home Score": 5,
+                "Away Team": "Detroit Tigers",
+                "Away Score": 6
+            }
+        ],
+        [
+            {
+                "Home Team": "Toronto Blue Jays",
+                "Home Score": 6,
+                "Away Team": "Houston Astros",
+                "Away Score": 10
+            },
             {
                 "Home Team": "Toronto Blue Jays",
                 "Home Score": 2,
-                "Away Team": "Kansas City Royals",
-                "Away Score": 5
+                "Away Team": "Houston Astros",
+                "Away Score": 7
             },
             {
                 "Home Team": "Toronto Blue Jays",
-                "Home Score": 4,
-                "Away Team": "Kansas City Royals",
-                "Away Score": 7
-            }
-        ],
-        [
-            {
-                "Home Team": "Seattle Mariners",
-                "Home Score": 8,
-                "Away Team": "New York Yankees",
+                "Home Score": 16,
+                "Away Team": "Houston Astros",
                 "Away Score": 3
             },
             {
-                "Home Team": "Seattle Mariners",
-                "Home Score": 18,
-                "Away Team": "New York Yankees",
-                "Away Score": 1
+                "Home Team": "Toronto Blue Jays",
+                "Home Score": 2,
+                "Away Team": "Houston Astros",
+                "Away Score": 10
+            }
+        ],
+        [
+            {
+                "Home Team": "Detroit Tigers",
+                "Home Score": 9,
+                "Away Team": "Houston Astros",
+                "Away Score": 6
             },
             {
-                "Home Team": "Seattle Mariners",
-                "Home Score": 7,
-                "Away Team": "New York Yankees",
+                "Home Team": "Detroit Tigers",
+                "Home Score": 10,
+                "Away Team": "Houston Astros",
+                "Away Score": 3
+            },
+            {
+                "Home Team": "Detroit Tigers",
+                "Home Score": 6,
+                "Away Team": "Houston Astros",
                 "Away Score": 4
-            }
-        ],
-        [
-            {
-                "Home Team": "Tampa Bay Rays",
-                "Home Score": 4,
-                "Away Team": "Kansas City Royals",
-                "Away Score": 7
             },
             {
-                "Home Team": "Tampa Bay Rays",
-                "Home Score": 7,
-                "Away Team": "Kansas City Royals",
-                "Away Score": 7
+                "Home Team": "Detroit Tigers",
+                "Home Score": 10,
+                "Away Team": "Houston Astros",
+                "Away Score": 11
             },
             {
-                "Home Team": "Tampa Bay Rays",
-                "Home Score": 4,
-                "Away Team": "Kansas City Royals",
-                "Away Score": 7
-            }
-        ],
-        [
-            {
-                "Home Team": "Seattle Mariners",
-                "Home Score": 3,
-                "Away Team": "Kansas City Royals",
-                "Away Score": 0
-            },
-            {
-                "Home Team": "Seattle Mariners",
-                "Home Score": 8,
-                "Away Team": "Kansas City Royals",
-                "Away Score": 7
-            },
-            {
-                "Home Team": "Seattle Mariners",
-                "Home Score": 3,
-                "Away Team": "Kansas City Royals",
-                "Away Score": 0
-            },
-            {
-                "Home Team": "Seattle Mariners",
-                "Home Score": 8,
-                "Away Team": "Kansas City Royals",
-                "Away Score": 5
+                "Home Team": "Detroit Tigers",
+                "Home Score": 6,
+                "Away Team": "Houston Astros",
+                "Away Score": 1
             }
         ]
     ],
     [
         {
-            "Home Team": "San Diego Padres",
-            "Home Score": 3,
-            "Away Team": "Seattle Mariners",
-            "Away Score": 0
-        },
-        {
-            "Home Team": "San Diego Padres",
-            "Home Score": 14,
-            "Away Team": "Seattle Mariners",
-            "Away Score": 16
-        },
-        {
-            "Home Team": "San Diego Padres",
+            "Home Team": "Los Angeles Dodgers",
             "Home Score": 7,
-            "Away Team": "Seattle Mariners",
-            "Away Score": 6
-        },
-        {
-            "Home Team": "San Diego Padres",
-            "Home Score": 4,
-            "Away Team": "Seattle Mariners",
-            "Away Score": 11
-        },
-        {
-            "Home Team": "San Diego Padres",
-            "Home Score": 3,
-            "Away Team": "Seattle Mariners",
-            "Away Score": 7
-        },
-        {
-            "Home Team": "San Diego Padres",
-            "Home Score": 1,
-            "Away Team": "Seattle Mariners",
+            "Away Team": "Detroit Tigers",
             "Away Score": 3
+        },
+        {
+            "Home Team": "Los Angeles Dodgers",
+            "Home Score": 4,
+            "Away Team": "Detroit Tigers",
+            "Away Score": 3
+        },
+        {
+            "Home Team": "Los Angeles Dodgers",
+            "Home Score": 21,
+            "Away Team": "Detroit Tigers",
+            "Away Score": 13
+        },
+        {
+            "Home Team": "Los Angeles Dodgers",
+            "Home Score": 3,
+            "Away Team": "Detroit Tigers",
+            "Away Score": 10
+        },
+        {
+            "Home Team": "Los Angeles Dodgers",
+            "Home Score": 0,
+            "Away Team": "Detroit Tigers",
+            "Away Score": 2
+        },
+        {
+            "Home Team": "Los Angeles Dodgers",
+            "Home Score": 11,
+            "Away Team": "Detroit Tigers",
+            "Away Score": 8
         }
     ]
 ]

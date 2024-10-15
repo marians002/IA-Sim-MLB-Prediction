@@ -1,9 +1,7 @@
 import os
 import statsapi
 import jsonpickle
-
 import pandas as pd
-
 from data_loader.player import *
 from data_loader.team import Team
 
@@ -126,7 +124,7 @@ def separate_pitchers_batters(team):
     return pitchers, batters
 
 
-def load_data():
+def load_data(verbose=False):
     teams_file = 'teams.json'
     players_file = 'players.json'
 
@@ -141,6 +139,10 @@ def load_data():
         # Save teams and players to JSON files
         save_to_json(teams, teams_file)
         save_to_json(players, players_file)
+
+    if verbose:
+        print()
+        print_team_rosters(teams)
 
     print("\033[92mTeams and players data loaded successfully.\033[0m")
     print()

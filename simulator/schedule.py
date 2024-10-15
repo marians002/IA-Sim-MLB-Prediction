@@ -3,7 +3,7 @@ import random
 from simulator.series_simulator import simulate_series
 
 
-def generate_schedule(teams: list):
+def generate_schedule(teams: list, verbose=False):
     num_teams = len(teams)
     schedule = []
 
@@ -21,6 +21,13 @@ def generate_schedule(teams: list):
     # Shuffle the schedule to distribute home and away games
     random.shuffle(full_schedule)
 
+    if verbose:
+        print("\033[91m Generated schedule:\033[0m")
+        for game in full_schedule:
+            print(game[0].team_name, " vs. ", game[1].team_name)
+
+    print("\033[92mSchedule generated successfully.\033[0m")
+    print()
     return full_schedule
 
 

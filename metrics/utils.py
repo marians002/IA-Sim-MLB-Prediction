@@ -8,7 +8,7 @@ def save_final_statistics(schedule, filename='final_statistics.json', verbose=Fa
 
     for game in schedule:
         if verbose:
-            print("Simulating game: ", game[0].team_name, " vs. ", game[1].team_name)
+            print("\033[91mSimulating game:\033[0m ", game[0].team_name, " vs. ", game[1].team_name)
         game_simulator = simulate_game(game[0], game[1])
 
         # Collect final statistics
@@ -19,6 +19,7 @@ def save_final_statistics(schedule, filename='final_statistics.json', verbose=Fa
     with open(filename, 'w') as f:
         json.dump(all_games_stats, f, indent=4)
 
+    print("\033[92mSeason is over. All games simulated\033[0m")
     return all_games_stats
 
 

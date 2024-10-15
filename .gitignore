@@ -12,5 +12,7 @@
 /.idea
 __pycache__
 /__pycache__
+/data_loader/__pycache__
 /manager/__pycache__
 /PNL/__pycache__
+/metrics/__pycache__

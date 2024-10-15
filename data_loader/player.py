@@ -72,11 +72,12 @@ class Pitcher(Player):
         super().__init__(data[0], data[1], data[2], data[6], data[7], data[8],
                          data[9], data[10], data[11], data[12], data[13], data[14],
                          data[15], data[16], data[17], data[18], data[19], data[20],
-                         data[21], data[22], data[23], data[24], data[25], data[26],
-                         data[27], data[28], data[29], pos)
+                         data[22], data[23], data[24], data[25], data[26],
+                         data[27], data[28], data[29], data[30], pos)
         self.p_game = data[4]
         self.p_formatted_ip = data[5]
-        self.pitch_hand = data[30]
+        self.gf = data[21]
+        self.pitch_hand = data[31]
 
     def __str__(self):
         return super().__str__()

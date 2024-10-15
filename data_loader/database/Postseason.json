@@ -1,0 +1,13 @@
+{
+    "World_Series": ["Houston Astros", "Philadelphia Phillies", "4", "2"],
+    "ALCS": ["Houston Astros", "New York Yankees", "4", "0"],
+    "NLCS": ["Philadelphia Phillies", "San Diego Padres", "4", "1"],
+    "ALDS1": ["New York Yankees", "Cleveland Guardians", "3", "2"],
+    "ALDS2": ["Houston Astros", "Seattle Mariner", "3", "0"],
+    "NLDS1": ["Philadelphia Phillies", "Atlanta Braves", "3", "1"],
+    "NLDS2": ["San Diego Padres", "Los Angeles Dodgers", "3", "1"],
+    "ALWC1": ["Cleveland Guardians", "Tampa Bay Rays", "2", "0"],
+    "NLWC1": ["San Diego Padres", "New York Mets", "2", "1"],
+    "ALWC2": ["Seattle Mariners", "Toronto Blue Jays", "2", "0"],
+    "NLWC2": ["Philadelphia Phillies", "St. Louis Cardinals", "2", "0"]
+  }

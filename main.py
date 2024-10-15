@@ -1,66 +1,59 @@
-from data_loader import data_loader as dl
-from simulator.game_simulator import *
-from manager.baseball_manager import *
-from manager.rules import *
-from genetica.mlbeticA import *
+from simulator.postseason import *
+from simulator.schedule import *
+from metrics.utils import *
+from metrics.metrics import compare_metrics
+from PNL.chat import run as run_commentaries
+from PNL.voice_google import run_voice
 
 
 def main():
-    teams = dl.load_data()
+    verbose = False
 
-    # Select two random teams:
-    # They will be fixed by the moment
-    t1 = teams[10]
-    t2 = teams[14]
-    # dl.print_team_rosters([t1, t2])
+    print("¿Desea visualizar los equipos? (s/n)")
+    verbose = input() == 's'
+    teams = dl.load_data(verbose)
 
-    t1_pitchers, t1_batters = dl.separate_pitchers_batters(t1)
-    t2_pitchers, t2_batters = dl.separate_pitchers_batters(t2)
+    print("¿Desea visualizar el calendario? (s/n)")
+    verbose = input() == 's'
+    schedule = generate_schedule(teams, verbose)
 
-    manager = BaseballManager()
-    rules = [change_pitcher_rule, steal_base_rule, bunt_rule, challenge_rule, defensive_shift_rule,
-             bullpen_usage_rule, pinch_hitter_rule, hit_and_run_rule, infield_in_rule,
-             defensive_positioning_rule]
-    for rule in rules:
-        manager.add_rule(rule)
-    # t = get_lineup(t1_pitchers, t1_batters)
+    print("¿Desea visualizar los enfrentamientos? (s/n)")
+    verbose = input() == 's'
+    results = save_final_statistics(schedule, verbose=verbose)
 
-    # Test lineup (Default batters and pitchers)
-    h_lineup = [t1_pitchers[0]]
-    t1_pitchers.pop(0)    # Remove the opening pitcher from the bullpen
-    a_lineup = [t2_pitchers[0]]
-    t2_pitchers.pop(0)    # Remove the opening pitcher from the bullpen
+    # Simulate the postseason
+    al_postseason_teams, nl_postseason_teams = get_postseason_teams(teams)
+    world_series_winner = create_postseason_structure(nl_postseason_teams, al_postseason_teams)
 
-    # Posteriormente hay que cambiar las dos lineas de arriba para que se elija un pitcher y ese pitcher se coloque en
-    # la posicion 0 del listado de pitchers para hacer cositas con los cambios de pitcher luego
+    print(f"\033[92mThe World Series winner is: \033[0m {world_series_winner} 🎉")
 
-    for i in range(10):
-        h_lineup.append(t1_batters[i])
-        a_lineup.append(t2_batters[i])
+    print("¿Desea visualizar las métricas? (s/n)")
+    verbose = input() == 's'
 
-    game_simulator = GameSimulator(manager, t1_batters, t1_pitchers, t2_batters, t2_pitchers, h_lineup, a_lineup)
-    game_simulator.simulate_game()
-    game_simulator.save_log('game_log.json')
+    # Create DataFrames for each division and league
+    (nl_east_df, nl_west_df, nl_central_df, nl_overall_df,
+     al_east_df, al_west_df, al_central_df, al_overall_df) = create_dataframes_from_results(results, teams)
+
+    (nl_overall_df_original, al_overall_df_original, nl_central_df_original, nl_east_df_original,
+     nl_west_df_original, al_central_df_original, al_east_df_original, al_west_df_original) = load_databases()
+
+    # Compare metrics
+    n = 5
+    compare_metrics(nl_overall_df, al_overall_df, nl_overall_df_original, al_overall_df_original, n, graphics=verbose)
+
+    # Get commentaries
+    print("¿Desea visualizar los comentarios del último partido? (s/n)")
+    verbose = input() == 's'
+    if verbose:
+        print("\033[92mComentarios:\033[0m")
+        run_commentaries()
+
+    print("¿Desea escuchar los comentarios del último partido? (s/n)")
+    verbose = input() == 's'
+    if verbose:
+        print("\033[92mGenerando audio:\033[0m")
+        run_voice()
 
 
 if __name__ == "__main__":
     main()
-
-# Genetic algorithm example
-# pool = players
-# init_population = []
-# for i in range(20):
-#     init_population.append(random.sample(players, 9))
-# fitness = fitness_lineup
-# ans = geneticA.genetic_algo(population=init_population, fitness=fitness, pool=pool)
-
-# Case of use
-# Fitness function is max when numeric array is ordered
-# numbers = list(range(1, 11))
-# permutations = list(itertools.permutations(numbers))
-# parents = random.sample(permutations, 2)
-# child1, child2 = geneticA.order_one_crossover(parents[0], parents[1])
-# pool = numbers
-# init_population = random.sample(permutations, 20)
-# ans = geneticA.genetic_algo(init_population, geneticA.fitness_sort, pool)
-# print(ans)

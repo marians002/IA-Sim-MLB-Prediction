@@ -4,8 +4,70 @@ from simulator.calculate_probs import *
 
 
 class GameSimulator:
-    def __init__(self, manager, t1, t2, batters_t1, batters_t2, h_lineup,
-                 a_lineup, h_bullpen, a_bullpen):
+    """
+    A class to simulate a baseball game.
+
+    Attributes:
+    ----------
+    manager : Manager
+        The manager responsible for making decisions during the game.
+    home_team : str
+        The name of the home team.
+    away_team : str
+        The name of the away team.
+    batters_t1 : list
+        List of batters for team 1.
+    batters_t2 : list
+        List of batters for team 2.
+    bullpen_h : list
+        List of bullpen pitchers for the home team.
+    bullpen_a : list
+        List of bullpen pitchers for the away team.
+    game_state : GameState
+        The current state of the game.
+    log : list
+        Log of game events.
+    home_team_lineup : list
+        Lineup of the home team.
+    away_team_lineup : list
+        Lineup of the away team.
+    h_pitcher : Pitcher
+        Current pitcher for the home team.
+    a_pitcher : Pitcher
+        Current pitcher for the away team.
+    defensive_rate_home : float
+        Defensive rate for the home team.
+    defensive_rate_away : float
+        Defensive rate for the away team.
+    current_batter : int
+        Index of the current batter in the lineup.
+    """
+
+    def __init__(self, manager, t1, t2, batters_t1, batters_t2, h_lineup, a_lineup, h_bullpen, a_bullpen):
+        """
+        Initializes the GameSimulator with the given parameters.
+
+        Parameters:
+        ----------
+        manager : Manager
+            The manager responsible for making decisions during the game.
+        t1 : Team
+            The home team.
+        t2 : Team
+            The away team.
+        batters_t1 : list
+            List of batters for team 1.
+        batters_t2 : list
+            List of batters for team 2.
+        h_lineup : list
+            Lineup of the home team.
+        a_lineup : list
+            Lineup of the away team.
+        h_bullpen : list
+            List of bullpen pitchers for the home team.
+        a_bullpen : list
+            List of bullpen pitchers for the away team.
+        """
         self.manager = manager
         self.home_team = t1.team_name
         self.away_team = t2.team_name
@@ -24,6 +86,9 @@ class GameSimulator:
         self.current_batter = 0  # Bateadores comienzan en el 1 del lineup y el pitcher en el 0
 
     def simulate_game(self):
+        """
+        Simulates a full game, inning by inning.
+        """
         self.log.append({'Game between: ': f"{self.home_team} and {self.away_team}"})
         for inning in range(1, 10):
             self.game_state.inning = inning
@@ -36,6 +101,9 @@ class GameSimulator:
                                          f"{self.away_team}: {self.game_state.away_score}"})
 
     def simulate_inning(self):
+        """
+        Simulates a single inning of the game.
+        """
         while self.game_state.outs < 3:
             # Get current batter and pitcher and update it in the game_state
             batter = self.get_next_batter()
@@ -65,6 +133,14 @@ class GameSimulator:
                 break
 
     def get_next_batter(self):
+        """
+        Gets the next batter in the lineup.
+
+        Returns:
+        -------
+        Batter
+            The next batter in the lineup.
+        """
         if (self.current_batter + 1) < 10:
             self.current_batter += 1
         else:
@@ -75,16 +151,40 @@ class GameSimulator:
         return self.away_team_lineup[self.current_batter]
 
     def get_current_pitcher(self):
+        """
+        Gets the current pitcher.
+
+        Returns:
+        -------
+        Pitcher
+            The current pitcher.
+        """
         if self.game_state.home_team_batting:
             return self.a_pitcher
         return self.h_pitcher
 
     def get_def_rate(self):
+        """
+        Gets the defensive rate of the team currently fielding.
+
+        Returns:
+        -------
+        float
+            The defensive rate of the team currently fielding.
+        """
         if self.game_state.home_team_batting:
             return self.defensive_rate_away
         return self.defensive_rate_home
 
     def update_pitcher(self, new_pitcher):
+        """
+        Updates the current pitcher.
+
+        Parameters:
+        ----------
+        new_pitcher : Pitcher
+            The new pitcher to be set.
+        """
         if new_pitcher:
             if self.game_state.home_team_batting:
                 self.a_pitcher = new_pitcher
@@ -94,12 +194,28 @@ class GameSimulator:
                 self.game_state.pitch_count_home = 0
 
     def swap_teams(self):
+        """
+        Swaps the teams, changing the batting team to the fielding team and vice versa.
+        """
         if self.game_state.home_team_batting:
             self.game_state.update(home_team_batting=False)
         else:
             self.game_state.update(home_team_batting=True)
 
     def apply_manager_decision(self, decision: Intention):
+        """
+        Applies the manager's decision.
+
+        Parameters:
+        ----------
+        decision : Intention
+            The decision made by the manager.
+
+        Returns:
+        -------
+        tuple
+            A tuple containing the result and action result.
+        """
         if decision.name == "Change Pitcher":
             bullpen = self.bullpen_a if self.game_state.home_team_batting else self.bullpen_h
             new_pitcher, action_result = decision.action(self.game_state, bullpen)
@@ -136,6 +252,14 @@ class GameSimulator:
             return None, "Decision not recognized or not implemented yet."
 
     def update_game_state(self, result):
+        """
+        Updates the game state based on the result of the play.
+
+        Parameters:
+        ----------
+        result : str
+            The result of the play.
+        """
         if result == 'strikeout':
             self.game_state.update(outs=self.game_state.outs + 1)
         elif result == 'walk':
@@ -169,18 +293,41 @@ class GameSimulator:
         self.game_state.update(score_difference=abs(self.game_state.home_score - self.game_state.away_score))
 
     def get_pitch_count(self):
+        """
+        Gets the current pitch count.
+
+        Returns:
+        -------
+        int
+            The current pitch count.
+        """
         if self.game_state.home_team_batting:
             return self.game_state.pitch_count_away
         return self.game_state.pitch_count_home
 
     def update_pitch_count(self, pitches=1):
+        """
+        Updates the pitch count.
+
+        Parameters:
+        ----------
+        pitches : int, optional
+            The number of pitches to add to the count (default is 1).
+        """
         if self.game_state.home_team_batting:
             self.game_state.update(pitch_count_away=self.game_state.pitch_count_away + pitches)
         else:
             self.game_state.update(pitch_count_home=self.game_state.pitch_count_home + pitches)
 
     def reset_inning(self):
-        # Reset inning if 3 outs
+        """
+        Resets the inning if there are 3 outs.
+
+        Returns:
+        -------
+        bool
+            True if the inning was reset, False otherwise.
+        """
         if self.game_state.outs >= 3:
             self.game_state.update(outs=0)
             self.game_state.reset_bases()
@@ -191,7 +338,14 @@ class GameSimulator:
         return False
 
     def get_final_statistics(self):
-        # return home team: score, away team: score
+        """
+        Gets the final statistics of the game.
+
+        Returns:
+        -------
+        dict
+            A dictionary containing the final statistics of the game.
+        """
         return {
             'Home Team': self.home_team,
             'Home Score': self.game_state.home_score,
@@ -200,11 +354,35 @@ class GameSimulator:
         }
 
     def get_winner(self):
+        """
+        Determines the winner of the game based on the current scores.
+
+        Returns:
+        -------
+        str
+            The name of the winning team.
+        """
         if self.game_state.home_score > self.game_state.away_score:
             return self.home_team
         return self.away_team
 
     def update_log(self, batter, pitcher, action, result, action_result):
+        """
+        Updates the game log with the current state and actions.
+
+        Parameters:
+        ----------
+        batter : Batter
+            The current batter.
+        pitcher : Pitcher
+            The current pitcher.
+        action : str
+            The action taken by the manager.
+        result : str
+            The result of the action.
+        action_result : str
+            A detailed description of the action result.
+        """
         if self.game_state.home_team_batting:
             batting_team = self.home_team
         else:
@@ -237,6 +415,13 @@ class GameSimulator:
         })
 
     def save_log(self, filename='game_log.json'):
-        # print(self.log)
+        """
+        Saves the game log to a JSON file.
+
+        Parameters:
+        ----------
+        filename : str, optional
+            The name of the file to save the log to (default is 'game_log.json').
+        """
         with open(filename, 'w') as f:
             json.dump(self.log, f, indent=4)

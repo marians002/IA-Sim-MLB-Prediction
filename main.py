@@ -2,6 +2,8 @@ from simulator.postseason import *
 from simulator.schedule import *
 from metrics.utils import *
 from metrics.metrics import compare_metrics
+from PNL.chat import run as run_commentaries
+from PNL.voice_google import run_voice
 
 
 def main():
@@ -28,7 +30,6 @@ def main():
     print("¿Desea visualizar las métricas? (s/n)")
     verbose = input() == 's'
 
-
     # Create DataFrames for each division and league
     (nl_east_df, nl_west_df, nl_central_df, nl_overall_df,
      al_east_df, al_west_df, al_central_df, al_overall_df) = create_dataframes_from_results(results, teams)
@@ -39,6 +40,19 @@ def main():
     # Compare metrics
     n = 5
     compare_metrics(nl_overall_df, al_overall_df, nl_overall_df_original, al_overall_df_original, n, graphics=verbose)
+
+    # Get commentaries
+    print("¿Desea visualizar los comentarios del último partido? (s/n)")
+    verbose = input() == 's'
+    if verbose:
+        print("\033[92mComentarios:\033[0m")
+        run_commentaries()
+
+    print("¿Desea escuchar los comentarios del último partido? (s/n)")
+    verbose = input() == 's'
+    if verbose:
+        print("\033[92mGenerando audio:\033[0m")
+        run_voice()
 
 
 if __name__ == "__main__":

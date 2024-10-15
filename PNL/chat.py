@@ -15,10 +15,11 @@ def generate_prompt_from_game_log(file_path):
     """
     Generates a prompt for the baseball game between two teams using the game log.
 
-    :param file_path: Path to the game log JSON file.
-    :param team1: Name of the first team.
-    :param team2: Name of the second team.
-    :return: Generated prompt string.
+    Args:
+        file_path (str): Path to the game log JSON file.
+
+    Returns:
+        str: Generated prompt string or an error message.
     """
     try:
         with open(file_path, 'r') as file:
@@ -36,9 +37,12 @@ def get_gemini_response(prompt):
     """
     Esta función toma un prompt como entrada, lo envía al modelo de Google Generative AI,
     y devuelve la respuesta generada.
-    
-    :param prompt: La consulta que deseas hacerle al modelo.
-    :return: La respuesta generada por el modelo.
+
+    Args:
+        prompt (str): La consulta que deseas hacerle al modelo.
+
+    Returns:
+        str: La respuesta generada por el modelo o un mensaje de error.
     """
     # Crea un mensaje con el contenido del prompt
     message = HumanMessage(content=prompt)
@@ -52,10 +56,10 @@ def get_gemini_response(prompt):
         return f"Error: {str(e)}"
 
 
-# Ejemplo de uso en este mismo script
-if __name__ == "__main__":
+def run():
     # Solicita al usuario que introduzca un prompt
-    file_path = '../game_log.json'
+    current_path = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_path, '../game_log.json')
     prompt = generate_prompt_from_game_log(file_path)
 
     # Obtén la respuesta del modelo

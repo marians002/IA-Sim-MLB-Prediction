@@ -3,6 +3,15 @@ from data_loader.player import Batter
 
 
 def calculate_defensive_rate(players: list[Batter]):
+    """
+    Calculates the defensive rate for a list of players.
+
+    Args:
+        players (list[Batter]): A list of Batter objects representing the players.
+
+    Returns:
+        float: The calculated defensive rate.
+    """
     total_defensive_metric = 0
     count = 0
 
@@ -22,6 +31,20 @@ def calculate_defensive_rate(players: list[Batter]):
 
 
 def determine_pitch_result(batter, pitcher, first_runner, pitch_count, defensive_rate, tamper_dp=0):
+    """
+    Determines the result of a pitch based on various factors.
+
+    Args:
+        batter (Batter): The batter facing the pitch.
+        pitcher (Pitcher): The pitcher throwing the pitch.
+        first_runner (Runner): The runner on first base, if any.
+        pitch_count (int): The current pitch count.
+        defensive_rate (float): The defensive rate of the fielding team.
+        tamper_dp (float, optional): Adjustment factor for double play probability. Defaults to 0.
+
+    Returns:
+        tuple: A tuple containing the result of the pitch and the total number of pitches thrown.
+    """
     strikes = 0
     balls = 0
     total_pitches = 0

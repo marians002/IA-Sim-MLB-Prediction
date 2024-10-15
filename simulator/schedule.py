@@ -4,6 +4,21 @@ from simulator.series_simulator import simulate_series
 
 
 def generate_schedule(teams: list, verbose=False):
+    """
+    Generate a round-robin schedule for the given teams.
+
+    Parameters:
+    -----------
+    teams : list
+        A list of team objects.
+    verbose : bool, optional
+        If True, prints the generated schedule (default is False).
+
+    Returns:
+    --------
+    list
+        A list of tuples representing the schedule, where each tuple contains two teams.
+    """
     num_teams = len(teams)
     schedule = []
 
@@ -32,13 +47,28 @@ def generate_schedule(teams: list, verbose=False):
 
 
 def create_postseason_structure(nl_teams, al_teams):
+    """
+    Create the postseason structure and simulate the series.
+
+    Parameters:
+    -----------
+    nl_teams : list
+        A list of National League team objects.
+    al_teams : list
+        A list of American League team objects.
+
+    Returns:
+    --------
+    object
+        The team object representing the World Series winner.
+    """
     all_stats = []
     nl_champion, stats = postseason_round(nl_teams)
     all_stats.append(stats)
     al_champion, stats = postseason_round(al_teams)
     all_stats.append(stats)
 
-    world_series_winner, stats = simulate_series(nl_champion, al_champion, 7, "World Series", "logs/World Series")
+    world_series_winner, stats = simulate_series(nl_champion, al_champion, 7)
     all_stats.append(stats)
 
     # Save all game statistics to a JSON file
@@ -49,18 +79,31 @@ def create_postseason_structure(nl_teams, al_teams):
 
 
 def postseason_round(teams):
+    """
+    Simulate a postseason round and return the champion.
+
+    Parameters:
+    -----------
+    teams : list
+        A list of team objects participating in the postseason round.
+
+    Returns:
+    --------
+    tuple
+        A tuple containing the champion team object and a list of statistics for each series.
+    """
     all_stats = []
-    wc_winner1, stats = simulate_series(teams[3], teams[4], 3, "Wild Card", "logs/Wild Card")
+    wc_winner1, stats = simulate_series(teams[3], teams[4], 3)
     all_stats.append(stats)
-    wc_winner2, stats = simulate_series(teams[2], teams[5], 3, "Wild Card", "logs/Wild Card")
-    all_stats.append(stats)
-
-    ds_winner1, stats = simulate_series(teams[0], wc_winner1, 5, "Division Series", "logs/Division Series")
-    all_stats.append(stats)
-    ds_winner2, stats = simulate_series(teams[1], wc_winner2, 5, "Division Series", "logs/Division Series")
+    wc_winner2, stats = simulate_series(teams[2], teams[5], 3)
     all_stats.append(stats)
 
-    cs_winner, stats = simulate_series(ds_winner1, ds_winner2, 7, "Championship Series", "logs/Championship Series")
+    ds_winner1, stats = simulate_series(teams[0], wc_winner1, 5)
+    all_stats.append(stats)
+    ds_winner2, stats = simulate_series(teams[1], wc_winner2, 5)
+    all_stats.append(stats)
+
+    cs_winner, stats = simulate_series(ds_winner1, ds_winner2, 7)
     all_stats.append(stats)
 
     return cs_winner, all_stats

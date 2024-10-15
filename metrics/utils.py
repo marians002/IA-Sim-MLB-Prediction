@@ -4,6 +4,17 @@ from simulator.series_simulator import *
 
 
 def save_final_statistics(schedule, filename='final_statistics.json', verbose=False):
+    """
+    Simulates a series of games, collects their final statistics, and saves them to a JSON file.
+
+    Args:
+        schedule (list): A list of tuples, where each tuple contains two teams to be simulated.
+        filename (str, optional): The name of the JSON file where the final statistics will be saved. Defaults to 'final_statistics.json'.
+        verbose (bool, optional): If True, prints the progress of the game simulations. Defaults to False.
+
+    Returns:
+        list: A list of dictionaries containing the final statistics for each game.
+    """
     all_games_stats = []
 
     for game in schedule:
@@ -24,6 +35,38 @@ def save_final_statistics(schedule, filename='final_statistics.json', verbose=Fa
 
 
 def create_dataframes_from_results(results, teams):
+    """
+    Create DataFrames from game results and team information.
+
+    This function processes a list of game results and a list of team objects to generate
+    DataFrames for each division and league in Major League Baseball (MLB). The DataFrames
+    contain information about each team's victories, losses, and position within their
+    respective divisions and leagues.
+
+    Parameters:
+    results (list of dict): A list of dictionaries where each dictionary represents a game result.
+                            Each dictionary should have the following keys:
+                            - 'Home Team': Name of the home team (str)
+                            - 'Home Score': Score of the home team (int)
+                            - 'Away Team': Name of the away team (str)
+                            - 'Away Score': Score of the away team (int)
+    teams (list of objects): A list of team objects. Each object should have the following attributes:
+                             - team_name (str): Name of the team
+                             - league (str): League of the team ('NL' or 'AL')
+                             - division (str): Division of the team ('NL East', 'NL West', 'NL Central',
+                                               'AL East', 'AL West', 'AL Central')
+
+    Returns:
+    tuple: A tuple containing eight pandas DataFrames in the following order:
+           - nl_east_df: DataFrame for National League East division
+           - nl_west_df: DataFrame for National League West division
+           - nl_central_df: DataFrame for National League Central division
+           - nl_overall_df: DataFrame for overall National League
+           - al_east_df: DataFrame for American League East division
+           - al_west_df: DataFrame for American League West division
+           - al_central_df: DataFrame for American League Central division
+           - al_overall_df: DataFrame for overall American League
+    """
     # Initialize empty dictionaries for victories and losses
     victories = {}
     losses = {}
@@ -115,6 +158,23 @@ def create_dataframes_from_results(results, teams):
 
 
 def load_databases():
+    """
+    Load and preprocess baseball division data from CSV files.
+
+    This function reads CSV files containing data for various baseball divisions,
+    adds a 'Position' column to each DataFrame, and returns the DataFrames.
+
+    Returns:
+        tuple: A tuple containing the following DataFrames:
+            - nl_overall_df_original (pd.DataFrame): National League overall data.
+            - al_overall_df_original (pd.DataFrame): American League overall data.
+            - nl_central_df_original (pd.DataFrame): National League Central Division data.
+            - nl_east_df_original (pd.DataFrame): National League East Division data.
+            - nl_west_df_original (pd.DataFrame): National League West Division data.
+            - al_central_df_original (pd.DataFrame): American League Central Division data.
+            - al_east_df_original (pd.DataFrame): American League East Division data.
+            - al_west_df_original (pd.DataFrame): American League West Division data.
+    """
     # Load the original CSV data
     # get current path
     current_dir = os.path.dirname(__file__)

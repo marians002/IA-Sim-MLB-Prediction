@@ -160,6 +160,20 @@ def calculate_position_similarity(df1, df2):
 
 
 def compare_metrics(nl_overall_df, al_overall_df, nl_overall_df_original, al_overall_df_original, n, graphics=False):
+    """
+    Compare various metrics between the National League (NL) and American League (AL) teams.
+
+    Parameters:
+    nl_overall_df (pd.DataFrame): DataFrame containing the overall metrics for NL teams.
+    al_overall_df (pd.DataFrame): DataFrame containing the overall metrics for AL teams.
+    nl_overall_df_original (pd.DataFrame): Original DataFrame containing the overall metrics for NL teams.
+    al_overall_df_original (pd.DataFrame): Original DataFrame containing the overall metrics for AL teams.
+    n (int): Number of top teams to compare.
+    graphics (bool, optional): If True, prints the results in a table-like format. Defaults to False.
+
+    Returns:
+    None
+    """
     # Convert team names to abbreviations
     nl_overall_df = convert_to_abbreviations(nl_overall_df, team_abbreviation_mapping)
     al_overall_df = convert_to_abbreviations(al_overall_df, team_abbreviation_mapping)

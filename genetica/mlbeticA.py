@@ -1,5 +1,7 @@
 import random
 from genetica import geneticA
+from data_loader import data_loader as dl
+
 
 """ 
 1er bateador: OBP   Modified: OBP + Sprint Speed
@@ -13,7 +15,7 @@ from genetica import geneticA
 9no: OAA else AVE   Modified: OAA + Speed + AVE
 """
 
-
+lineups = {}
 def fitness_lineup(lineup):
     val = 0
     val += 250 * lineup[0].on_base_percent + lineup[0].avg_best_speed
@@ -22,6 +24,10 @@ def fitness_lineup(lineup):
     val += 500 * lineup[3].slg_percent
     val += 250 * lineup[4].avg + 300 * lineup[4].home_run
     # 6th player
+    try:
+        a = lineup[5].oaa
+    except:
+        print(lineup[5].first_name, lineup[5].last_name)
     if lineup[5].oaa is not None:
         val += 250 * lineup[5].avg + 4 * lineup[5].oaa + 60
     else:
@@ -32,6 +38,10 @@ def fitness_lineup(lineup):
     else:
         val += 500 * lineup[6].avg
     # 8th player
+    try:
+        a = lineup[7].oaa
+    except:
+        print(lineup[7].first_name, lineup[7].last_name)
     if lineup[7].oaa is not None:
         val += 8 * lineup[7].oaa + 120
     else:
@@ -198,11 +208,15 @@ def initial_population(pitchers, batters, n=20):
     return population
 
 
-def get_lineup(pitchers, batters):
+def get_lineup(team):
+    if team.team_name in lineups:
+        return lineups[team.team_name]
+    
+    pitchers, batters = dl.separate_pitchers_batters(team)
     population = initial_population(pitchers, batters)
-    pool = list(batters)
-    pool.extend(pitchers)
-    return shift(geneticA.genetic_algo(population, fitness_lineup, pool, search_t=1))
+    pool = batters + pitchers
+    lineups[team.team_name] = shift(geneticA.genetic_algo(population, fitness_lineup, pool, search_t=1))
+    return lineups[team.team_name]
 
 
 def shift(iterable: list):

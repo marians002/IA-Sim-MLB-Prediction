@@ -84,9 +84,6 @@ def mutate(child, pool):
         candidates = []
 
         i = random.randint(a=0, b=(len(child) - 2))
-        # region Fix this
-        if child[i].pos[0] == 'DH':
-            return child
 
         for player in pool:
             if child[i].player_id != player.player_id and child[i].pos[0] == player.pos[0]:
@@ -95,11 +92,6 @@ def mutate(child, pool):
         if len(candidates) == 0: return child
         child[i] = random.sample(candidates, k=1)[0]
     return child
-
-
-""" def mutate(child, pool):
-    return child """
-
 
 def wheel_selection(population, weights):
     # Spin the wheel, bigger portion to most weighted individuals

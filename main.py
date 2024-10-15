@@ -6,7 +6,6 @@ from metrics.metrics import compare_metrics, team_abbreviation_mapping
 
 def main():
     teams = dl.load_data()
-
     schedule = generate_schedule(teams)
     results = save_final_statistics(schedule)
 

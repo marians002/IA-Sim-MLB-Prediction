@@ -3,7 +3,7 @@ import random
 from simulator.series_simulator import simulate_series
 from data_loader.team import Team
 
-def generate_schedule(teams : list[Team]):
+def generate_schedule(teams : list[Team], verbose=False):
     """
     Generate the MLB schedule for 2022 without dates.
     
@@ -54,6 +54,14 @@ def generate_schedule(teams : list[Team]):
         for team2 in al_teams:
             schedule.extend([(team1, team2)] * 2 )  
             schedule.extend([(team2, team1)] * 2)
+
+    if verbose:
+        # print in pink color
+        print("\033[95mGenerated Schedule:\033[0m")
+        for team1, team2 in schedule:
+            print(f"{team1.team_name} vs {team2.team_name}")
+    print("\033[92mSchedule generated successfully.\033[0m")
+
     return schedule
 
 def create_postseason_structure(nl_teams, al_teams):

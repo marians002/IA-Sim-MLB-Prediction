@@ -1,5 +1,4 @@
-import random
-from collections import defaultdict
+import random, json
 from simulator.series_simulator import simulate_series
 
 
@@ -25,22 +24,36 @@ def generate_schedule(teams : list):
 
 
 def create_postseason_structure(nl_teams, al_teams):
-    nl_champion = postseason_round(nl_teams, "NL")
-    al_champion = postseason_round(al_teams, "AL")
+    all_stats = []
+    nl_champion, stats = postseason_round(nl_teams, "NL")
+    all_stats.append(stats)
+    al_champion, stats = postseason_round(al_teams, "AL")
+    all_stats.append(stats)
     
-    world_series_winner = simulate_series(nl_champion, al_champion, 7, "World Series", "logs/World Series")
-    
+    world_series_winner, stats = simulate_series(nl_champion, al_champion, 7, "World Series", "logs/World Series")
+    all_stats.append(stats)
+
+    # Save all game statistics to a JSON file
+    with open('postseason.json', 'w') as f:
+        json.dump(all_stats, f, indent=4)
+
     return world_series_winner
 
 
 def postseason_round(teams, league):
-    wc_winner1 = simulate_series(teams[3], teams[4], 3, "Wild Card", "logs/Wild Card")
-    wc_winner2 = simulate_series(teams[2], teams[5], 3, "Wild Card", "logs/Wild Card")
+    all_stats = []
+    wc_winner1, stats = simulate_series(teams[3], teams[4], 3, "Wild Card", "logs/Wild Card")
+    all_stats.append(stats)
+    wc_winner2, stats = simulate_series(teams[2], teams[5], 3, "Wild Card", "logs/Wild Card")
+    all_stats.append(stats)
     
-    ds_winner1 = simulate_series(teams[0], wc_winner1, 5, "Division Series", "logs/Division Series")
-    ds_winner2 = simulate_series(teams[1], wc_winner2, 5, "Division Series", "logs/Division Series")
-    
-    cs_winner = simulate_series(ds_winner1, ds_winner2, 7, "Championship Series", "logs/Championship Series")
-    
-    return cs_winner
+    ds_winner1, stats = simulate_series(teams[0], wc_winner1, 5, "Division Series", "logs/Division Series")
+    all_stats.append(stats)
+    ds_winner2, stats = simulate_series(teams[1], wc_winner2, 5, "Division Series", "logs/Division Series")
+    all_stats.append(stats)
+
+    cs_winner, stats = simulate_series(ds_winner1, ds_winner2, 7, "Championship Series", "logs/Championship Series")
+    all_stats.append(stats)
+
+    return cs_winner, all_stats
 

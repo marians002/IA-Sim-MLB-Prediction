@@ -2,25 +2,26 @@ import pandas as pd
 from simulator.series_simulator import *
 
 
-def save_final_statistics(schedule, filename='final_statistics.json'):
-    all_game_stats = []
+def save_final_statistics(schedule, filename='final_statistics.json', verbose=False):
+    all_games_stats = []
 
     for game in schedule:
-        print("Simulating game: ", game[0].team_name, " vs. ", game[1].team_name)
+        if verbose:
+            print("Simulating game: ", game[0].team_name, " vs. ", game[1].team_name)
         game_simulator = simulate_game(game[0], game[1])
 
         # Collect final statistics
         game_stats = game_simulator.get_final_statistics()
-        all_game_stats.append(game_stats)
+        all_games_stats.append(game_stats)
 
     # Save all game statistics to a JSON file
     with open(filename, 'w') as f:
-        json.dump(all_game_stats, f, indent=4)
+        json.dump(all_games_stats, f, indent=4)
 
-    return all_game_stats
+    return all_games_stats
 
 
-def create_dataframes_from_results(results):
+def create_dataframes_from_results(results, teams):
     # Initialize empty dictionaries for victories and losses
     victories = {}
     losses = {}
@@ -73,13 +74,18 @@ def create_dataframes_from_results(results):
     # Populate the lists with team data
     for team, wins in victories.items():
         team_data = {'Team': team, 'Victories': wins, 'Losses': losses[team]}
+        t = None
+        for team_obj in teams:
+            if team_obj.team_name == team:
+                t = team_obj
+                break
 
-        if league == 'NL':
+        if t.league == 'NL':
             nl_overall_data.append(team_data)
-            nl_divisions[division].append(team_data)
-        elif league == 'AL':
+            nl_divisions[t.division].append(team_data)
+        elif t.league == 'AL':
             al_overall_data.append(team_data)
-            al_divisions[division].append(team_data)
+            al_divisions[t.division].append(team_data)
 
     # Sort the lists by victories
     nl_east_data = sorted(nl_east_data, key=lambda x: x['Victories'], reverse=True)
@@ -104,3 +110,20 @@ def create_dataframes_from_results(results):
     al_overall_df = pd.DataFrame(al_overall_data)
 
     return nl_east_df, nl_west_df, nl_central_df, nl_overall_df, al_east_df, al_west_df, al_central_df, al_overall_df
+
+
+def load_databases():
+    # Load the original CSV data
+    # get current path
+    current_dir = os.path.dirname(__file__)
+    path = '../data_loader/database/'
+    nl_overall_df_original = pd.read_csv(os.path.join(current_dir, path, 'NL_overall.csv'))
+    nl_central_df_original = pd.read_csv(os.path.join(current_dir, path, 'NL_central_division.csv'))
+    nl_east_df_original = pd.read_csv(os.path.join(current_dir, path, 'NL_east_division.csv'))
+    nl_west_df_original = pd.read_csv(os.path.join(current_dir, path, 'NL_west_division.csv'))
+    al_overall_df_original = pd.read_csv(os.path.join(current_dir, path, 'AL_overall.csv'))
+    al_central_df_original = pd.read_csv(os.path.join(current_dir, path, 'AL_central_division.csv'))
+    al_east_df_original = pd.read_csv(os.path.join(current_dir, path, 'AL_east_division.csv'))
+    al_west_df_original = pd.read_csv(os.path.join(current_dir, path, 'AL_west_division.csv'))
+    return (nl_overall_df_original, al_overall_df_original, nl_central_df_original, nl_east_df_original,
+            nl_west_df_original, al_central_df_original, al_east_df_original, al_west_df_original)

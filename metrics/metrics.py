@@ -35,6 +35,7 @@ team_abbreviation_mapping = {
     'Oakland Athletics': 'OAK'
 }
 
+
 def convert_to_abbreviations(df, mapping):
     """
     Convert full team names to abbreviations.
@@ -49,6 +50,7 @@ def convert_to_abbreviations(df, mapping):
     reverse_mapping = {v: k for k, v in mapping.items()}
     df['Team'] = df['Team'].map(reverse_mapping)
     return df
+
 
 def top_n_comparison(df1, df2, n, mapping):
     """
@@ -65,15 +67,16 @@ def top_n_comparison(df1, df2, n, mapping):
     """
     df1 = convert_to_abbreviations(df1, mapping)
     df2 = convert_to_abbreviations(df2, mapping)
-    
+
     top_n_df1 = df1.head(n)['Team']
     top_n_df2 = df2.head(n)['Team']
-    
+
     overlap = set(top_n_df1).intersection(set(top_n_df2))
     overlap_count = len(overlap)
     overlap_percentage = (overlap_count / n) * 100
-    
+
     return overlap_count, overlap_percentage
+
 
 def pearson_similarity(df1, df2, mapping):
     """
@@ -89,16 +92,41 @@ def pearson_similarity(df1, df2, mapping):
     """
     df1 = convert_to_abbreviations(df1, mapping)
     df2 = convert_to_abbreviations(df2, mapping)
-    
+
     # Ensure both DataFrames have the same teams in the same order
     df1_sorted = df1.sort_values(by='Team').reset_index(drop=True)
     df2_sorted = df2.sort_values(by='Team').reset_index(drop=True)
-    
+
     # Extract the rankings
     rankings_df1 = df1_sorted['Victories']
     rankings_df2 = df2_sorted['Victories']
-    
+
     # Calculate Pearson correlation coefficient
     correlation, _ = pearsonr(rankings_df1, rankings_df2)
-    
+
     return correlation
+
+
+def compare_metrics(nl_overall_df, al_overall_df, nl_overall_df_original, al_overall_df_original, n,
+                    team_abbreviation_mapping):
+    # Convert team names to abbreviations
+    nl_overall_df = convert_to_abbreviations(nl_overall_df, team_abbreviation_mapping)
+    al_overall_df = convert_to_abbreviations(al_overall_df, team_abbreviation_mapping)
+    nl_overall_df_original = convert_to_abbreviations(nl_overall_df_original, team_abbreviation_mapping)
+    al_overall_df_original = convert_to_abbreviations(al_overall_df_original, team_abbreviation_mapping)
+
+    # Compare top N teams
+    nl_overlap_count, nl_overlap_percentage = top_n_comparison(nl_overall_df, nl_overall_df_original, n,
+                                                               team_abbreviation_mapping)
+    al_overlap_count, al_overlap_percentage = top_n_comparison(al_overall_df, al_overall_df_original, n,
+                                                               team_abbreviation_mapping)
+
+    # Calculate Pearson similarity
+    nl_pearson = pearson_similarity(nl_overall_df, nl_overall_df_original, team_abbreviation_mapping)
+    al_pearson = pearson_similarity(al_overall_df, al_overall_df_original, team_abbreviation_mapping)
+
+    # Print results
+    print(f"NL Top {n} Teams Overlap: {nl_overlap_count} teams, {nl_overlap_percentage:.2f}%")
+    print(f"AL Top {n} Teams Overlap: {al_overlap_count} teams, {al_overlap_percentage:.2f}%")
+    print(f"NL Pearson Correlation: {nl_pearson:.2f}")
+    print(f"AL Pearson Correlation: {al_pearson:.2f}")
